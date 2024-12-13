@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+  
+    <main>
+        <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="addNewLabel">+ Add New Outward</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="row">
+                        <div class="form-group col-md-4 p-2">
+                            <label for="Inward">Unique Inward Number</label>
+                            
+                              <div class="input-group w-100 ">
+                                <input type="text" class="form-control" id="Inward" placeholder="381" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <!-- <div class="input-group-append">
+                                  <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-gear  ml-auto"></i></span>
+                                </div> -->
+                              </div>
+                              
+                            
+                          </div>
+                          <div class="col-md-4"></div>
+                          <div class="col-md-4"></div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="date" class="form-control" id="userName" placeholder="Enter Name">
+                          <label for="userName">Date</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="number" class="form-control" id="userID" placeholder="name@example.com">
+                          <label for="userID">Sender Unique Outward No.</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="Phone Number">
+                          <label for="userID">From</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="email" class="form-control" id="userID" placeholder="name@example.com">
+                          <label for="userID">Sender Email Id</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Place</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="time" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier Received Time</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier Delivered by</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">TO</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier received by</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="email" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Receiver Email id</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="number" class="form-control" id="userID" placeholder="">
+                          <label for="userID">POD Number</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier Company Name</label>
+                        </div>
+                      </div>
+                   
+        
+                   
+                      <!-- <div class="col-6 my-3">
+                        <div class="dropdown">
+                          <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="height: calc(3.5rem + calc(var(--bs-border-width) * 2));">
+                            Select Column
+                          </button>
+                          <ul class="dropdown-menu columnName p-0 w-100">
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Company Name</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Contact Name</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Email</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Source</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">City	</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Contact Type</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">RM</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Creation Date</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Last Interaction Date</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Last Interaction With</label></li>
+                          </ul>
+                        </div>
+                      </div> -->
+                      <div class="col-md-12 text-end">
+                        <button type="button" class="btn btn-outline-secondary my-3">Cancel</button>
+                        <button type="submit" class="btn btn-secondary my-3">Save</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+              <div class="card-body p-0">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div
+                      class="col-md-3 collapse collapse-horizontal show p-0"
+                      file-include-html="assets/includes/sidebar.html"
+                      id="collapseWidthExample"
+                    ></div>
+                    <div class="col card " id="main">
+                      <div class="row">
+                        
+                        <div class="col-md-12 ">
+                          <div class="row mt-3">
+                            <div class="col">
+                              <h1>Vendor Tour Invoice</h1>
+                          
+                            </div>
+                        
+                          </div>
+
+                          <hr>
+                          <form>
+                            <div class="form-group row py-2">
+                              <label
+                                for="inputPassword"
+                                class="col-sm-2 col-form-label "
+                                >Vendor</label
+                              >
+                              <div class="col-sm-2">
+                                <div class="form-group">
+                                  <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Adani Electricity</option>
+                                    <option>Hyginetech India Pvt Ltd	</option>
+                                     <option>	TATA Power</option>
+                                    </select>
+                                </div>
+                              </div>
+                              <label
+                                for="inputPassword"
+                                class="col-sm-2 col-form-label"
+                              >
+                                Source Destination</label
+                              >
+                              <div class="col-sm-2">
+                                <div class="form-group">
+                                  <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>[GJ]-Gujrat</option>
+                                    <option>[MH]- Maharastra</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                  </select>
+                                </div>
+                              </div>
+              
+                              <label
+                                for="inputPassword"
+                                class="col-sm-2 col-form-label "
+                                >Target Destination</label
+                              >
+                              <div class="col-sm-2">
+                                <div class="form-group">
+                                  <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>[MH]- Maharastra</option>
+                                    <option>[GJ]-Gujrat</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+              
+                            <div class="form-group row py-2">
+                              <label for="inputPassword" class="col-sm-2 col-form-label"
+                                >Branch</label
+                              >
+                              <div class="col-sm-2">
+                                <div class="form-group">
+                                  <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Head Office</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                  </select>
+                                </div>
+                              </div>
+                              <label for="date" class="col-sm-2 col-form-label">Date</label>
+                              <div class="col-sm-2">
+                                <div class="form-group">
+                                  <input type="date" class="form-control" placeholder="" />
+                                </div>
+                              </div>
+                         
+                              <label for="date" class="col-sm-2 col-form-label">Due Date</label>
+                              <div class="col-sm-2">
+                                <div class="form-group">
+                                  <input type="date" class="form-control" placeholder="" />
+                                </div>
+                              </div>
+                            </div>
+              
+                         
+                          </form>
+                          <hr>
+                       
+                          <div
+                            class="table-responsive rounded-3 border bookmakerTable"
+                          >
+                            <table class="table m-0">
+                              <thead style="white-space: pre;">
+                                <tr>
+                                    <th scope="col">S.No.</th>
+                                    <th scope="col">Passenger Name</th>
+                                    <th scope="col">Travel Request No.</th>
+                                       <th scope="col">Gender</th>
+                                    <th scope="col">Booking Status</th>
+                                    <th scope="col">Travel Mode</th>
+                                    <th scope="col">Travel From</th>
+                                    <th scope="col">Travel To</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col" class="col-11">Action</th>
+                                    
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td>Neeraj Malviya</td>
+                                    <td><a href="">0000</a></td>
+                                     <td>Male</td>
+                                    <td>CNF</td> 
+                                    <td><select class="border-0 text-dark">
+                                      <option>Flight</option>
+                                      <option selected>Train</option>
+                                    </select></td> 
+                                    
+                                    <td>Maharstra-[MH]</td>
+                                    <td>Gujrat-[GJ]</td>
+                                    <td>18-Mar-2024</td>
+                                    <td>19-Mar-2024</td>
+                                    <td><i class="fa fa-currency-rupee"></i>2500.25</td>
+                                  
+                                    <td >
+                                    <i class="fa fa-plus text-primary" ></i>
+                                    <i class="fa fa-copy text-primary" ></i>
+                                    <i class="fa fa-close text-danger" ></i>
+                                    </td>
+                                  </tr>
+              
+                                  <tr>
+                                    <td scope="row">2</td>
+                                    <td>Abhishek Jhariya</td>
+                                    <td><a href="">0000</a></td>
+                                <td>Male</td>
+                                    <td>CNF</td> 
+                                  <td><select class="border-0 text-dark">
+                                      <option selected>Flight</option>
+                                      <option>Train</option>
+                                    </select></td>
+                                  
+                                    <td>Maharstra-[MH]</td>
+                                    <td>Gujrat-[GJ]</td>
+                                    <td>18-Mar-2024</td>
+                                    <td>19-Mar-2024</td>
+                                    <td><i class="bi bi-currency-rupee"></i>2500.25</td>
+                                  
+                                   
+                                    <td >
+                                        <i class="fa fa-plus text-primary" ></i>
+                                        <i class="fa fa-copy text-primary" ></i>
+                                        <i class="fa fa-close text-danger" ></i>
+                                        </td>
+                                  </tr>
+              
+                                  <tr>
+                                    <td scope="row">3</td>
+                                    <td>Poonam Singh</td>
+                                    <td><a href="">0000</a></td>
+                                      <td>Male</td>
+                                    <td>CNF</td>
+                                    <td><select class="border-0 text-dark">
+                                      <option>Flight</option>
+                                      <option>Train</option>
+                                      <option selected value="">Hotel</option>
+                                    </select></td> 
+                                   
+                                    <td>Maharstra-[MH]</td>
+                                    <td>Gujrat-[GJ]</td>
+                                    <td>18-Mar-2024</td>
+                                    <td>19-Mar-2024</td>
+                                    <td><i class="bi bi-currency-rupee"></i>2500.25</td>
+                                  
+                                    
+                                    <td >
+                                        <i class="fa fa-plus text-primary" ></i>
+                                        <i class="fa fa-copy text-primary" ></i>
+                                        <i class="fa fa-close text-danger" ></i>
+                                        </td>
+                                  </tr>
+              
+                                  <tr>
+                                    <td scope="row">4</td>
+                                    <td>Aakanksha Gupta</td>
+                                    <td><a href="">0000</a></td>
+                                     <td>Male</td>
+                                    <td>CNF</td> 
+                                    <td><select class="border-0 text-dark">
+                                      <option>Flight</option>
+                                      <option>Train</option>
+                                      <option selected>Car</option>
+                                    </select></td> 
+                                 
+                                    <td>Maharstra-[MH]</td>
+                                    <td>Gujrat-[GJ]</td>
+                                    <td>18-Mar-2024</td>
+                                    <td>19-Mar-2024</td>
+                                    <td><i class="bi bi-currency-rupee"></i>2500.25</td>
+                                  
+                                  
+                                    <td >
+                                        <i class="fa fa-plus text-primary" ></i>
+                                        <i class="fa fa-copy text-primary" ></i>
+                                        <i class="fa fa-close text-danger" ></i>
+                                        </td>
+                                  </tr>
+                    
+                                
+                              </tbody>
+                            </table>
+                          
+                          </div>
+                         
+                        </div>
+                       
+                      </div>
+                      <div class="row w-100 mx-1 mt-3">
+                        <div class="col-md-6 mt-4">
+                        
+                        </div>
+          
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-7">
+                              <p>Sub Total</p>
+                              <p>Total Passenger:</p>
+                            </div>
+          
+                            <div class="col-md-5">
+                              <p class=""><i class="bi bi-currency-rupee"></i>12501.25</p>
+                              <p class="">5</p>
+                            </div>
+                          </div>
+          
+                          <div class="row">
+                            <div class="col-md-4">
+                              <p class="text-info">apply after tax</p>
+                            </div>
+                          </div>
+          
+                          <div class="row mt-4">
+                            <div class="col-md-7 font-weight-bold">
+                              <p>IGST [18%]</p>
+                            </div>
+                            <div class="col-md-5">
+                              <p class="float-right">
+                                <i class="bi bi-currency-rupee"></i>180.00
+                              </p>
+                            </div>
+                          </div>
+          
+                          <div class="row my-2">
+                            <div class="col-md-7">
+                              <p class="font-weight-bold">Total</p>
+                            </div>
+                            <div class="col-md-5">
+                              <p class="font-weight-bold float-right">
+                                <i class="bi bi-currency-rupee"></i>1080.00
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+          <div class="row w-100 mx-1">
+            <div class="col-md-6">
+              <!-- <div class="form-group">
+              <label for="exampleFormControlTextarea1">Terms and Conditions</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div> -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="file"
+                  class="form-control-file"
+                  id="exampleFormControlFile1"
+                />
+              </div>
+              <small>you can upload maximum of 10 files, each 5mb</small>
+            </div>
+          </div>
+          <div class="float-right bttn mt-3 mb-3" style="margin-left: auto;">
+            <a href="treval_management.html"  class="btn btn-dark">Submit</a>
+            <a href="" class="btn btn-dark">Cancel</a>
+           
+          </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

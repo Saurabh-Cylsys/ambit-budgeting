@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Courier Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+   #reportsChart {
+            max-width: 600px; /* Set max width for the chart */
+            width: 100%; /* Ensure the chart is responsive */
+        }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+
+
+  .chart-container {
+    margin-top: 40px;
+  }
+
+
+
+  #chart,
+  #lineGraph {
+    height: 350px;
+    /* Fixed height */
+  }
+
+  .mycard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+</style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row">
+                    <h4 class="pageTitle mt-2">Courier Dashboard</h4>
+
+                    <div class="row mt-3">
+                      <!-- <div class="col-md-3 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="date" class="form-control" id="userID">
+                          <label for="userID">Date</label>
+                        </div>
+                      </div>
+                      <div class="col-md-3 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <div class="dropdown">
+                            <button class="form-select dropdown-toggle" type="button" id="businessDropdown"
+                              aria-expanded="false">
+                              <label for="businessDropdown">Business</label><br> Select Business
+                            </button>
+                            <ul class="dropdown-menu p-2 col-12" aria-labelledby="businessDropdown">
+                              <li><label><input type="checkbox" value="1">Group Corporate Office</label></li>
+                              <li><label><input type="checkbox" value="2">Global Private Client</label></li>
+                              <li><label><input type="checkbox" value="3">Asset Management</label></li>
+                              <li><label><input type="checkbox" value="4">Investment Banking</label></li>
+
+                              <li><label><input type="checkbox" value="5"> SME Lending</label></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div> -->
+
+                      <!-- Company Dropdown -->
+                      <div class="col-md-3 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <div class="dropdown">
+                            <button class="form-select dropdown-toggle" type="button" id="companyDropdown"
+                              aria-expanded="false">
+                              <label for="companyDropdown">Company</label><br> Select Company
+                            </button>
+                            <ul class="dropdown-menu p-2 col-12" aria-labelledby="companyDropdown">
+                              <li><label><input type="checkbox" value="1">Ambit Capital Private Ltd</label></li>
+                              <li><label><input type="checkbox" value="2">Ambit Investment Advisors Private Ltd</label></li>
+                              <li><label><input type="checkbox" value="3">Ambit Private Ltd</label></li>
+                              <li><label><input type="checkbox" value="4">Ambit Finvest Private Ltd</label></li>
+                     
+                              <li><label><input type="checkbox" value="6">Ambit Investment Managers Private Ltd</label></li>
+                              <li><label><input type="checkbox" value="5">Ambit Singapore Pte. Ltd</label></li>
+                             
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Widgets Dropdown -->
+                      <div class="col-md-3 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <div class="dropdown">
+                            <button class="form-select dropdown-toggle" type="button" id="widgetsDropdown"
+                              aria-expanded="false">
+                              <label for="widgetsDropdown">Widgets</label><br> Select Widgets
+                            </button>
+                            <ul class="dropdown-menu p-2 col-12" aria-labelledby="widgetsDropdown">
+                              <li><label><input type="checkbox" value="1">All Type Courier</label></li>
+                              <li><label><input type="checkbox" value="2"> Total Courier</label></li>
+                              <li><label><input type="checkbox" value="3"> Total Inward Couriers</label></li>
+                              <li><label><input type="checkbox" value="4"> Total Outward Couriers</label></li>
+                              <li><label><input type="checkbox" value="5"> Total Reverse Pickup Couriers</label></li>
+                              <li><label><input type="checkbox" value="5"> Couriers Date Wise Chart</label></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3"></div>
+                      <div class="col-md-3"></div>
+                      <!-- Total Couriers -->
+                      <div class="col-md-3">
+                        <div class=" mycard p-2">
+                          <h6>Total Couriers</h6>
+                          <h4>150</h4>
+                          <button class="btn btn-success py-0">View</button>
+                        </div>
+                      </div>
+
+                      <!-- Inward Couriers -->
+                      <div class="col-md-3  ">
+                        <div class="mycard p-3">
+                          <h6>Inward Couriers</h6>
+                          <h4>80</h4>
+                          <button class="btn btn-success py-0">View</button>
+                        </div>
+                      </div>
+
+                      <!-- Outward Couriers -->
+                      <div class="col-md-3">
+                        <div class="mycard p-3">
+                          <h6>Outward Couriers</h6>
+                          <h4>50</h4>
+                          <button class="btn btn-success py-0">View</button>
+                        </div>
+                      </div>
+
+                      <!-- Reverse Pickup Couriers -->
+                      <div class="col-md-3">
+                        <div class="mycard p-3">
+                          <h6>Reverse Pickup Couriers</h6>
+                          <h4>20</h4>
+                          <button class="btn btn-success py-0">View</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Chart Section -->
+                    <div class="col-md-6 mt-3">
+                      <div class="mycard1">
+                        
+                        <div id="reportsChart">    
+                              <p class="small mt-2 ">
+                                &nbsp;  Details :
+                                  <span class="text-warning">
+                                      <select name="" id="">
+                                          <option value="">Today</option>
+                                          <option value="">7 days</option>
+                                          <option value="">1 month</option>
+                                          <option value="">1 year</option>
+                                      </select>
+                                  </span>
+                              </p>
+                          
+                  </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                      <div class="mycard1 p-3">
+                        <h5>All Type Courier</h5>
+                        <hr>
+                        <div class="chart-container">
+                          <div id="courierChart"></div><br>
+                        </div>
+                      </div>
+                    </div>
+              
+                  </div>
+                  <!-- row -->
+                  <div class="col-md-12 mt-3">
+                    <div class="mycard1"> <p class="small mt-2 ">
+                      &nbsp;  Details :
+                        <span class="text-warning">
+                            <select name="" id="">
+                                <option value="">Today</option>
+                                <option value="">7 days</option>
+                                <option value="">1 month</option>
+                                <option value="">1 year</option>
+                            </select>
+                        </span>
+                    </p>
+                      <div id="chart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/highcharts.js"></script>
+  <script src="assets/js/jquery.dvstr_jqp_graph.js"></script>
+  <script src="assets/js/jquery.reusable-highcharts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize ApexCharts Bar Chart for Courier Data
+      new ApexCharts(document.querySelector("#chart"), {
+        series: [
+          {
+            name: "Inward Couriers",
+            data: [30, 40, 45, 50, 49, 60] // Example data for inward couriers
+          },
+          {
+            name: "Outward Couriers",
+            data: [35, 50, 55, 60, 52, 70] // Example data for outward couriers
+          },
+          {
+            name: "Reverse Pickup Couriers",
+            data: [20, 35, 40, 45, 42, 55] // Example data for reverse pickup couriers
+          }
+        ],
+        chart: {
+          height: 350,
+          type: "bar"
+        },
+        xaxis: {
+          categories: [
+            "Ambit Capital Private Ltd", 
+            "Ambit Investment Advisors Private Ltd", 
+            "Ambit Private Ltd", 
+            "Ambit Finvest Private Ltd", 
+            "Ambit Singapore Pte. Ltd", 
+            "Ambit Investment Managers Private Ltd"
+          ],
+          labels: {
+            style: {
+              fontSize: '10px' // Adjusted font size
+            }
+          }
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: '55%',
+            endingShape: 'rounded'
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ['transparent']
+        },
+        fill: {
+          opacity: 1
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " couriers"
+            }
+          }
+        }
+      }).render();
+    });
+  </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        new ApexCharts(document.querySelector("#reportsChart"), {
+            series: [
+                {
+                    name: "Inward Courier",
+                    data: [10, 15, 5], // Sample data for Local, International, and Domestic Inward Couriers
+                },
+                {
+                    name: "Outward Courier",
+                    data: [20, 25, 10], // Sample data for Local, International, and Domestic Outward Couriers
+                },
+                {
+                    name: "Reverse Pickup Courier",
+                    data: [5, 10, 3], // Sample data for Local, International, and Domestic Reverse Pickup Couriers
+                },
+            ],
+            chart: {
+                height: 350,
+                type: "line", // Changed chart type to line for better visibility
+                toolbar: {
+                    show: false,
+                },
+            },
+            markers: {
+                size: 5, // Slightly larger markers for better visibility
+            },
+            colors: ["#376681", "#FF4560", "#00E396"], // Different colors for each series
+            fill: {
+                type: "gradient",
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.3,
+                    opacityTo: 0.4,
+                    stops: [0, 90, 100],
+                },
+            },
+            dataLabels: {
+                enabled: true, // Enable data labels for visibility
+            },
+            stroke: {
+                curve: "smooth",
+                width: 2,
+            },
+            xaxis: {
+                categories: [
+                    "__Local Courier",      // First category
+                    "International Courier", // Second category
+                    "Domestic Courier",   // Third category
+                ],
+                labels: {
+                    show: true, // Show the x-axis labels
+                    style: {
+                        fontSize: '14px', // Font size for the x-axis labels
+                        fontWeight: 'bold', // Make the labels bold
+                        colors: ["#333"], // Color of the labels
+                    },
+                },
+            },
+            tooltip: {
+                x: {
+                    format: "dd/MM/yy HH:mm",
+                },
+                shared: true, // Show tooltips for all series
+            },
+        }).render();
+    });
+</script>
+  <!-- ApexCharts Configuration -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Chart options
+      var options = {
+        chart: {
+          type: 'donut',
+          height: 350,
+        },
+        series: [150, 80, 50, 20], // Default data for Total Couriers, Inward, Outward, Reverse Pickup
+        labels: ['Total Couriers', 'Inward Couriers', 'Outward Couriers', 'Reverse Pickup Couriers'],
+        colors: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 300
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+      };
+
+      // Render the chart
+      var chart = new ApexCharts(document.querySelector("#courierChart"), options);
+      chart.render();
+
+      // Function to update the chart with new data (simulate live updates)
+      function updateChart(total, inward, outward, reversePickup) {
+        chart.updateSeries([total, inward, outward, reversePickup]);
+      }
+
+      // Simulating live data updates
+      setInterval(() => {
+        // Generate random data for demo
+        var totalCouriers = Math.floor(Math.random() * 200) + 100;
+        var inwardCouriers = Math.floor(Math.random() * totalCouriers * 0.6);
+        var outwardCouriers = Math.floor(Math.random() * totalCouriers * 0.3);
+        var reversePickupCouriers = totalCouriers - inwardCouriers - outwardCouriers;
+
+        // Update the chart with new data
+        updateChart(totalCouriers, inwardCouriers, outwardCouriers, reversePickupCouriers);
+      }, 5000); // Updates every 5 seconds (adjust as needed)
+    });
+  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Common function to handle multi-select dropdowns
+    function handleDropdown(dropdownId, label) {
+      const dropdownButton = document.getElementById(dropdownId);
+      const dropdownMenu = dropdownButton.nextElementSibling;
+      const checkboxes = dropdownMenu.querySelectorAll('input[type="checkbox"]');
+      let selectedValues = [];
+
+      // Toggle dropdown menu on button click
+      dropdownButton.addEventListener('click', function () {
+        dropdownMenu.classList.toggle('show');
+      });
+
+      // Update dropdown button text based on selections
+      function updateDropdownText() {
+        const selectedItems = Array.from(checkboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.parentNode.textContent.trim());
+
+        if (selectedItems.length > 0) {
+          dropdownButton.innerHTML = `<label for="${dropdownId}">${label}</label><br> ${selectedItems.join(', ')}`;
+        } else {
+          dropdownButton.innerHTML = `<label for="${dropdownId}">${label}</label><br> Select ${label} Type`;
+        }
+      }
+
+      // Add event listener to checkboxes
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          const value = this.value;
+
+          if (this.checked) {
+            selectedValues.push(value);
+          } else {
+            selectedValues = selectedValues.filter(item => item !== value);
+          }
+
+          updateDropdownText();
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function (event) {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.remove('show');
+        }
+      });
+    }
+
+    // Initialize dropdowns for Company and Widgets only
+    handleDropdown('companyDropdown', 'Company');
+    handleDropdown('widgetsDropdown', 'Widgets');
+  });
+</script>
+
+    <script>
+      const ctx = document.getElementById('courierChart').getContext('2d');
+
+      const courierChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Inward Courier', 'Outward Courier', 'Reverse Pickup Courier'],
+              datasets: [
+                  {
+                      label: 'Pending',
+                      data: [20, 30, 15], // Pending couriers data
+                      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      borderWidth: 1
+                  },
+                  {
+                      label: 'Done',
+                      data: [40, 20, 30], // Done couriers data
+                      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      borderWidth: 1
+                  }
+              ]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              },
+              plugins: {
+                  title: {
+                      display: true,
+                      text: 'Courier Status (Pending vs Done)'
+                  }
+              }
+          }
+      });
+  </script>
+</body>
+
+</html>

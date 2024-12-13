@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row mt-3 align-items-center">
+                        <div class="col">
+                          <h1>Vendor Master</h1>
+                        </div>
+
+                        <hr />
+                        <div class="col-md-3 my-3"> <label for="yourUsername" class="form-label">Vendor Name</label>
+                          <input class="form-control" type="text" placeholder="Enter Vendor Name">
+                        </div>
+
+                        <!-- <div class="col-md-3 my-3"> <label for="vendorID" class="form-label">Vendor ID</label>
+                          <input class="form-control" type="text" placeholder="Enter Vendor ID">
+                        </div> -->
+                        <!-- <div class="col-md-3 my-3"> <label for="phone" class="form-label">Phone No.</label>
+                          <input class="form-control" type="tel" placeholder="Enter Phone No.">
+                        </div> -->
+                        <!-- <div class="col-md-3 my-3"> <label for="email" class="form-label">Email ID</label>
+                          <input class="form-control" type="email" placeholder="Enter Email ID">
+                        </div> -->
+
+                        <div class="col-md-3 my-3">
+                          <label for="yourUsername" class="form-label">Business / Function Name</label>
+                          <div class="multi-select-dropdown">
+                            <button class="form-control" type="button" id="dropdownButton" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              Select Business/Function
+                            </button>
+                            <ul class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownButton">
+                              <li>
+                                <input type="text" name="" id="" value="Business" class=" w-100 bg-body-secondary p-2 border-0" disabled>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Group Corporate Office" class="business-checkbox">
+                                  Group Corporate Office / GCO
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Global Private Client" class="business-checkbox"> Global
+                                  Private Client / PC
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Asset Management" class="business-checkbox"> Asset
+                                  Management / AM
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Institutional Equities" class="business-checkbox">
+                                  Institutional Equities / IE
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Investment Banking" class="business-checkbox">
+                                  Investment Banking / IB
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="SME Lending" class="business-checkbox"> SME Lending /
+                                  SMEL
+                                </label>
+                              </li>
+                              <li>
+                                <input type="text" name="" id="" value="Functions" class=" w-100 bg-body-secondary p-2 border-0" disabled>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Admin" class="business-checkbox"> Admin
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="CCF" class="business-checkbox"> CCF
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="CMT" class="business-checkbox"> CMT
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="FI" class="business-checkbox"> FI
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="PMS" class="business-checkbox"> PMS
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Central Office" class="business-checkbox"> Central Office
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Wealth Operations" class="business-checkbox"> Wealth Operations
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Broking Operations" class="business-checkbox"> Broking Operations
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Client Experience" class="business-checkbox"> Client Experience
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Branding" class="business-checkbox"> Branding
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Product Team" class="business-checkbox"> Product Team
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="DD Team" class="business-checkbox"> DD Team
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Research Team" class="business-checkbox"> Research Team
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="HR" class="business-checkbox"> HR
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Legal" class="business-checkbox"> Legal
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input type="checkbox" value="Compliance" class="business-checkbox"> Compliance
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+
+                        <div class="col-md-2"><a class="btn btn-dark mt-4 " href="">Add</a>&nbsp;&nbsp;<a
+                            class="btn btn-danger mt-4 " href="">Close</a></div>
+                            <div class="col-12 mt-3">
+                              <div class="row align-items-center">
+                                <div class="col-md-8">
+                                  <nav class="navbar navbar-expand-lg">
+                                    <div class="container-fluid">
+                                     
+                                      <div class="navbar-collapse bg-white d-flex" id="">
+                                        <div class="navbar-nav  mb-2 mb-lg-0">
+                                          <div class="dropdown">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                              data-bs-toggle="dropdown" aria-expanded="false">
+                                              Select Column
+                                            </button>
+                                            <ul class="dropdown-menu columnName p-0">
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select
+                                                  All</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                                  &nbsp;&nbsp;S.No</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;User
+                                                  Name</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                                  &nbsp;&nbsp;Role.</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                                  &nbsp;&nbsp;Designation</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                                  &nbsp;&nbsp;Company</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                                  &nbsp;&nbsp;Business</a></li>
+                                              <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                                  &nbsp;&nbsp;Action</a></li>
+            
+                                            </ul>
+                                          </div>
+                                        </div>&nbsp;
+                                        <form class="d-flex " role="search">
+                                          <select class="form-select" aria-label="Default select example">
+                                            <option selected>Show</option>
+                                            <option value="1">10</option>
+                                            <option value="1">20</option>
+                                            <option value="1">50</option>
+                                          </select>
+                                        </form>
+                                        <img src="assets/images/download.svg" alt="">
+                                      </div>
+                                      
+                                    </div>
+                                  </nav>
+                                  
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Search</label>
+                                  <input type="search" name="" id="" class="form-control col mx-2" placeholder="Search">
+                                   
+                                </div>
+                              </div>
+                              
+                            </div>
+                      </div>
+                      <div class="col-md-12 p-3">
+                        <div class="table-responsive card">
+                          <table id="dtBasicExample" class="table table-sm  table-striped m-0" cellspacing="0"
+                            width="100%">
+                            <thead>
+                              <tr>
+                                <!-- <th scope="col">Vendor ID</th> -->
+                                <th scope="col">Vendor</th>
+                                <!-- <th scope="col">Phone No.</th> -->
+                                <th scope="col">Business / Function </th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <!-- <td>1011</td> -->
+                                <td>Aria Hotel                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>Group Corporate Office / GCO</td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1012</td> -->
+                                <td>Car parking
+                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>	HR</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1013</td> -->
+                                <td>Aria                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>	Global Private Client / GPC</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1014</td> -->
+                                <td>Car Parking and other conveyance
+                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>Investment Banking / IB</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1015</td> -->
+                                <td>airtel
+                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>Asset Management / AM</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1016</td> -->
+                                <td>various vendors including PN writer
+                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>	IT</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1017</td> -->
+                                <td>Local
+                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>Legal</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <!-- <td>1018</td> -->
+                                <td>Knight Frank
+                                </td>
+                                <!-- <td>1234567890</td> -->
+                                <td>	Compliance</td>
+                                <!-- <td></td> -->
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect">
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <nav class="mt-1" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Previous</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">1</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">2</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">3</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

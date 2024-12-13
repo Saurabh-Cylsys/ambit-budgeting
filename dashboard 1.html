@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+           
+           
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+        .myphoto {
+            background-color: rgb(45, 45, 189);
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0px 0px 7px 9px #092b68;
+        }
+
+        .social-ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .social-icon {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="fluid-container m-3">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card third-width p-2 mb-2">
+                        <h5>2020 forecast Feclects January & Fabruary Actuals</h5>
+                    </div>
+                    <div class="card third-width p-2 mb-2">
+                        <h6>Current Month</h6>
+                        <p>Net incom %</p>
+                        <h4 class="text-center">13.06 %</h4>
+                    </div>
+                    <div class="card third-width p-2 mb-2">
+                        <h6>Average sales price %</h6>
+                        <p>2020 forecast %</p>
+                        <h4 class="text-center">1,336 </h4>
+                        <p class="text-center">0.04 vs &nbsp; &nbsp; &nbsp; Plan</p>
+                    </div>
+                    <div class="card third-width p-2 mb-2">
+                        <h6>FTE count</h6>
+                        <p>2020 forecast %</p>
+                        <h4 class="text-center">1,336</h4>
+                        <p class="text-center">106 vs &nbsp; &nbsp; &nbsp; Plan</p>
+                        <p class="text-center">0.04 vs &nbsp; &nbsp; &nbsp; Actual</p>
+                    </div>
+                    <div class="card third-width p-2 mb-2">
+                        <h6>Revenue per FTE</h6>
+                        <p>2020 forecast</p>
+                        <h4 class="text-center">$ 103, 817</h4>
+                        <p class="text-center">106 vs &nbsp; &nbsp; &nbsp; Plan</p>
+                        <p class="text-center">0.04 vs &nbsp; &nbsp; &nbsp; Actual</p>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                   <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <div class="card p-2">
+                            <h5 class="mb-4">Revinue and Unit Trend</h5>
+                        <div id="chartContainer" style="height: 250px; width: 90%;"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="card p-2">
+                            <h5 class="mb-4">Opex comperision</h5>
+                            <p>Mar-20</p>
+                            <div id="chartContainer1" style="height: 250px; width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                     <div class="card p-2">
+                        <h4 class="mb-2">Management Summary- cash impect by summary</h4>
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color: #f3f3f3;">
+                                  <th>Time</th>
+                                  <th>Net Sales</th>
+                                  <th>Gross Profit</th>
+                                  <th>Net Income</th>
+                                  <th>Cash & Cash Equivalents</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td>Mar-20</td>
+                                    <td>25,042,136</td>
+                                    <td>11,012,591</td>
+                                    <td>2,802,930</td>
+                                    <td class="negative">(983,208)</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Apr-20</td>
+                                    <td>16,955,030</td>
+                                    <td>9,446,772</td>
+                                    <td>1,785,682</td>
+                                    <td>3,487,810</td>
+                                  </tr>
+                                  <tr>
+                                    <td>May-20</td>
+                                    <td>20,139,342</td>
+                                    <td>9,862,044</td>
+                                    <td>1,901,892</td>
+                                    <td>2,350,721</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Jun-20</td>
+                                    <td>22,558,665</td>
+                                    <td>10,817,183</td>
+                                    <td>2,622,479</td>
+                                    <td class="negative">(4,706,526)</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Jul-20</td>
+                                    <td>18,858,752</td>
+                                    <td>9,059,384</td>
+                                    <td>1,415,191</td>
+                                    <td>2,052,217</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        // First chart - Revenue and Unit Trend
+        var chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            data: [{
+                type: "column",
+                showInLegend: true,
+                legendMarkerColor: "grey",
+                dataPoints: [
+                    { y: 100, label: "Q1 2020" },
+                    { y: 80, label: "Q2 2020" },
+                    { y: 60, label: "Q3 2020" },
+                    { y: 40, label: "Q4 2020" }
+                ]
+            }]
+        });
+        chart1.render();
+
+        // Second chart - Scenario by Accounts
+        var chart2 = new CanvasJS.Chart("chartContainer1", {
+            animationEnabled: true,
+            // title: {
+            //     text: "Crude Oil Reserves vs Production, 2016"
+            // },
+            axisY: {
+                title: "Scanario",
+                titleFontColor: "#4F81BC",
+                lineColor: "#4F81BC",
+                labelFontColor: "#4F81BC",
+                tickColor: "#4F81BC"
+            },
+            axisY2: {
+                title: "",
+                titleFontColor: "#C0504E",
+                lineColor: "#C0504E",
+                labelFontColor: "#C0504E",
+                tickColor: "#C0504E"
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: function (e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                        e.dataSeries.visible = false;
+                    } else {
+                        e.dataSeries.visible = true;
+                    }
+                    chart2.render();
+                }
+            },
+            data: [{
+                type: "column",
+                name: "2020 AOP",
+                legendText: "2020 Forecast",
+                showInLegend: true,
+                dataPoints: [
+                    { label: "5M", y: 266.21 },
+                    { label: "4M", y: 302.25 },
+                    { label: "3M", y: 157.20 },
+                    { label: "2M", y: 148.77 },
+                    { label: "1M", y: 101.50 }
+                ]
+            },
+            {
+                type: "column",
+                name: "2020 Forecast",
+                legendText: "2020 AOP",
+                axisYType: "secondary",
+                showInLegend: true,
+                dataPoints: [
+                    { label: "Q1 2020", y: 10.46 },
+                    { label: "Q2 2020", y: 2.27 },
+                    { label: "Q3 2020", y: 3.99 },
+                    { label: "Q4 2020", y: 4.45 },
+                    { label: "Q5 2020", y: 2.92 }
+                ]
+            }]
+        });
+        chart2.render();
+    }
+</script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="Assets/js/bootstrap.js"></script>
+<script src="Assets/js/bootstrap.min.js"></script>
+<script src="Assets/js/bootstrap.bundle.js"></script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .graph-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows cards to wrap to the next line if necessary */
+  }
+
+  .graph-section .card {
+    flex: 1;
+    /* Makes all cards take equal space */
+    display: flex;
+    flex-direction: column;
+    /* Allows the contents to stack vertically */
+    justify-content: space-between;
+    /* Ensures space between contents */
+    height: 350px;
+  }
+</style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 card collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col">
+                          <h1 class="mt-3">Graphical Comparison</h1>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                          <div class="col-md-12 graph-section">
+                            <div class="row">
+                              <div class="col-md-12 mb-5">
+                                <div class="card p-2">
+                                  <h5 class="mb-4">Revenue and Expenses</h5>
+                                  <div id="chartContainer" style="height: 250px; width: 100%"></div>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                <div class="card p-2">
+                                  <h5 class="mb-4">Previous year and current year</h5>
+                                  <p>Mar-20</p>
+                                  <div id="chartContainer1" style="height: 250px; width: 100%"></div>
+                                </div>
+                              </div>
+                              <!-- <div class="col-md-12 mb-3">
+                                  <div class="card p-2">
+                                    <h5 class="mb-2">
+                                      Management Summary - Cash impact by
+                                      summary
+                                    </h5>
+                                    <table class="table">
+                                      <thead>
+                                        <tr style="background-color: #f3f3f3">
+                                          <th>Time</th>
+                                          <th>Net Sales</th>
+                                          <th>Gross Profit</th>
+                                          <th>Net Income</th>
+                                          <th>Cash & Cash Equivalents</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody style="white-space: nowrap">
+                                        <tr>
+                                          <td>Mar-20</td>
+                                          <td>25,042,136</td>
+                                          <td>11,012,591</td>
+                                          <td>2,802,930</td>
+                                          <td class="negative">(983,208)</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Apr-20</td>
+                                          <td>16,955,030</td>
+                                          <td>9,446,772</td>
+                                          <td>1,785,682</td>
+                                          <td>3,487,810</td>
+                                        </tr>
+                                        <tr>
+                                          <td>May-20</td>
+                                          <td>20,139,342</td>
+                                          <td>9,862,044</td>
+                                          <td>1,901,892</td>
+                                          <td>2,350,721</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Jun-20</td>
+                                          <td>22,558,665</td>
+                                          <td>10,817,183</td>
+                                          <td>2,622,479</td>
+                                          <td class="negative">(4,706,526)</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Jul-20</td>
+                                          <td>18,858,752</td>
+                                          <td>9,059,384</td>
+                                          <td>1,415,191</td>
+                                          <td>2,052,217</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div> -->
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.onload = function () {
+      // First chart - Revenue and Unit Trend
+
+      var chart1 = new CanvasJS.Chart("chartContainer", {
+
+        exportEnabled: true,
+        animationEnabled: true,
+        legend: {
+          cursor: "pointer",
+          itemclick: function (e) {
+            e.dataSeries.visible = !e.dataSeries.visible;
+            chart1.render();
+          }
+        },
+        data: [{
+          type: "pie",
+          startAngle: 25,
+          toolTipContent: "<b>{label}</b>: {y}%",
+          showInLegend: "true",
+          legendText: "{label}",
+          indexLabelFontSize: 16,
+          indexLabel: "{label} - {y}%",
+          dataPoints: [
+            { y: 51.08, label: "Revenue" },
+            { y: 27.34, label: "Expenses" },
+          ]
+        }]
+      });
+
+      chart1.render();
+
+      // Second chart - Scenario by Accounts
+      var chart2 = new CanvasJS.Chart("chartContainer1", {
+        animationEnabled: true,
+        axisY: {
+          title: "Budget",
+          titleFontColor: "#4F81BC",
+          lineColor: "#4F81BC",
+          labelFontColor: "#4F81BC",
+          tickColor: "#4F81BC",
+        },
+        toolTip: { shared: true },
+        legend: {
+          cursor: "pointer",
+          itemclick: function (e) {
+            e.dataSeries.visible = !e.dataSeries.visible;
+            chart2.render();
+          },
+        },
+        data: [
+          {
+            type: "column",
+            name: "Year 2023",
+            legendText: "Year 2023",
+            showInLegend: true,
+            dataPoints: [
+              { label: "5M", y: 266.21 },
+              { label: "4M", y: 302.25 },
+              { label: "3M", y: 157.2 },
+              { label: "2M", y: 148.77 },
+              { label: "1M", y: 101.5 },
+            ],
+          },
+          {
+            type: "column",
+            name: "Year 2024",
+            legendText: "Year 2024",
+            axisYType: "secondary",
+            showInLegend: true,
+            dataPoints: [
+              { label: "Advertising And Marketing", y: 10.46 },
+              { label: "Automobile Expense", y: 2.27 },
+              { label: "Bad Debt", y: 3.99 },
+              { label: "Bank Fees and Charges", y: 4.45 },
+              { label: "Consultant Expense", y: 2.92 },
+            ],
+          },
+        ],
+      });
+      chart2.render();
+
+
+    };
+  </script>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="Assets/js/bootstrap.js"></script>
+  <script src="Assets/js/bootstrap.min.js"></script>
+  <script src="Assets/js/bootstrap.bundle.js"></script>
+  <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

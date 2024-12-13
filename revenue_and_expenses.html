@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card " id="main">
+                  <div class="row">
+
+                    <div class="col-md-12 ">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>Revenue and Expenses
+                          </h1>
+                        </div>
+                      </div>
+                      <hr>
+
+                      <div class="row align-items-center">
+                        <div class="col-md-6">
+                          <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                              <div class="navbar-collapse bg-white d-flex" id="">
+                                <div class="navbar-nav  mb-2 mb-lg-0">
+                                  <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                      Select Column
+                                    </button>
+                                    <ul class="dropdown-menu columnName p-0">
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name"> Ticket Id</label>
+                                      </li>
+
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Email</label>
+                                      </li>
+
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Subject </label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Ticket owner </label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">PHONE</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Priority</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Group</label>
+                                      </li>
+
+                                    </ul>
+                                  </div>
+                                </div>&nbsp;
+                                <form class="d-flex " role="search">
+                                  <select class="form-select" aria-label="Default select example">
+                                    <option selected>Show</option>
+                                    <option value="1">10</option>
+                                    <option value="1">20</option>
+                                    <option value="1">50</option>
+                                  </select>
+                                </form>
+                                <img src="assets/images/download.svg" alt="">
+                                <!-- <a class="btn btn-dark ms-lg-auto"
+                                  href="review_approve_budget.html">Approve Budget</a> -->
+
+                              </div>
+                            </div>
+                          </nav>
+                        </div>
+                        <div class="col-md-6">
+                          <ul class="d-inline-flex p-0 list-unstyled justify-content-end w-100 m-0">
+                            <li class="mx-2">
+                              <select name="" id="" class="form-select">
+                                <option value="">Select Year</option>
+                                <option value="">FY 2023 - FY 2024</option>
+                                <option value="">FY 2022 - FY 2023</option>
+                                <option value="">FY 2021 - FY 2022</option>
+                              </select>
+                            </li>
+                            <li class="mx-2"><input type="search" name="" id="" placeholder="Search"
+                                class="form-control"></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12 p-3">
+                        <div class="table-responsive card">
+                          <table id="dtBasicExample" class="table table-sm small table-striped m-0" cellspacing="0"
+                            width="100%">
+                            <thead>
+                              <tr>
+                                <th scope="col" colspan="2" rowspan="1" class="bg-transparent text-black">Account</th>
+                                <th scope="col" colspan="5" rowspan="1"
+                                  class="text-center bg-transparent text-black border-start">
+                                  Apr 2022 - Mar 2023</th>
+                              </tr>
+                              <tr>
+                                <th scope="col" colspan="1" rowspan="1">Business / Function</th>
+                                <th scope="col" colspan="1" rowspan="1">Expense</th>
+                                <th scope="col" colspan="1" rowspan="1">Budget</th>
+                                <th scope="col" colspan="1" rowspan="1">Actual</th>
+                                <th scope="col" colspan="1" rowspan="1">Utilized Percentage</th>
+                                <th scope="col" colspan="1" rowspan="1">Over Budget</th>
+                                <th scope="col" colspan="1" rowspan="1">Exceeded Percentage</th>
+                              </tr>
+                            </thead>
+                            <tbody style="font-weight: 400;">
+                              <tr>
+                                <td>Group Corporate Office</td>
+                                <td> Advertising And Marketing</td>
+                                <td>0</td>
+                                <td>12197</td>
+                                <td></td>
+                                <td>12197</td>
+                                <td class="bg-danger"></td>
+                              </tr>
+                              <tr>
+                                <td>Global Private Client</td>
+                                <td> Automobile Expense </td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Asset Management</td>
+                                <td> Bad Debt </td>
+                                <td>10250.12 </td>
+                                <td>429390.84 </td>
+                                <td>4189.13%</td>
+                                <td>419140.72</td>
+                                <td class="bg-danger">4089.13%</td>
+                              </tr>
+                              <tr>
+                                <td>Institutional Equities</td>
+                                <td> Bank Fees and Charges </td>
+                                <td>52000 </td>
+                                <td>0 </td>
+                                <td>0.00%</td>
+                                <td>-52000</td>
+                                <td>-100.00%</td>
+                              </tr>
+                              <tr>
+                                <td>Investment Banking</td>
+                                <td>Consultant Expense</td>
+                                <td>4276856.75</td>
+                                <td>2920360.91</td>
+                                <td>68.28%</td>
+                                <td>-1356495.84</td>
+                                <td>-31.72%</td>
+                              </tr>
+                              <tr>
+                                <td>SME Lending</td>
+                                <td>Contract Assets</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>CEO Office</td>
+                                <td>Credit Card Charges</td>
+                                <td>1200000</td>
+                                <td>4119051.19</td>
+                                <td>343.25%</td>
+                                <td>2919051.19</td>
+                                <td class="bg-danger">243.25%</td>
+                              </tr>
+                              <tr>
+                                <td>F&A</td>
+                                <td>Depreciation And Amortisation</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>OPS</td>
+                                <td>Depreciation Expense</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>IT</td>
+                                <td>IT and Internet Expenses</td>
+                                <td>600000</td>
+                                <td>1743383.47</td>
+                                <td>290.56%</td>
+                                <td>1143383.47</td>
+                                <td class="bg-danger">190.56%</td>
+                              </tr>
+                              <tr>
+                                <td>Legal</td>
+                                <td>Janitorial Expense</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>HR</td>
+                                <td>Lodging</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>HR</td>
+                                <td>Meals and Entertainment</td>
+                                <td>16483</td>
+                                <td>-27.5</td>
+                                <td>290.56%</td>
+                                <td>1143383.47</td>
+                                <td>-100.17%</td>
+                              </tr>
+                              <tr>
+                                <td>CEO Office</td>
+                                <td>Merchandise</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td></td>
+                                <td>0</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>HR</td>
+                                <td>Office Supplies</td>
+                                <td>1500</td>
+                                <td>62610</td>
+                                <td>4174.00%</td>
+                                <td>61110</td>
+                                <td class="bg-danger">4074.00%</td>
+                              </tr>
+                            </tbody>
+                            <tfoot>
+                              <tr>
+                                <td colspan="1" rowspan="1"></td>
+                                <td colspan="1" rowspan="1">Total for Expense</td>
+                                <td colspan="1" rowspan="1">37516774.09 </td>
+                                <td colspan="1" rowspan="1">36931139.49 </td>
+                                <td colspan="1" rowspan="1">98.44% </td>
+                                <td colspan="1" rowspan="1">-585634.6 </td>
+                                <td colspan="1" rowspan="1">-1.56% </td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+
+                      </div>
+                      <nav class="mt-1" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Previous</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">1</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">2</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">3</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  <script>function showComment() {
+      var commentBox = document.getElementById("comment");
+      commentBox.style.display = commentBox.style.display === "none" ? "block" : "none";
+    }
+  </script>
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

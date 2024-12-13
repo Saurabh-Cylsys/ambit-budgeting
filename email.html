@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+/>
+  </head>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+  
+    <main>
+        
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+              <div class="card-body p-0">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div
+                      class="col-md-3 collapse collapse-horizontal show p-0"
+                      file-include-html="assets/includes/sidebar.html"
+                      id="collapseWidthExample"
+                    ></div>
+                    <div class="col card " id="main">
+                      <div class="row">
+                        
+                        <div class="col-md-12 ">
+                          <div class="row mt-3">
+                            <div class="col">
+                              <h1>Ola/Uber Summary Report </h1>
+                          
+                            </div>
+                        
+                          </div>
+                          <hr>
+                          <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                              <div class="navbar-collapse bg-white d-flex" id="">
+                                <div class="navbar-nav  mb-2 mb-lg-0">
+                                  <div class="dropdown">
+                                    <button
+                                      class="btn btn-outline-secondary dropdown-toggle"
+                                      type="button"
+                                      data-bs-toggle="dropdown"
+                                      aria-expanded="false"
+                                    >
+                                      Select Column
+                                    </button>
+                                    <ul class="dropdown-menu columnName p-0">
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select All</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;S.No</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Company Name</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;HOD-To</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Cc</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Ola</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Uber</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Action</a></li>
+
+                                    
+                                    </ul>
+                                  </div>
+                                </div>&nbsp;
+                                <form class="d-flex " role="search">
+                                  <select
+                                    class="form-select"
+                                    aria-label="Default select example"
+                                  >
+                                    <option selected>Show</option>
+                                    <option value="1">10</option>
+                                    <option value="1">20</option>
+                                    <option value="1">50</option>
+                                  </select>
+                                </form>
+                                <img src="assets/images/download.svg" alt=""><a class="btn btn-dark ms-lg-auto" href="">Resend Mail</a> 
+                               
+                              </div>
+                            </div>
+                          </nav>
+                          <div
+                            class="table-responsive rounded-3 border bookmakerTable"
+                          >
+                            <table class="table m-0">
+                              <thead>
+                                <tr> 
+                                  <th><input class="" type="checkbox"></th>
+                                    
+                                    <th>Company Name</th>
+                                    <th>Department Name</th>
+                                    <th>Date/Time</th>
+                                    <th scope="col">Hod-To</th>
+                                    <th scope="col">Cc</th>
+                                    <th>Upload File	</th>
+                                    <th scope="col">Status</th>
+                                
+                               
+                                   
+                                  <th>Download</th>
+                            
+                         
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <tr><td><input class="" type="checkbox"></td>
+                                   
+                                    <td>Ambit Capital Private Ltd</td>
+                                    <td>HR,IT</td>
+                                    <td>12/10/2024 10:15am</td>
+                                    <td>Raman Johar</td>
+                                    <td>Nitin Bhasin,Ruchita</td>
+                                    <td>	APL-Ola.xlxs	</td>
+                                    <td>Pending</td>
+                                    <td>
+                                     <i class="fa fa-download fa-2x"></i>
+                                    </td>
+                                    
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><input class="" type="checkbox"></td>
+                                    
+                                   <td>Ambit Private Ltd</td>
+                                   <td>Group Corporate Office</td>
+                                   <td>12/10/2024 01:15pm</td>
+                                  <td>Dhipu</td>
+                                  <td>Pillai</td>
+                                 <td>AWPL-Uber.xlxs</td>
+                                  <td>Send</td>
+                                  <td>
+                                    <i class="fa fa-download fa-2x"></i>
+                                   </td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                          
+                          </div>
+                          <nav class="mt-1" aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#"
+                                  >Previous</a
+                                >
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">1</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">2</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">3</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#"
+                                  >Next</a
+                                >
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function navigateToPage(selectElement) {
+        const selectedValue = selectElement.value;
+        if (selectedValue) {
+          window.location.href = selectedValue;
+        }
+      }
+    </script>
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      document.getElementById('actionSelect').addEventListener('change', function() {
+        if (this.value === 'review') {
+          // Replace 'yourPageURL.html' with the actual URL of the page you want to navigate to
+          window.location.href = 'edit_email.html';
+        }
+      });
+    </script>
+  </body>
+</html>

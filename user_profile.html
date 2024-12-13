@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link
+    href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  
+  </head>
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+
+    <main>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-envelope-slash-fill"></i> Unlink your Mailbox?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                   
+                      <div class="card-body mt-4">
+                      
+                        
+                        <p class="p-2">Are you Sure to Unlink your Mailbox?</p></a></label>
+                       
+                      </div>
+                 
+                    <div class="modal-footer">
+                      <a  class="btn btn-secondary"  data-bs-dismiss="modal" href="user.html">No</a>
+                        <a  class="btn btn-info1" href="mailbox 1.html">Yes</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+         
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1"><i class="bi bi-trash"></i> Delete your User?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                   
+                      <div class="card-body mt-4">
+                      
+                        
+                        <p class="">Are you Sure to Delete your User?</p></a></label>
+                       
+                      </div>
+                 
+                    <div class="modal-footer">
+                      <a  class="btn btn-secondary"  data-bs-dismiss="modal" href="user.html">No</a>
+                        <a  class="btn btn-info1" href="user.html">Yes</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card-body p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div
+                    class="col-md-3 collapse collapse-horizontal show p-0"
+                    file-include-html="assets/includes/sidebar.html"
+                    id="collapseWidthExample"
+                  ></div>
+                  <div class="col card" id="main">
+                    <div class="row">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>Profile</h1>
+                        </div>
+                      </div>
+                      <hr />
+                      
+      <section class="section profile">
+        <div class="row">
+         
+
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link active"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-overview"
+                    >
+                      Overview
+                    </button>
+                  </li>
+
+                  <li class="nav-item">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-edit"
+                    >
+                      Edit Profile
+                    </button>
+                  </li>
+
+                  <!-- <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+                </li> -->
+
+                  <!-- <li class="nav-item">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-change-password"
+                    >
+                      Change Password
+                    </button>
+                  </li> -->
+                </ul>
+                <div class="tab-content pt-2">
+                  <div
+                    class="tab-pane fade show active profile-overview"
+                    id="profile-overview"
+                  >
+                   
+
+                    <h5 class="card-title">Profile Details</h5>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Full Name</div>
+                      <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Company</div>
+                      <div class="col-lg-9 col-md-8">
+                        Sunt est soluta temporibus accusantium
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Job</div>
+                      <div class="col-lg-9 col-md-8">
+                        Sunt est soluta temporibus accusantium
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Country</div>
+                      <div class="col-lg-9 col-md-8">UK</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Address</div>
+                      <div class="col-lg-9 col-md-8">
+                        Sunt est soluta temporibus accusantium 535022
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">
+                        k.anderson@example.com
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tab-pane fade profile-edit pt-3"
+                    id="profile-edit"
+                  >
+                    <!-- Profile Edit Form -->
+                    <form>
+                  
+
+                      <div class="row mb-3">
+                        <label
+                          for="fullName"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Full Name</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="fullName"
+                            type="text"
+                            class="form-control"
+                            id="fullName"
+                            value="Kevin Anderson"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- <div class="row mb-3">
+                        <label
+                          for="about"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >About</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <textarea
+                            name="about"
+                            class="form-control"
+                            id="about"
+                            style="height: 100px"
+                          >
+Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea
+                          >
+                        </div>
+                      </div> -->
+
+                      <div class="row mb-3">
+                        <label
+                          for="company"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Company Name</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="company"
+                            type="text"
+                            class="form-control"
+                            id="company"
+                            value="Lueilwitz, Wisoky and Leuschke"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- <div class="row mb-3">
+                        <label
+                          for="Job"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Job</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="job"
+                            type="text"
+                            class="form-control"
+                            id="Job"
+                            value="Web Designer"
+                          />
+                        </div>
+                      </div> -->
+
+                      <div class="row mb-3">
+                        <label
+                          for="Country"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Country</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="country"
+                            type="text"
+                            class="form-control"
+                            id="Country"
+                            value="UK"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="Address"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Address</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="address"
+                            type="text"
+                            class="form-control"
+                            id="Address"
+                            value="Sunt est soluta temporibus accusantium 535022"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="Phone"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Phone</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="phone"
+                            type="text"
+                            class="form-control"
+                            id="Phone"
+                            value="(436) 486-3538 x29071"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="Email"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Email</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="email"
+                            type="email"
+                            class="form-control"
+                            id="Email"
+                            value="k.anderson@example.com"
+                          />
+                        </div>
+                      </div>
+
+                      
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-dark">
+                          Save Changes
+                        </button>
+                      </div>
+                    </form>
+                    <!-- End Profile Edit Form -->
+                  </div>
+
+                  <div class="tab-pane fade pt-3" id="profile-settings">
+                    <!-- Settings Form -->
+                    <form>
+                      <div class="row mb-3">
+                        <label
+                          for="fullName"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Email Notifications</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="changesMade"
+                              checked
+                            />
+                            <label class="form-check-label" for="changesMade">
+                              Changes made to your account
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="newProducts"
+                              checked
+                            />
+                            <label class="form-check-label" for="newProducts">
+                              Information on new products and services
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="proOffers"
+                            />
+                            <label class="form-check-label" for="proOffers">
+                              Marketing and promo offers
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="securityNotify"
+                              checked
+                              disabled
+                            />
+                            <label
+                              class="form-check-label"
+                              for="securityNotify"
+                            >
+                              Security alerts
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-dark">
+                          Save Changes
+                        </button>
+                      </div>
+                    </form>
+                    <!-- End settings Form -->
+                  </div>
+
+                  <div class="tab-pane fade pt-3" id="profile-change-password">
+                    <!-- Change Password Form -->
+                    <form>
+                      <div class="row mb-3">
+                        <label
+                          for="currentPassword"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Current Password</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="password"
+                            type="password"
+                            class="form-control"
+                            id="currentPassword"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="newPassword"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >New Password</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="newpassword"
+                            type="password"
+                            class="form-control"
+                            id="newPassword"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="renewPassword"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Re-enter New Password</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="renewpassword"
+                            type="password"
+                            class="form-control"
+                            id="renewPassword"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-dark">
+                          Change Password
+                        </button>
+                      </div>
+                    </form>
+                    <!-- End Change Password Form -->
+                  </div>
+                </div>
+                <!-- End Bordered Tabs -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      // Function to open feedback form
+      function openFeedbackForm() {
+        document.getElementById('qrSection').style.display = 'none';
+        document.getElementById('feedbackForm').style.display = 'block';
+      }
+
+      // Simulate QR code scanning after 5 seconds (for demo purpose)
+      setTimeout(openFeedbackForm, 5000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>Budget Code Master</h1>
+                        </div>
+
+                        <hr />
+
+                        <div class="col-md-4 my-2">
+                          <label for="yourUsername" class="form-label"
+                              >Business / Function Name</label
+                            >
+
+                            <select name="" id="" class="form-select">
+                              <option value="" selected disabled>
+                                Select Business/Function
+                              </option>
+
+                              <option value="" disabled>
+                                Business
+                                <hr />
+                              </option>
+                              <option value="">
+                                Group Corporate Office / GCO
+                              </option>
+                              <option value="">
+                                Global Private Client / GPC
+                              </option>
+                              <option value="">Asset Management / AM</option>
+                              <option value="">
+                                Institutional Equities / IE
+                              </option>
+                              <option value="">Investment Banking / IB</option>
+                              <option value="">
+                                SME Lending / SMEL
+                              </option>
+
+                              <option value="" disabled>
+                                Functions
+                                <hr />
+                              </option>
+                              <option value="">Admin</option>
+                              <option value="">CCF</option>
+                              <option value="">CMT</option>
+                              <option value="">FI</option>
+                              <option value="">PMS</option>
+                              <option value="">Central Office</option>
+                              <option value="">Wealth Operations</option>
+                              <option value="">Broking Operations</option>
+                              <option value="">Client Experience</option>
+                              <option value="">Branding</option>
+                              <option value="">Product Team</option>
+                              <option value="">DD Team</option>
+                              <option value="">Research Team</option>
+                              <option value="">HR</option>
+                              <option value="">Legal</option>
+                              <option value="">IT</option>
+                              <option value="">
+                                Compliance
+                                <hr />
+                              </option>
+                            </select>
+                        </div>
+                        <!-- <div class="col-md-4 my-2">
+                          <label for="yourUsername" class="form-label">Department</label>
+                          <select name="" id="" class="form-select">
+                            <option value="">Admin</option>
+                            <option value="">General</option>
+                            <option value="">Legal</option>
+                            <option value="">HR</option>
+                            <option value="">CEO</option>
+                            <option value="">IT</option>
+                            <option value="">F&A</option>
+                          </select>
+                        </div> -->
+                        <div class="col-md-4 my-2">
+                          <label for="yourUsername" class="form-label">Budget Head</label>
+                          <select name="" id="" class="form-select">
+                            <option value="">Audit Fees</option>
+                            <option value="">Insurance Expenses</option>
+                            <option value="">Professional & Legal Charges</option>
+                            <option value="">Repairs and Maintenace</option>
+                            <option value="">Staff Welfare Expenses</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4 my-2">
+                          <label for="yourUsername" class="form-label">Budget Code</label>
+                          <input class="form-control" type="text" placeholder="Enter Budget Code" />
+                          <span class="text-danger small">remark: Business/function name + Business Head + serial no.</span>
+                        </div>
+
+                        <div class="col-md-4 my-2">
+                          <a class="btn btn-dark mt-4" href="">Save</a>&nbsp;&nbsp;<a class="btn btn-danger mt-4"
+                            href="">Close</a>
+                        </div>
+                        <div class="col-12 mt-3">
+                          <div class="row align-items-center">
+                            <div class="col-md-8">
+                              <nav class="navbar navbar-expand-lg">
+                                <div class="container-fluid">
+
+                                  <div class="navbar-collapse bg-white d-flex" id="">
+                                    <div class="navbar-nav  mb-2 mb-lg-0">
+                                      <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                          data-bs-toggle="dropdown" aria-expanded="false">
+                                          Select Column
+                                        </button>
+                                        <ul class="dropdown-menu columnName p-0">
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;Select
+                                              All</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;S.No</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;User
+                                              Name</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;Role.</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;Designation</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;Company</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;Business</a></li>
+                                          <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                              &nbsp;&nbsp;Action</a></li>
+
+                                        </ul>
+                                      </div>
+                                    </div>&nbsp;
+                                    <form class="d-flex " role="search">
+                                      <select class="form-select" aria-label="Default select example">
+                                        <option selected>Show</option>
+                                        <option value="1">10</option>
+                                        <option value="1">20</option>
+                                        <option value="1">50</option>
+                                      </select>
+                                    </form>
+                                    <img src="assets/images/download.svg" alt="">
+                                  </div>
+
+                                </div>
+                              </nav>
+
+                            </div>
+                            <div class="col-md-4">
+                              <label for="">Search</label>
+                              <input type="search" name="" id="" class="form-control col mx-2" placeholder="Search">
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-12 p-3">
+                        <div class="table-responsive card">
+                          <table id="dtBasicExample" class="table table-sm table-striped m-0" cellspacing="0"
+                            width="100%">
+                            <thead>
+                              <tr>
+                                <th scope="col-3">Business / Enterprise Function</th>
+                                <!-- <th>Department</th> -->
+                                <th>Budget Head</th>
+                                <th scope="col-3">Budget Code</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Group Corporate Office / GCO</td>
+                                <!-- <td>Admin</td> -->
+                                <td>Professional & Legal Charges</td>
+                                <td>LEPL0001                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+
+                                      <option value="">
+                                        Edit
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Asset Management / AM</td>
+                                <!-- <td>HR</td> -->
+                                <td>Repairs And Maintenance</td>
+                                <td>LEPL0002</td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+
+                                      <option value="">
+                                        Edit
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <nav class="mt-1" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Previous</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">1</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">2</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">3</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

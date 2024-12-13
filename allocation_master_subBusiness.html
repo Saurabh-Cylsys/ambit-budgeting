@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <style>
+    .list-group-item:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    #list-style {
+      border: 0;
+      border-left: 5px solid;
+      font-size: smaller;
+      font-weight: 400;
+      margin-top: 0.5rem;
+    }
+  </style>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+
+    <main>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card-body p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div
+                    class="col-md-3 collapse collapse-horizontal show p-0"
+                    file-include-html="assets/includes/sidebar.html"
+                    id="collapseWidthExample"
+                  ></div>
+                  <div class="col card" id="main">
+                    <div class="row align-items-center">
+                      <div class="col-6 my-2">
+                        <h1 class="m-0">Allocation Master - Sub Business</h1>
+                      </div>
+                      <hr />
+
+                      <div class="col-12">
+                        <div class="row align-items-center">
+                          <div class="col-md-6">
+                            <nav class="navbar navbar-expand-lg">
+                              <div class="container-fluid">
+                               
+                                <div class="navbar-collapse bg-white d-flex" id="">
+                                  <div class="navbar-nav  mb-2 mb-lg-0">
+                                    <div class="dropdown">
+                                      <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Select Column
+                                      </button>
+                                      <ul class="dropdown-menu columnName p-0">
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select
+                                            All</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;S.No</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;User
+                                            Name</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Role.</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Designation</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Company</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Business</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Action</a></li>
+      
+                                      </ul>
+                                    </div>
+                                  </div>&nbsp;
+                                  <form class="d-flex " role="search">
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>Show</option>
+                                      <option value="1">10</option>
+                                      <option value="1">20</option>
+                                      <option value="1">50</option>
+                                    </select>
+                                  </form>
+                                  <img src="assets/images/download.svg" alt="">
+                                </div>
+                                
+                              </div>
+                            </nav>
+                            
+                          </div>
+                          <div class="col-md-6">
+                            <div class="d-flex">
+                            <input type="search" name="" id="" class="form-control col mx-2" placeholder="Search">
+                             <a class="btn btn-dark ms-lg-auto col-7 mx-2"
+                              href="add_allocations_subBusiness.html">+Add Allocation Marter - Sub Business</a></div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <div class="col-12 p-3">
+                        <div class="table-responsive card">
+                          <table
+                            id="dtBasicExample"
+                            class="table table-sm small table-striped m-0"
+                            cellspacing="0"
+                            width="100%"
+                          >
+                            <thead>
+                              <tr>
+                                <th scope="col">Sub Allocation Method</th>
+                                <!-- <th scope="col">Budget Name</th> -->
+                                <!-- <th scope="col">Start Date </th>
+                                <th scope="col">End Date</th> -->
+                               
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                               <!-- <td>Allocation 2022</td> -->
+                                <td>Budget 2022 - GCO</td>
+                                <!-- <td>01/01/2022</td>
+                                <td>31/12/2022</td> -->
+                              
+                                 <td>
+                                  <select
+                                    class="custom-select"
+                                    id="inlineFormCustomSelect"
+                                    onchange="if (this.value) { window.location.href = this.value; }"
+                                  >
+                                    <option value="" selected="">Action</option>
+                                    <option value="">Edit</option>
+                                    <option value="">Delete</option>
+                                   
+                                  </select>
+                                </td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                     
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Common function to handle multi-select dropdowns
+        function handleDropdown(dropdownId, label) {
+          const dropdownButton = document.getElementById(dropdownId);
+          const dropdownMenu = dropdownButton.nextElementSibling;
+          const checkboxes = dropdownMenu.querySelectorAll(
+            'input[type="checkbox"]'
+          );
+          let selectedValues = [];
+
+          // Toggle dropdown menu on button click
+          dropdownButton.addEventListener("click", function () {
+            dropdownMenu.classList.toggle("show");
+          });
+
+          // Update dropdown button text based on selections
+          function updateDropdownText() {
+            const selectedItems = Array.from(checkboxes)
+              .filter((checkbox) => checkbox.checked)
+              .map((checkbox) => checkbox.parentNode.textContent.trim());
+
+            if (selectedItems.length > 0) {
+              dropdownButton.innerHTML = `<label for="${dropdownId}">${label}</label><br> ${selectedItems.join(
+                ", "
+              )}`;
+            } else {
+              dropdownButton.innerHTML = `<label for="${dropdownId}">${label}</label><br> Select ${label} Type`;
+            }
+          }
+
+          // Add event listener to checkboxes
+          checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+              const value = this.value;
+
+              if (this.checked) {
+                selectedValues.push(value);
+              } else {
+                selectedValues = selectedValues.filter(
+                  (item) => item !== value
+                );
+              }
+
+              updateDropdownText();
+            });
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (event) {
+            if (
+              !dropdownButton.contains(event.target) &&
+              !dropdownMenu.contains(event.target)
+            ) {
+              dropdownMenu.classList.remove("show");
+            }
+          });
+        }
+
+        // Initialize dropdowns for Company and Widgets only
+        handleDropdown("companyDropdown", "Company");
+        handleDropdown("widgetsDropdown", "Widgets");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<style>
+    /* .dropdown-toggle {
+        cursor: pointer;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+    } */
+    #termsservices{
+        display: none;
+    }
+
+    /* Define the hover effect for the card */
+    .card1:hover, .card1.active {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgb(255 154 0);
+    }
+
+    /* Customizing card styles */
+    .card1 {
+        cursor: pointer;
+    }
+
+    /* Adjusting card body styles */
+    .card-body {
+        padding: 2rem;
+    }
+
+</style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="card">
+            <div class="card-header bg-white">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                      <button
+                        class="btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseWidthExample"
+                        aria-expanded="false"
+                        aria-controls="collapseWidthExample"
+                      >
+                        <img src="assets/images/hamburger.svg" alt="..." />
+                      </button>
+                    </div>
+                   
+                  </div>
+                </div>
+             
+              
+                </div>
+              </div>
+            </div> -->
+            <div class="card-body p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div
+                    class="col-md-3 collapse collapse-horizontal show p-0"
+                    file-include-html="assets/includes/sidebar.html"
+                    id="collapseWidthExample"
+                  ></div>
+                  <div class="col card " id="main">
+                    <div class="row">
+                      
+                      <div class="col-md-12 ">
+                        <div class="row mt-3">
+                          <div class="col">
+                            <h1>Let's Link your mailbox</h1>
+                        
+                          </div>
+                      
+                        </div>
+                        <hr>
+                        <div class="col-md-12">
+                           
+                            <p>Link your mailboxes with MailBlitz to gain full functionality of core engagement tools like , email sequence
+                                conversation meeting and more</p>
+                        </div>
+                        <div class="container-fluid m-auto">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-4 mb-3">
+                                        <!-- Link to target anchor -->
+                                        <a href='#target1' id='target1' class='target'></a>
+                                        <div class="card1 card btn" onclick="toggleHover(this)">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><img src="assets/images/google.png" alt="" class="w-25 "></h5>
+                                                <p class="card-text"><b>Google</b></p>
+                                                <p class="card-text">Gmail / Suite</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-3">
+                                        <div class="card1 card btn" onclick="toggleHover(this)">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><img src="assets/images/outlook.png" alt="" class="w-25"></h5>
+                                                <p class="card-text"><b>Outlook</b></p>
+                                                <p class="card-text">HotMail, Live, MSN</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-3">
+                                        <div class="card1 card btn" onclick="toggleHover(this)">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><img src="assets/images/mail.png" alt="" onclick="myFunction()" class="w-25 mt-4"></h5> 
+                                                <p class="card-text"><b>Other</b></p>
+                                                <p class="card-text">Any Provider, IMAP</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="termsservices">
+                                <h5>What is the Email Address That you want to link?</h5>
+                                <input type="email" class="form-control" placeholder="Enter Email Address">
+                            </div>
+                            <div class="mt-3">
+                                <h5>MailBlitz Terms of services</h5>
+                            <p><span><input type="checkbox"></span> I agree to MailBlitz’s <a href="">Terms of Service</a> and <a href="">Privacy Policy</a> and will not
+                                use Plollo to send any spam unsolicited
+                                or harassing email (Commercial or otherwise) in violation of any applicable laws. By clicking * Link
+                                mailbox* blow, I acknowledge that business contact data submitted from my email account to MailBlitz may be
+                                used to provide and improve Mailblitz’s services as further described in our <a href="">Terms of Service</a>. <a href="">Learn more</a>
+                                about data sharing.</p>
+                              <a href="link_mail.html" class="btn btn-dark float-end mb-3">Link Mailbox</a>
+                            </div>
+                        </div> 
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+
+ 
+
+<!-- Modal -->
+
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+      function toggleHover(element) {
+          element.classList.toggle('active');
+      }
+  </script>
+<script>
+    function myFunction() {
+      var x = document.getElementById("termsservices");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+</script>
+</body>
+
+</html>

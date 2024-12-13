@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card " id="main">
+                  <div class="row">
+
+                    <div class="col-md-12 ">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>Budget 2023 Optimistic</h1>
+
+                        </div>
+                        <div class="col" style="    max-width: max-content;">
+                          <a class="btn btn-dark" href="">Draft</a>
+                          <a class="btn btn-outline-secondary" href="">Cancelled</a>
+                          <a class="btn btn-outline-secondary" href="">Confirmed</a>
+                          <a class="btn btn-outline-secondary" href="">Validated</a>
+                          <a class="btn btn-outline-secondary" href="">Done</a>
+
+                        </div>
+                      </div>
+
+                      <hr>
+
+                      <div class="row">
+                        <div class=" col-md-6">
+                          <label for="initiatorName">Budget Name</label>
+                          <input type="text" class="form-control" id="initiatorName" value="Budget 2022 Optimistic"
+                            required>
+                        </div>
+                        <div class=" col-md-6"> </div>
+                        <div class=" col-md-6 mt-4">
+                          <label for="periodCycle">Responsible</label>
+                          <select class="form-control" id="periodCycle" required>
+                            <option value="">Select Responsible</option>
+                            <option value="Q1" selected>Mitchell Admin</option>
+
+                          </select>
+                        </div>
+                        <div class=" col-md-6">
+                          <label for="periodCycle"><b>Period</b></label>
+                          <div class="row">
+                            <div class=" col-md-6">
+                              <label for="initiatorName">From Date</label>
+                              <input type="text" class="form-control" id="initiatorName" placeholder="Enter your name"
+                                required>
+                            </div>
+                            <div class=" col-md-6">
+                              <label for="initiatorName">To Date</label>
+                              <input type="text" class="form-control" id="initiatorName" placeholder="Enter your name"
+                                required>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class=" col-md-6">
+                          <label for="initiatorName">Company Name</label>
+                          <input type="text" class="form-control" id="initiatorName" placeholder="Ambit Pvt. Ltd"
+                            required>
+                        </div>
+                        <div class="col-md-12 p-3">
+                          <h4>Budget Line</h4>
+                          <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                              <div class="navbar-collapse bg-white d-flex" id="">
+                                <div class="navbar-nav  mb-2 mb-lg-0">
+                                  <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                      Select Column
+                                    </button>
+                                    <ul class="dropdown-menu columnName p-0">
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name"> Ticket Id</label>
+                                      </li>
+
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Email</label>
+                                      </li>
+
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Subject </label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Ticket owner </label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">PHONE</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Priority</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                          for="company_name">Group</label>
+                                      </li>
+
+                                    </ul>
+                                  </div>
+                                </div>&nbsp;
+                                <form class="d-flex " role="search">
+                                  <select class="form-select" aria-label="Default select example">
+                                    <option selected>Show</option>
+                                    <option value="1">10</option>
+                                    <option value="1">20</option>
+                                    <option value="1">50</option>
+                                  </select>
+                                </form>
+                                <img src="assets/images/download.svg" alt="">
+
+                              </div>
+                            </div>
+                          </nav>
+                          <div class="table-responsive card">
+                            <table id="dtBasicExample" class="table table-sm small table-striped m-0" cellspacing="0"
+                              width="100%">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Budgetary position</th>
+                                  <th scope="col">Analytic account</th>
+                                  <th scope="col">Start Date</th>
+                                  <th scope="col">End Date</th>
+                                  <th scope="col">Paid Date</th>
+                                  <th scope="col">Planned Amount</th>
+                                  <th scope="col">Practical Amount</th>
+                                  <th scope="col">Theoretical Amount</th>
+                                  <th>Achievement</th>
+
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td></td>
+                                  <td>Administrative</td>
+                                  <td>01/02/2024</td>
+                                  <td>01/12/2024</td>
+                                  <td></td>
+                                  <td>35000</td>
+                                  <td>00.00</td>
+                                  <td>00.00</td>
+                                  <td>0%</td>
+
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>Deco-Adic</td>
+                                  <td>01/10/2024</td>
+                                  <td>01/12/2024</td>
+                                  <td></td>
+                                  <td>25000</td>
+                                  <td>00.00</td>
+                                  <td>00.00</td>
+                                  <td>0%</td>
+
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>Deco-Adic</td>
+                                  <td>01/05/2024</td>
+                                  <td>01/12/2024</td>
+                                  <td></td>
+                                  <td>55000</td>
+                                  <td>00.00</td>
+                                  <td>00.00</td>
+                                  <td>0%</td>
+
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>Deco-Adic</td>
+                                  <td>01/08/2024</td>
+                                  <td>01/12/2024</td>
+                                  <td></td>
+                                  <td>15000</td>
+                                  <td>00.00</td>
+                                  <td>00.00</td>
+                                  <td>0%</td>
+
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>Deco-Adic</td>
+                                  <td>04/07/2024</td>
+                                  <td>01/12/2024</td>
+                                  <td></td>
+                                  <td>75000</td>
+                                  <td>00.00</td>
+                                  <td>00.00</td>
+                                  <td>0%</td>
+
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td>Deco-Adic</td>
+                                  <td>04/09/2024</td>
+                                  <td>01/12/2024</td>
+                                  <td></td>
+                                  <td>85000</td>
+                                  <td>00.00</td>
+                                  <td>00.00</td>
+                                  <td>0%</td>
+
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <nav class="mt-1" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Previous</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">1</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">2</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">3</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

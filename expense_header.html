@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-md-3 collapse collapse-horizontal show p-0"
+            file-include-html="assets/includes/sidebar.html"
+            id="collapseWidthExample"
+          ></div>
+          <div class="col card" id="main">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row mt-3">
+                  <div class="col">
+                    <h1>Expense Header</h1>
+                  </div>
+
+                  <hr />
+                  <div class="col-md-4 my-2">
+                    <label for="yourUsername" class="form-label"
+                      >Expense Name</label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter Expense Name"
+                    />
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <a class="btn btn-dark mt-4" href="">Save</a>&nbsp;&nbsp;<a
+                      class="btn btn-danger mt-4"
+                      href=""
+                      >Close</a
+                    >
+                  </div>
+                  <div class="col-12 mt-3">
+                    <div class="row align-items-center">
+                      <div class="col-md-8">
+                        <nav class="navbar navbar-expand-lg">
+                          <div class="container-fluid">
+                            <div class="navbar-collapse bg-white d-flex" id="">
+                              <div class="navbar-nav mb-2 mb-lg-0">
+                                <div class="dropdown">
+                                  <button
+                                    class="btn btn-outline-secondary dropdown-toggle"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Select Column
+                                  </button>
+                                  <ul class="dropdown-menu columnName p-0">
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Select All</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Expense Name</a
+                                      >
+                                    </li>
+
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Action</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              &nbsp;
+                              <form class="d-flex" role="search">
+                                <select
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>Show</option>
+                                  <option value="1">10</option>
+                                  <option value="1">20</option>
+                                  <option value="1">50</option>
+                                </select>
+                              </form>
+                              <img src="assets/images/download.svg" alt="" />
+                            </div>
+                          </div>
+                        </nav>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="">Search</label>
+                        <input
+                          type="search"
+                          name=""
+                          id=""
+                          class="form-control col mx-2"
+                          placeholder="Search"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 p-3">
+                  <div class="table-responsive card">
+                    <table
+                      id="dtBasicExample"
+                      class="table table-sm table-striped m-0"
+                      cellspacing="0"
+                      width="100%"
+                    >
+                      <thead>
+                        <tr>
+                          <th scope="col-3">Expense Name</th>
+
+                          <th class="text-end">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Office Rent- Ambit House                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Office Rent- One Lodha Place
+                          </td>
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Office Rent Dr Site - One Bkc
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Warehouse Rent
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Office Rent WeWorks Bangalore
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Electricity Charges - Ambit House
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Electricity Charges - One Lodha Place
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Mobile and Telephone Exp- Business
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Bandwidth Internet Exps- Business
+                          </td>
+
+                          <td class="text-end">
+                            <div>
+                              <select
+                                class="custom-select"
+                                id="inlineFormCustomSelect"
+                                onchange="if(this.value) location.href=this.value;"
+                              >
+                                <option value="" selected>Action</option>
+                                <option value="">Edit</option>
+                                <option value="">Delete</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <nav class="mt-1" aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item card">
+                      <a class="page-link text-black" href="#">Previous</a>
+                    </li>
+                    <li class="page-item card">
+                      <a class="page-link text-black" href="#">1</a>
+                    </li>
+                    <li class="page-item card">
+                      <a class="page-link text-black" href="#">2</a>
+                    </li>
+                    <li class="page-item card">
+                      <a class="page-link text-black" href="#">3</a>
+                    </li>
+                    <li class="page-item card">
+                      <a class="page-link text-black" href="#">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

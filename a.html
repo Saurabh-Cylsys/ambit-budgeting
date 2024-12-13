@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<style>
+  .list-group-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  #list-style {
+    border: 0;
+    border-left: 5px solid;
+    font-size: smaller;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  /* Style for the container */
+  .percentage-container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Style for the input box */
+  .percentage-input, .percentage-input:focus {
+    width: 100px;
+    padding: 5px;
+    font-size: 1em;
+    text-align: right;
+    border: none;
+    outline: none;
+  }
+
+  /* Style for the percentage symbol */
+  .percentage-symbol {
+    margin-left: 5px;
+    font-size: 1em;
+  }
+</style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row align-items-center">
+                    <div class="col-6 my-2">
+                      <h1 class="m-0"> Budget</h1>
+                    </div>
+                    <hr />
+
+                    <div class="col-12">
+                      <div class="row">
+                        <div class=" col-md-6">
+                          <label for="initiatorName">Financial </label>
+                          <input type="text" class="form-control" id="initiatorName" value="Budget 2022 Optimistic"
+                            required>
+                        </div>
+                        <div class=" col-md-6">
+                        
+                        </div>
+                        <div class=" col-md-6">
+                          <label for="periodCycle"><b>Period</b></label>
+                          <div class="row">
+                            <div class=" col-md-6">
+                              <label for="initiatorName">From Date</label>
+                              <input type="text" class="form-control" id="initiatorName" placeholder="Enter your name"
+                                required>
+                            </div>
+                            <div class=" col-md-6">
+                              <label for="initiatorName">To Date</label>
+                              <input type="text" class="form-control" id="initiatorName" placeholder="Enter your name"
+                                required>
+                            </div>
+
+                          </div>
+                        </div>
+                        <hr class="mt-2">
+
+                        <h5 class="accordion-header d-flex align-items-center" id="headingAllocate">
+                          
+                          PROFESSIONAL & LEGAL CHARGES &nbsp;
+                         
+                          <!-- "+" button to open/close the accordion -->
+                          <button class="btn btn-outline-primary mt-2" type="button" onclick="toggleAllocate()">
+                            +
+                          </button>
+                        </h5>
+                        
+                        <div id="collapseAllocate" class="accordion-collapse collapse"
+                          aria-labelledby="headingAllocate" data-bs-parent="#allocateAccordion">
+                          <div class="accordion-body">
+                            <div class="form-group">
+                              <div class="table-responsive rounded-3 border bookmakerTable">
+                                <table class="table m-0">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" rowspan="2" class="text-center align-middle">Budget Sub Head</th>
+                                      <th class="text-center align-middle">Budget Code</th>
+                                      <th class="text-center align-middle">Description</th>
+                                      <th class="text-center align-middle">Direct/Indirect</th>
+                                      <th class="text-center align-middle">Business</th>
+                                      <th class="text-center align-middle">Department</th>
+                                      <th class="text-center align-middle">Total Amount</th>
+                                      <th scope="col" rowspan="2" class="text-center align-middle">Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="text-center align-middle">Internal Audit Fees</td>
+                                      <td class="text-center align-middle">FNPL0001</td>
+                                      <td class="text-center align-middle">Internal Audit Fees FY21</td>
+                                      <td class="text-center align-middle">Direct</td>
+                                      <td class="text-center align-middle">Corporate Finance</td>
+                                      <td class="text-center align-middle"></td>
+                                      <td class="text-center align-middle">360000</td>
+                                      <td>
+                                        <select class="custom-select" id="inlineFormCustomSelect"
+                                          onchange="if (this.value) { window.location.href = this.value; }">
+                                          <option value="" selected="">Action</option>
+                                          <option value="">Edit</option>
+                                          <option value="">Delete</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <!-- Add other rows as needed -->
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <h5 class="accordion-header mt-2" id="headingAudit">
+                          
+                            Audit Fees  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-outline-primary mt-2" type="button" onclick="toggleAudit()">
+                              +
+                            </button>
+                        </h5>
+                        <div id="collapseAudit" class="accordion-collapse collapse"
+                        aria-labelledby="headingAudit" data-bs-parent="#allocateAccordion">
+                        <div class="accordion-body">
+                          <div class="form-group">
+                           
+                            <div class="table-responsive rounded-3 border bookmakerTable">
+                              <table class="table m-0">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" rowspan="2" class="text-center align-middle">
+                                      Budget Sub Head</th>
+                                    <th class="text-center align-middle">Budget Code</th>
+                                    <th class="text-center align-middle">Description</th>
+                                    <th class="text-center align-middle">Direct/Indirect</th>
+                                    <th class="text-center align-middle">Business</th>
+                                    <th class="text-center align-middle">Department</th>
+                                    <th class="text-center align-middle">Total Amount</th>
+                                    <th scope="col" rowspan="2" class="text-center align-middle">Action
+                                    </th>
+                                  </tr>
+                                 
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="text-center align-middle">Audit Fees</td>
+                                    <td class="text-center align-middle">FNPL0002</td>
+                                    <td class="text-center align-middle">Statutory, Tax, MAT  Audit Fees FY21</td>
+                                    <td class="text-center align-middle">Direct</td>
+                                    <td class="text-center align-middle">SME</td>
+                                    <td class="text-center align-middle"></td>
+                                    <td class="text-center align-middle">1530000</td>
+                                  
+                                    <td>
+                                      <select class="custom-select" id="inlineFormCustomSelect"
+                                        onchange="if (this.value) { window.location.href = this.value; }">
+                                        <option value="" selected="">Action</option>
+                                        <option value="">Edit</option>
+                                        <option value="">Delete</option>
+
+                                      </select>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center align-middle">Audit Fees</td>
+                                    <td class="text-center align-middle">FNPL0003</td>
+                                    <td class="text-center align-middle">Statutory, Tax, MAT  Audit Fees FY21</td>
+                                    <td class="text-center align-middle">Direct</td>
+                                    <td class="text-center align-middle">Corporate Finance</td>
+                                    <td class="text-center align-middle"></td>
+                                    <td class="text-center align-middle">3600000</td>
+                                  
+                                    <td>
+                                      <select class="custom-select" id="inlineFormCustomSelect"
+                                        onchange="if (this.value) { window.location.href = this.value; }">
+                                        <option value="" selected="">Action</option>
+                                        <option value="">Edit</option>
+                                        <option value="">Delete</option>
+
+                                      </select>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center align-middle">Audit Fees</td>
+                                    <td class="text-center align-middle">FNPL0004</td>
+                                    <td class="text-center align-middle">Consol Audit Fees FY21</td>
+                                    <td class="text-center align-middle">Direct</td>
+                                    <td class="text-center align-middle"></td>
+                                    <td class="text-center align-middle"></td>
+                                    <td class="text-center align-middle">990000</td>
+                                  
+                                    <td>
+                                      <select class="custom-select" id="inlineFormCustomSelect"
+                                        onchange="if (this.value) { window.location.href = this.value; }">
+                                        <option value="" selected="">Action</option>
+                                        <option value="">Edit</option>
+                                        <option value="">Delete</option>
+
+                                      </select>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table> 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <h4 class="accordion-header mt-2" id="headingRepairs&Maintenace">
+                     
+                          Repairs and Maintenace
+                          &nbsp;
+                          <button class="btn btn-outline-primary mt-2" type="button" onclick="toggleRepairs()">
+                            +
+                          </button>
+                      </h4>
+                      <div id="collapseRepairs&Maintenace" class="accordion-collapse collapse"
+                      aria-labelledby="headingRepairs&Maintenace" data-bs-parent="#allocateAccordion">
+                      <div class="accordion-body">
+                        <div class="form-group">
+                         
+                          <div class="table-responsive rounded-3 border bookmakerTable">
+                            <table class="table m-0">
+                              <thead>
+                                <tr>
+                                  <th scope="col" rowspan="2" class="text-center align-middle">
+                                    Budget Sub Head</th>
+                                  <th class="text-center align-middle">Budget Code</th>
+                                  <th class="text-center align-middle">Description</th>
+                                  <th class="text-center align-middle">Direct/Indirect</th>
+                                  <th class="text-center align-middle">Business</th>
+                                  <th class="text-center align-middle">Department</th>
+                                  <th class="text-center align-middle">Total Amount</th>
+                                  <th scope="col" rowspan="2" class="text-center align-middle">Action
+                                  </th>
+                                </tr>
+                               
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="text-center align-middle">AMC charges</td>
+                                  <td class="text-center align-middle">FNPL0007</td>
+                                  <td class="text-center align-middle">AMC Charges</td>
+                                  <td class="text-center align-middle">Indirect</td>
+                                  <td class="text-center align-middle">SME</td>
+                                  <td class="text-center align-middle"></td>
+                                  <td class="text-center align-middle">530000</td>
+                                
+                                  <td>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if (this.value) { window.location.href = this.value; }">
+                                      <option value="" selected="">Action</option>
+                                      <option value="">Edit</option>
+                                      <option value="">Delete</option>
+
+                                    </select>
+                                  </td>
+                                </tr>
+                               
+                              </tbody>
+                            </table> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="accordion-header mt-2" id="headingInsuranceExpenses">
+                      
+                        Insurance Expenses
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-outline-primary mt-2" type="button" onclick="toggleInsurance()">
+                          +
+                        </button>
+                    </h4>
+                    <div id="collapseInsuranceExpenses" class="accordion-collapse collapse"
+                    aria-labelledby="headingInsuranceExpenses" data-bs-parent="#allocateAccordion">
+                    <div class="accordion-body">
+                      <div class="form-group">
+                       
+                        <div class="table-responsive rounded-3 border bookmakerTable">
+                          <table class="table m-0">
+                            <thead>
+                              <tr>
+                                <th scope="col" rowspan="2" class="text-center align-middle">
+                                  Budget Sub Head</th>
+                                <th class="text-center align-middle">Budget Code</th>
+                                <th class="text-center align-middle">Description</th>
+                                <th class="text-center align-middle">Direct/Indirect</th>
+                                <th class="text-center align-middle">Business</th>
+                                <th class="text-center align-middle">Department</th>
+                                <th class="text-center align-middle">Total Amount</th>
+                                <th scope="col" rowspan="2" class="text-center align-middle">Action
+                                </th>
+                              </tr>
+                             
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="text-center align-middle">Insurance Expenses</td>
+                                <td class="text-center align-middle">FNPL0013</td>
+                                <td class="text-center align-middle">Professional Indemnity Insurance</td>
+                                <td class="text-center align-middle">Indirect</td>
+                                <td class="text-center align-middle"></td>
+                                <td class="text-center align-middle"></td>
+                                <td class="text-center align-middle">150000</td>
+                              
+                                <td>
+                                  <select class="custom-select" id="inlineFormCustomSelect"
+                                    onchange="if (this.value) { window.location.href = this.value; }">
+                                    <option value="" selected="">Action</option>
+                                    <option value="">Edit</option>
+                                    <option value="">Delete</option>
+
+                                  </select>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-center align-middle">Insurance Expenses</td>
+                                <td class="text-center align-middle">FNPL0023</td>
+                                <td class="text-center align-middle">Art Works (Paintings) Insurance</td>
+                                <td class="text-center align-middle">Indirect</td>
+                                <td class="text-center align-middle"></td>
+                                <td class="text-center align-middle"></td>
+                                <td class="text-center align-middle">36000</td>
+                              
+                                <td>
+                                  <select class="custom-select" id="inlineFormCustomSelect"
+                                    onchange="if (this.value) { window.location.href = this.value; }">
+                                    <option value="" selected="">Action</option>
+                                    <option value="">Edit</option>
+                                    <option value="">Delete</option>
+
+                                  </select>
+                                </td>
+                              </tr>
+                            
+                            </tbody>
+                          </table> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <h4 class="accordion-header mt-2" id="headingStaffWelfareExpenses">
+                    
+                      Staff Welfare Expenses
+                      &nbsp;&nbsp;
+                      <button class="btn btn-outline-primary mt-2" type="button" onclick="toggleStaff()">
+                        +
+                      </button>
+                  </h4>
+                  <div id="collapseStaffWelfareExpenses" class="accordion-collapse collapse"
+                    aria-labelledby="headingStaffWelfareExpenses" data-bs-parent="#allocateAccordion">
+                    <div class="accordion-body">
+                      <div class="form-group">
+                       
+                        <div class="table-responsive rounded-3 border bookmakerTable">
+                          <table class="table m-0">
+                            <thead>
+                              <tr>
+                                <th scope="col" rowspan="2" class="text-center align-middle">
+                                  Budget Sub Head</th>
+                                <th class="text-center align-middle">Budget Code</th>
+                                <th class="text-center align-middle">Description</th>
+                                <th class="text-center align-middle">Direct/Indirect</th>
+                                <th class="text-center align-middle">Business</th>
+                                <th class="text-center align-middle">Department</th>
+                                <th class="text-center align-middle">Total Amount</th>
+                                <th scope="col" rowspan="2" class="text-center align-middle">Action
+                                </th>
+                              </tr>
+                             
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="text-center align-middle">Staff Welfare Expenses</td>
+                                <td class="text-center align-middle">FNPL0013</td>
+                                <td class="text-center align-middle">Team Lunch</td>
+                                <td class="text-center align-middle">Indirect</td>
+                                <td class="text-center align-middle"></td>
+                                <td class="text-center align-middle"></td>
+                                <td class="text-center align-middle">742500</td>
+                              
+                                <td>
+                                  <select class="custom-select" id="inlineFormCustomSelect"
+                                    onchange="if (this.value) { window.location.href = this.value; }">
+                                    <option value="" selected="">Action</option>
+                                    <option value="">Edit</option>
+                                    <option value="">Delete</option>
+
+                                  </select>
+                                </td>
+                              </tr>
+                              
+                            
+                            </tbody>
+                          </table> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Common function to handle multi-select dropdowns
+      function handleDropdown(dropdownId, label) {
+        const dropdownButton = document.getElementById(dropdownId);
+        const dropdownMenu = dropdownButton.nextElementSibling;
+        const checkboxes = dropdownMenu.querySelectorAll(
+          'input[type="checkbox"]'
+        );
+        let selectedValues = [];
+
+        // Toggle dropdown menu on button click
+        dropdownButton.addEventListener("click", function () {
+          dropdownMenu.classList.toggle("show");
+        });
+
+        // Update dropdown button text based on selections
+        function updateDropdownText() {
+          const selectedItems = Array.from(checkboxes)
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => checkbox.parentNode.textContent.trim());
+
+          if (selectedItems.length > 0) {
+            dropdownButton.innerHTML = `<label for="${dropdownId}">${label}</label><br> ${selectedItems.join(
+              ", "
+            )}`;
+          } else {
+            dropdownButton.innerHTML = `<label for="${dropdownId}">${label}</label><br> Select ${label} Type`;
+          }
+        }
+
+        // Add event listener to checkboxes
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("change", function () {
+            const value = this.value;
+
+            if (this.checked) {
+              selectedValues.push(value);
+            } else {
+              selectedValues = selectedValues.filter(
+                (item) => item !== value
+              );
+            }
+
+            updateDropdownText();
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !dropdownButton.contains(event.target) &&
+            !dropdownMenu.contains(event.target)
+          ) {
+            dropdownMenu.classList.remove("show");
+          }
+        });
+      }
+
+      // Initialize dropdowns for Company and Widgets only
+      handleDropdown("companyDropdown", "Company");
+      handleDropdown("widgetsDropdown", "Widgets");
+    });
+  </script>
+   <script>
+    function toggleAllocate() {
+      const collapseElement = document.getElementById('collapseAllocate');
+      const isCollapsed = !collapseElement.classList.contains('show');
+      collapseElement.classList.toggle('show', isCollapsed);
+    }
+  </script>
+   <script>
+    function toggleAudit() {
+      const collapseElement = document.getElementById('collapseAudit');
+      const isCollapsed = !collapseElement.classList.contains('show');
+      collapseElement.classList.toggle('show', isCollapsed);
+    }
+  </script>
+  <script>
+    function toggleRepairs() {
+      const collapseElement = document.getElementById('collapseRepairs&Maintenace');
+      const isCollapsed = !collapseElement.classList.contains('show');
+      collapseElement.classList.toggle('show', isCollapsed);
+    }
+  </script>
+  <script>
+    function toggleInsurance() {
+      const collapseElement = document.getElementById('collapseInsuranceExpenses');
+      const isCollapsed = !collapseElement.classList.contains('show');
+      collapseElement.classList.toggle('show', isCollapsed);
+    }
+  </script>
+  <script>
+    function toggleStaff() {
+      const collapseElement = document.getElementById('collapseStaffWelfareExpenses');
+      const isCollapsed = !collapseElement.classList.contains('show');
+      collapseElement.classList.toggle('show', isCollapsed);
+    }
+  </script>
+</body>
+
+</html>

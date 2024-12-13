@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card " id="main">
+                  <div class="row">
+
+                    <div class="col-md-12 ">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>Drafting and Revising Budgets - Enterprise</h1>
+
+                        </div>
+
+                      </div>
+                      <hr>
+                      <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                          <div class="navbar-collapse bg-white d-flex" id="">
+                            <div class="navbar-nav  mb-2 mb-lg-0">
+                              <div class="dropdown">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                  data-bs-toggle="dropdown" aria-expanded="false">
+                                  Select Column
+                                </button>
+                                <ul class="dropdown-menu columnName p-0">
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name"> Ticket Id</label>
+                                  </li>
+
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name">Email</label>
+                                  </li>
+
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name">Subject </label>
+                                  </li>
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name">Ticket owner </label>
+                                  </li>
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name">PHONE</label>
+                                  </li>
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name">Priority</label>
+                                  </li>
+                                  <li>
+                                    <input type="checkbox" name="" id="company_name" class="me-2" /><label
+                                      for="company_name">Group</label>
+                                  </li>
+
+                                </ul>
+                              </div>
+                            </div>&nbsp;
+                            <form class="d-flex " role="search">
+                              <select class="form-select" aria-label="Default select example">
+                                <option selected>Show</option>
+                                <option value="1">10</option>
+                                <option value="1">20</option>
+                                <option value="1">50</option>
+                              </select>
+                            </form>
+                            <img src="assets/images/download.svg" alt=""> 
+                            <!-- <a class="btn btn-dark ms-lg-auto"
+                              href="add_budget.html">+ Draft Budget</a> -->
+
+                          </div>
+                        </div>
+                      </nav>
+                      <div class="col-md-12 p-3">
+                        <div class="table-responsive card">
+                          <table id="dtBasicExample" class="table table-sm small table-striped m-0" cellspacing="0"
+                            width="100%">
+                            <thead>
+                              <tr>
+                                <th scope="col">Budget Name</th>
+                                <th>Enterprise Function Name</th>
+                                <th scope="col">Due Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <!-- <td scope="row"><input type="checkbox" /></td> -->
+                                <td>
+                                  <!-- <a href="budget1.html"> -->
+                                  Budget 2024 - IT
+                                  <!-- </a> -->
+                                </td>
+                                <!-- <td>01/01/2022</td>
+                                    <td>31/12/2022</td> -->
+                                <td>IT</td>
+                                <td>01/03/2024</td>
+                                <td>
+                                  <a href="add_budget-enterprise.html">
+                                  Initiate</a></td>
+                                <td>
+                                  <select class="custom-select" id="inlineFormCustomSelect"
+                                    onchange="if (this.value) { window.location.href = this.value; }">
+                                    <option value="" selected="">Action</option>
+                                    <option value="">Approve</option>
+                                    <option value="">Reject</option>
+
+                                  </select>
+                                </td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                        </div>
+
+                      </div>
+                      <nav class="mt-1" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Previous</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">1</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">2</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">3</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  <script>function showComment() {
+      var commentBox = document.getElementById("comment");
+      commentBox.style.display = commentBox.style.display === "none" ? "block" : "none";
+    }
+  </script>
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<style>
+  * {
+      box-sizing: border-box;
+  }
+
+  .graph-section .row {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if necessary */
+}
+
+.graph-section .card {
+    flex: 1; /* Makes all cards take equal space */
+    display: flex;
+    flex-direction: column; /* Allows the contents to stack vertically */
+    justify-content: space-between; /* Ensures space between contents */
+    height: 350px;
+}
+
+
+</style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                    <nav class="navbar navbar-expand-lg">
+                      <div class="container-fluid">
+                        <div class="navbar-collapse bg-white d-flex" id="">
+                          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-outline-secondary dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                Select Column
+                              </button>
+                              <ul class="dropdown-menu columnName p-0">
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Company Name</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Contact Name</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">Email</label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">Source</label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">City </label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Contact Type</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">RM</label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Creation Date</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Last Interaction Date</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Last Interaction With</label
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <form class="d-flex" role="search">
+                            <select
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Show</option>
+                              <option value="1">10</option>
+                              <option value="1">20</option>
+                              <option value="1">50</option>
+                            </select>
+                          </form>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div> -->
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 card collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card " id="main">
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <div class="row">
+                        <div class="col">
+                          <h1 class="mt-3">Dashboard</h1>
+
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                          <div class="col">
+                              <div class="card third-width p-1 mb-2">
+                                  <h6 class="small">2020 forecast Feclects </h6>
+                                  <p>January & Fabruary Actuals</p>
+                                  <p class="text-center mt-3"></p>
+                              </div></div>
+                              <div class="col">
+                              <div class="card third-width p-1 mb-2 ">
+                                  <h6 class="small">Current Month</h6> 
+                                  <p>Net incom %</p>
+                                  <h6 class="text-center">13.06 %</h6>
+                                  <p class="text-center mt-3"></p>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card third-width p-1 mb-2">
+                                  <h6 class="small">Average sales price %</h6>
+                                  <p >2020 forecast %</p>
+                                  <h6 class="text-center">1,336 <br>0.04 vs &nbsp; &nbsp; Plan </h6>
+                                  <p class="text-center "></p>
+                              </div>
+                            </div>
+                            
+                            <div class="col">
+                              <div class="card third-width p-2 mb-2">
+                                  <h6 class="small">FTE count</h6>
+                                  <p class="m-0">2020 forecast %</p>
+                                  <h6 class="text-center">1,336 <br>106 vs &nbsp; &nbsp; Plan <br>0.04 vs &nbsp; &nbsp; Actual</h6>
+                                
+                              </div> </div>
+                              <div class="col">
+                              <div class="card third-width p-2 mb-2">
+                                  <h6 class="small">Revenue per FTE</h6>
+                                  <p class="m-0">2020 forecast</p>
+                                  <h6 class="text-center">$ 103, 817 <br>106 vs &nbsp;  &nbsp; Plan <br>0.04 vs &nbsp; &nbsp; Actual</h6>
+
+                                
+                              </div>
+                          
+                            </div>
+                       
+                       
+
+                            <div class="col-md-12 graph-section">
+                              <div class="row">
+                                  <div class="col-md-6 mb-5">
+                                      <div class="card p-2">
+                                          <h5 class="mb-4">Revenue and Unit Trend</h5>
+                                          <div id="chartContainer" style="height: 250px; width: 90%;"></div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <div class="card p-2">
+                                          <h5 class="mb-4">Opex comparison</h5>
+                                          <p>Mar-20</p>
+                                          <div id="chartContainer1" style="height: 250px; width: 90%;"></div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <div class="card p-2">
+                                          <h4 class="mb-2">Management Summary - Cash impact by summary</h4>
+                                          <table class="table">
+                                              <thead>
+                                                  <tr style="background-color: #f3f3f3;">
+                                                      <th>Time</th>
+                                                      <th>Net Sales</th>
+                                                      <th>Gross Profit</th>
+                                                      <th>Net Income</th>
+                                                      <th>Cash & Cash Equivalents</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody style="white-space: nowrap;">
+                                                  <tr>
+                                                      <td>Mar-20</td>
+                                                      <td>25,042,136</td>
+                                                      <td>11,012,591</td>
+                                                      <td>2,802,930</td>
+                                                      <td class="negative">(983,208)</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Apr-20</td>
+                                                      <td>16,955,030</td>
+                                                      <td>9,446,772</td>
+                                                      <td>1,785,682</td>
+                                                      <td>3,487,810</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>May-20</td>
+                                                      <td>20,139,342</td>
+                                                      <td>9,862,044</td>
+                                                      <td>1,901,892</td>
+                                                      <td>2,350,721</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Jun-20</td>
+                                                      <td>22,558,665</td>
+                                                      <td>10,817,183</td>
+                                                      <td>2,622,479</td>
+                                                      <td class="negative">(4,706,526)</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Jul-20</td>
+                                                      <td>18,858,752</td>
+                                                      <td>9,059,384</td>
+                                                      <td>1,415,191</td>
+                                                      <td>2,052,217</td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <div class="card p-2">
+                                          <h5 class="mb-4">Scenario by Accounts</h5>
+                                          <div id="chartContainer3" style="height: 250px; width: 90%;"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                        
+                      </div>
+                
+                       
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <script>
+    window.onload = function () {
+        // First chart - Revenue and Unit Trend
+        var chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            data: [{
+                type: "column",
+                showInLegend: true,
+                legendMarkerColor: "grey",
+                dataPoints: [
+                    { y: 100, label: "Q1 2020" },
+                    { y: 80, label: "Q2 2020" },
+                    { y: 60, label: "Q3 2020" },
+                    { y: 40, label: "Q4 2020" }
+                ]
+            }]
+        });
+        chart1.render();
+
+        // Second chart - Scenario by Accounts
+        var chart2 = new CanvasJS.Chart("chartContainer1", {
+            animationEnabled: true,
+            axisY: {
+                title: "Scenario",
+                titleFontColor: "#4F81BC",
+                lineColor: "#4F81BC",
+                labelFontColor: "#4F81BC",
+                tickColor: "#4F81BC"
+            },
+            toolTip: { shared: true },
+            legend: {
+                cursor: "pointer",
+                itemclick: function (e) {
+                    e.dataSeries.visible = !e.dataSeries.visible;
+                    chart2.render();
+                }
+            },
+            data: [
+                {
+                    type: "column",
+                    name: "2020 AOP",
+                    legendText: "2020 Forecast",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "5M", y: 266.21 },
+                        { label: "4M", y: 302.25 },
+                        { label: "3M", y: 157.20 },
+                        { label: "2M", y: 148.77 },
+                        { label: "1M", y: 101.50 }
+                    ]
+                },
+                {
+                    type: "column",
+                    name: "2020 Forecast",
+                    legendText: "2020 AOP",
+                    axisYType: "secondary",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "Q1 2020", y: 10.46 },
+                        { label: "Q2 2020", y: 2.27 },
+                        { label: "Q3 2020", y: 3.99 },
+                        { label: "Q4 2020", y: 4.45 },
+                        { label: "Q5 2020", y: 2.92 }
+                    ]
+                }
+            ]
+        });
+        chart2.render();
+
+        // Third chart - Scenario by Accounts (Operating Expenses, Sales, Cost of Sales)
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+            animationEnabled: true,
+            title: { text: "" },
+            axisY: { title: "Medals", includeZero: true },
+            legend: {
+                cursor: "pointer",
+                itemclick: function (e) {
+                    e.dataSeries.visible = !e.dataSeries.visible;
+                    chart3.render();
+                }
+            },
+            toolTip: {
+                shared: true,
+                content: function (e) {
+                    var str = "<strong>" + e.entries[0].dataPoint.label + "</strong><br/>";
+                    var total = e.entries.reduce((sum, entry) => sum + entry.dataPoint.y, 0);
+                    e.entries.forEach(entry => {
+                        str += `<span style="color:${entry.dataSeries.color}">${entry.dataSeries.name}</span>: <strong>${entry.dataPoint.y}</strong><br/>`;
+                    });
+                    str += `<span style="color:Tomato">Total:</span><strong>${total}</strong><br/>`;
+                    return str;
+                }
+            },
+            data: [
+                {
+                    type: "bar",
+                    showInLegend: true,
+                    name: "",
+                    color: "#045FF8",
+                    dataPoints: [
+                        { label: "Operating Expenses", y: 70 },
+                        { label: "Sales", y: 120 },
+                        { label: "Cost of Sales", y: 70 }
+                    ]
+                },
+                {
+                    type: "bar",
+                    showInLegend: true,
+                    name: "",
+                    color: "#FEB356",
+                    dataPoints: [
+                      { label: "Cost of Sales", y: 68 },
+                      { label: "Sales", y: 117 },
+                      { label: "Operating Expenses", y: 74 }
+                    ]
+                },
+                {
+                    type: "bar",
+                    showInLegend: true,
+                    name: "",
+                    color: "#131078",
+                    dataPoints: [
+                      { label: "Cost of Sales", y: 65 },
+                      { label: "Sales", y: 130 },
+                      { label: "Operating Expenses", y: 80 }
+                    ]
+                },
+                {
+                    type: "bar",
+                    showInLegend: true,
+                    name: "",
+                    color: "#64AC8E",
+                    dataPoints: [
+                      { label: "Cost of Sales", y: 65 },
+                      { label: "Sales", y: 129 },
+                      { label: "Operating Expenses", y: 83 }
+                    ]
+                }
+            ]
+        });
+        chart3.render();
+    };
+</script>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/include.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="Assets/js/bootstrap.js"></script>
+<script src="Assets/js/bootstrap.min.js"></script>
+<script src="Assets/js/bootstrap.bundle.js"></script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+  
+    <main>
+        <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="addNewLabel">+ Add New Vendor</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userName" placeholder="Enter Name">
+                          <label for="userName">Name</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="email" class="form-control" id="userID" placeholder="name@example.com">
+                          <label for="userID">Email ID</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="number" class="form-control" id="userID" placeholder="Phone Number">
+                          <label for="userID">PHONE No</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="name@example.com">
+                          <label for="userID">Company Name</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Payables</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <select class="form-select" id="department" aria-label="Floating label select example">
+                            <option value="0">Select</option>
+                            <option value="1">Electricity Bill</option>
+                            <option value="2">Repair & Maintenance</option>
+                          </select>
+                          <label for="department">Categories</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <select class="form-select" id="department" aria-label="Floating label select example">
+                            <option value="0">Select</option>
+                            <option value="1">	Register Business-reguler</option>
+                          
+                          </select>
+                          
+                          <label for="department">GST Treatment</label>
+                        </div>
+                      </div>
+                 
+                      <div class="col-md-12 text-end">
+                        <button type="button" class="btn btn-outline-secondary my-3">Cancel</button>
+                        <button type="submit" class="btn btn-secondary my-3">Save</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+              <div class="card-body p-0">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div
+                      class="col-md-3 collapse collapse-horizontal show p-0"
+                      file-include-html="assets/includes/sidebar.html"
+                      id="collapseWidthExample"
+                    ></div>
+                    <div class="col card " id="main">
+                      <div class="row">
+                        
+                        <div class="col-md-12 ">
+                            <h4>Add Department Wise Report Config</h4>
+                            <hr>
+                          <form>
+                            <div class="row">
+                              
+                                <div class="col-md-6">
+                                    <label for="travelType">Company Name</label>
+                                    <div class="">
+                                      <select class="form-select" id="travelType" aria-label="Floating label select example">
+                                        <option value="">Select Company Name</option>
+                                        <option value="2" >Ambit Capital Private Ltd</option>
+                                        <option value="3">Ambit Investment Advisors Private Ltd</option>
+                                        <option value="4">Ambit Private Ltd</option>
+                                        <option value="5">Ambit Finvest Private Ltd</option>
+                                        <option value="6">Ambit Investment Managers Private Ltd</option>
+                                        <option value="7">Ambit Singapore Pte. Ltd</option>
+                                      
+                                      </select>
+        
+        
+                                      
+                                   
+                                  </div></div>
+                              <div class=" col-md-6  ">
+                                <label for="template">Department Name</label>
+                                <div class="dropdown">
+                                  <button
+                                    class="form-control dropdown-toggle"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Select Department
+                                  </button>
+                                  <ul class="dropdown-menu columnName p-0 col-12">
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select All</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Group Corporate Office</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Global Private Client</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Asset Management</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Institutional Equities</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Investment Banking</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;SME Lending</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;HR</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;IT</a></li>
+                                  
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+    
+                            <div class="row">
+                              <div class="col-md-4 mt-2">
+                                <input type="checkbox">&nbsp;Ola
+                                &nbsp;&nbsp;<input type="checkbox">&nbsp;Uber
+                              </div>
+                              <div class="col-md-6"></div>
+                              <div class="col-md-6 mt-2">
+                                <label for="toEmail">To </label>
+                                <input type="email" class="form-control" id="toEmail" >
+                              </div>
+                              <div class="col-md-6 mt-2">
+                                <label for="ccEmail">CC</label>
+                                <input type="email" class="form-control" id="ccEmail"  >
+                              </div>
+                            </div>
+    
+                            <div class="row">
+                              <!-- <div class="col-md-6 mt-2">
+                                <label for="subject">Ola</label>
+                                <input type="number" class="form-control" id="subject" >
+                              </div>
+                              <div class="col-md-6 mt-2">
+                                <label for="subject">Uber</label>
+                                <input type="number" class="form-control" id="subject" >
+                              </div> -->
+                              <!-- <div class="col-md-6 mt-2">
+                                <label for="customFile">Attach Document</label>
+                                <div class="custom-file form-control">
+                                  <input class="custom-file-input" id="customFile" type="file">
+                                  <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                              </div> -->
+                            </div>
+    
+                            
+    
+                            <!-- <div class="form-group mt-3">
+                              <label for="sendMeetingRequest"><strong>Want to Send Meeting Request</strong></label>
+                              <input type="checkbox" id="sendMeetingRequest" data-toggle="collapse" data-target="#collapseExample">
+                              <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                  <div class="row">
+                                    <div class="col-md-4">
+                                      <label for="meetingDateTime">Date Time</label>
+                                      <div class="input-group date form_datetime" data-date-format="dd MM yyyy - HH:ii p">
+                                        <input class="form-control" id="meetingDateTime" type="text" placeholder="dd mm yyyy">
+                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="meetingDuration">Duration</label>
+                                      <input type="text" class="form-control" id="meetingDuration" placeholder="Duration">
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="meetingLocation">Location</label>
+                                      <input type="text" class="form-control" id="meetingLocation" placeholder="Location">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+    
+                            <div class="row">
+                              <div class="col-md-12 mt-3">
+                                <a href="email.html" class="btn btn-dark">Save</a>
+                                <button type="reset" class="btn btn-danger">Cancel</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

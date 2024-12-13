@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <style>
+
+
+
+
+    #qrCodeContainer {
+        margin-top: 10px; /* Adjust the margin as needed */
+    }
+    
+        .form-wrap.form-builder .frmb,
+        #mandatory-fields,
+        .configure-form-container {
+          border: 3px dashed #ccc !important;
+          padding: 10px;
+        }
+    
+        .form-control:disabled,
+        .form-control[readonly] {
+          background-color: #ffffff;
+          opacity: 1;
+        }
+      </style>
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+  
+    <main>
+        <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="addNewLabel">+ Add New Outward</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="row">
+                        <div class="form-group col-md-4 p-2">
+                            <label for="Inward">Unique Outward Number</label>
+                            
+                              <div class="input-group w-100 ">
+                                <input type="text" class="form-control" id="Inward" placeholder="381" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <!-- <div class="input-group-append">
+                                  <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-gear  ml-auto"></i></span>
+                                </div> -->
+                              </div>
+                              
+                            
+                          </div>
+                          <div class="col-md-4"></div>
+                          <div class="col-md-4"></div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="date" class="form-control" id="userName" placeholder="Enter Name">
+                          <label for="userName">Date</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="number" class="form-control" id="userID" placeholder="name@example.com">
+                          <label for="userID">Sender Unique Outward No.</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="Phone Number">
+                          <label for="userID">From</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="email" class="form-control" id="userID" placeholder="name@example.com">
+                          <label for="userID">Sender Email Id</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Place</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="time" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier Received Time</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier Delivered by</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">TO</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier received by</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="email" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Receiver Email id</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="number" class="form-control" id="userID" placeholder="">
+                          <label for="userID">POD Number</label>
+                        </div>
+                      </div>
+                      <div class="col-4 my-3">
+                        <div class="form-floating mb-md-0 mb-3">
+                          <input type="text" class="form-control" id="userID" placeholder="">
+                          <label for="userID">Courier Company Name</label>
+                        </div>
+                      </div>
+                   
+        
+                   
+                      <!-- <div class="col-6 my-3">
+                        <div class="dropdown">
+                          <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="height: calc(3.5rem + calc(var(--bs-border-width) * 2));">
+                            Select Column
+                          </button>
+                          <ul class="dropdown-menu columnName p-0 w-100">
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Company Name</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Contact Name</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Email</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Source</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">City	</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Contact Type</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">RM</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Creation Date</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Last Interaction Date</label></li>
+                            <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                                for="company_name">Last Interaction With</label></li>
+                          </ul>
+                        </div>
+                      </div> -->
+                      <div class="col-md-12 text-end">
+                        <button type="button" class="btn btn-outline-secondary my-3">Cancel</button>
+                        <button type="submit" class="btn btn-secondary my-3">Save</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+              <div class="card-body p-0">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div
+                      class="col-md-3 collapse collapse-horizontal show p-0"
+                      file-include-html="assets/includes/sidebar.html"
+                      id="collapseWidthExample"
+                    ></div>
+                    <div class="col card " id="main">
+                      <div class="row">
+                        
+                        <div class="col-md-12 ">
+                          <div class="row mt-3">
+                            <div class="col">
+                              <h1>Add Form</h1>
+                          
+                            </div>
+                        
+                          </div>
+                          <hr>
+                
+                          <form>
+                          
+                                <div class="col-md-12 ">
+                                  <div class="row mt-4">
+                                    <div class=" col-md-6">
+                                      <label for="FormName">Category</label>
+                                      <select id="country" name="country" class="form-control">
+                                        <option value=""> Feedback</option>
+                                        <option value="">Hiring</option>
+                                        
+                                        <select name="" id=""></select>
+                                      
+                                     
+                                  </div>
+                                  
+                                  
+                                    <div class=" col-md-6">
+                                      <label for="FormName">Form Name</label>
+                                      <input type="text" class="form-control" id="FormName" value="" placeholder="Enter form name" />
+                                      <label class="has-error"></label>
+                                    </div>
+                                  </div>
+                    
+                                  <label>Configure Form</label>
+                    
+                                  <div class="configure-form-container">
+                                  
+                                    <div class="row">
+                                      <div class="col-md-10 ">
+                    
+                    
+                                        <label class="field-label">Linked In Profile Used</label>
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                    
+                                        <label class="field-label">Company Name</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                    
+                                        <label class="field-label">Company Sector</label>
+                                        <select class="form-control" name="select-1627200864632-0-preview"
+                                          id="select-1627200864632-0-preview">
+                                          <option value="Banks" id="select-1627200864632-0-preview-0">Banks</option>
+                                          <option value="Finance" id="select-1627200864632-0-preview-1">Finance</option>
+                                          <option value="Mutual Fund" id="select-1627200864632-0-preview-2">Mutual Fund</option>
+                                          <option value="Information Technology" id="select-1627200864632-0-preview-3">Information
+                                            Technology</option>
+                                          <option value="Miscellaneous" id="select-1627200864632-0-preview-4">Miscellaneous</option>
+                                          <option value="Auto" id="select-1627200864632-0-preview-5">Auto</option>
+                                          <option value="Pharmaceuticals and health care" id="select-1627200864632-0-preview-6">
+                                            Pharmaceuticals and health care</option>
+                                          <option value="Personal Care" id="select-1627200864632-0-preview-7">Personal Care</option>
+                                          <option value="Petroleum" id="select-1627200864632-0-preview-8">Petroleum</option>
+                                          <option value="Power" id="select-1627200864632-0-preview-9">Power</option>
+                                          <option value="Engineering" id="select-1627200864632-0-preview-10">Engineering</option>
+                                          <option value="Tobacco" id="select-1627200864632-0-preview-11">Tobacco</option>
+                                          <option value="Cement" id="select-1627200864632-0-preview-12">Cement</option>
+                                          <option value="Mining" id="select-1627200864632-0-preview-13">Mining</option>
+                                          <option value="Service" id="select-1627200864632-0-preview-14">Service</option>
+                                          <option value="Auto Ancillaries" id="select-1627200864632-0-preview-15">Auto Ancillaries</option>
+                                          <option value="Chemicals" id="select-1627200864632-0-preview-16">Chemicals</option>
+                                          <option value="Construction" id="select-1627200864632-0-preview-17">Construction</option>
+                                        </select>
+                    
+                                        <label class="field-label">Company Head Office Location</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                    
+                                        <label class="field-label">Company Employee size</label>
+                                        <select class="form-control" name="select-1627200864632-0-preview"
+                                          id="select-1627200864632-0-preview">
+                                          <option value="Banks" id="select-1627200864632-0-preview-0">50-100</option>
+                                          <option value="Finance" id="select-1627200864632-0-preview-1">100-500</option>
+                                          <option value="Mutual Fund" id="select-1627200864632-0-preview-2">500-1000</option>
+                                          <option value="Information Technology" id="select-1627200864632-0-preview-3">1000+
+                                          </option>
+                    
+                                        </select>
+                                        <label class="field-label">Designation</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                                        <label class="field-label">Company Revanue</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                                        <label class="field-label">Company Website URL</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                                        <label class="field-label">Company Works in</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                                        <label class="field-label">Location</label>
+                    
+                                        <span class="required-asterisk" style="display:inline"> *</span>
+                                        <input class="form-control" type="text" id="text-1627200813512-preview">
+                    
+                                        <label class="field-label">Country</label>
+                    
+                                        <select id="country" name="country" class="form-control">
+                                          <option value="Afghanistan">INDIA</option>
+                                          <option value="Åland Islands">Åland Islands</option>
+                                          <option value="Albania">Albania</option>
+                                          <option value="Algeria">Algeria</option>
+                                          <option value="American Samoa">American Samoa</option>
+                                          <option value="Andorra">Andorra</option>
+                                          <option value="Angola">Angola</option>
+                                          <option value="Anguilla">Anguilla</option>
+                                          <option value="Antarctica">Antarctica</option>
+                                          <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                          <option value="Argentina">Argentina</option>
+                                          <option value="Armenia">Armenia</option>
+                                          <option value="Aruba">Aruba</option>
+                                          <option value="Australia">Australia</option>
+                                          <option value="Austria">Austria</option>
+                                          <option value="Azerbaijan">Azerbaijan</option>
+                                          <option value="Bahamas">Bahamas</option>
+                                          <option value="Bahrain">Bahrain</option>
+                                          <option value="Bangladesh">Bangladesh</option>
+                    
+                                          <option value="Guyana">Guyana</option>
+                                          <option value="Haiti">Haiti</option>
+                                          <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                          <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                          <option value="Honduras">Honduras</option>
+                                          <option value="Hong Kong">Hong Kong</option>
+                                          <option value="Hungary">Hungary</option>
+                                          <option value="Iceland">Iceland</option>
+                                          <option value="India">India</option>
+                                          <option value="Indonesia">Indonesia</option>
+                                          <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                          <option value="Iraq">Iraq</option>
+                                          <option value="Ireland">Ireland</option>
+                                          <option value="Isle of Man">Isle of Man</option>
+                                          <option value="Israel">Israel</option>
+                                          <option value="Italy">Italy</option>
+                                          <option value="Jamaica">Jamaica</option>
+                                          <option value="Japan">Japan</option>
+                                          <option value="Jersey">Jersey</option>
+                    
+                                          <option value="Tonga">Tonga</option>
+                                          <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                          <option value="Tunisia">Tunisia</option>
+                                          <option value="Turkey">Turkey</option>
+                                          <option value="Turkmenistan">Turkmenistan</option>
+                                          <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                          <option value="Tuvalu">Tuvalu</option>
+                                          <option value="Uganda">Uganda</option>
+                                          <option value="Ukraine">Ukraine</option>
+                                          <option value="United Arab Emirates">United Arab Emirates</option>
+                                          <option value="United Kingdom">United Kingdom</option>
+                                          <option value="United States">United States</option>
+                                          <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                          <option value="Uruguay">Uruguay</option>
+                                          <option value="Uzbekistan">Uzbekistan</option>
+                                          <option value="Vanuatu">Vanuatu</option>
+                                          <option value="Venezuela">Venezuela</option>
+                                          <option value="Viet Nam">Viet Nam</option>
+                                          <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                          <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                          <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                          <option value="Western Sahara">Western Sahara</option>
+                                          <option value="Yemen">Yemen</option>
+                                          <option value="Zambia">Zambia</option>
+                                          <option value="Zimbabwe">Zimbabwe</option>
+                                        </select>
+                                        <label class="field-label">Date Of birth of client</label>
+                                        <input type="date" class="form-control" name="" id="">
+                                        <label class="field-label">Talking Regarding</label>
+                                        <select class="form-control" name="select-1627201267896-0-preview"
+                                          id="select-1627201267896-0-preview">
+                                          <option value="Digital Marketing" id="select-1627201267896-0-preview-0">Digital Marketing</option>
+                                          <option value="IT Staffing" id="select-1627201267896-0-preview-1">IT Staffing</option>
+                                          <option value="Software Development" id="select-1627201267896-0-preview-2">Software Development
+                                          </option>
+                                          <option value="HR Consultancy" id="select-1627201267896-0-preview-3">HR Consultancy</option>
+                                          <option value="Unicorn Ops" id="select-1627201267896-0-preview-4">Unicorn Ops</option>
+                                          <option value="Fiver Freelancer" id="select-1627201267896-0-preview-5">Fiver Freelancer</option>
+                                          <option value="Fiver Buyer" id="select-1627201267896-0-preview-6">Fiver Buyer</option>
+                                          <option value="Reference Software Development" id="select-1627201267896-0-preview-7">Reference
+                                            Software Development</option>
+                                          <option value="Mobile Development" id="select-1627201267896-0-preview-8">Mobile Development
+                                          </option>
+                                          <option value="Mutual Fund" id="select-1627201267896-0-preview-9">Mutual Fund</option>
+                                        </select>
+                                        <label class="field-label">Comments/Remarks</label>
+                                        <textarea name="" class="form-control" id=""></textarea>
+                                       
+                                      </div>
+                                      <div class="col-md-2 card-footer">
+                                        <i class="fa fa-file-text">  Autocomplete</i>
+                                     
+                                          
+                                        <i class="fa fa-check-square-o">  Checkbox</i>
+                                        <i class="fa fa-calendar">Date Field</i><br>
+                                        <i class="fa fa-align-justify"> Header</i><br>
+                                        <i class="fa fa-phone">Number</i> 
+                                        <i class="fa fa-square"> Paragraph</i> 
+                                        <i class="fa fa-camera"> Radio Button</i> 
+                                        <i class="fa  fa-toggle-down">  Dropdown</i>
+                                          <i class="fa  fa-file-text mt-2">  Text Field</i> <br>
+                                            <i class="fa  fa-file-text"> Text Area</i><br>
+                                          <i class="fa input-control input-control-14 ui-sortable-handle  mt-2" data-type="time"><span><span
+                                                class="control-icon">🕒</span>Time</span></i><br>
+                                          <i class="fa  input-control input-control-18 ui-sortable-handle  mt-2" data-type="Currency"><span><span
+                                                class="control-icon"><i class="fa fa-money"></i></span>Currency</span></i><br>
+                                          <i class=" fa  input-control input-control-19 ui-sortable-handle  mt-2" data-type="Source"><span><span
+                                                class="control-icon"><span
+                                                  style="font-weight: bold;font-family: cursive;">LS</span></span>Lead Source</span></i>
+                                          <i class="fa  input-control input-control-20 ui-sortable-handle  mt-2" data-type="Vertical"><span><span
+                                                class="control-icon"><span
+                                                  style="font-weight: bold;font-family: cursive;">V</span></span>Vertical</span></i>
+                                          <i class="fa  input-control input-control-21 ui-sortable-handle  mt-2" data-type="Country"><span><span
+                                                class="control-icon"><span
+                                                  style="font-weight: bold;font-family: cursive;">C</span></span>Country</span></i>
+                                          <i class="fa  input-control input-control-22 ui-sortable-handle  mt-2" data-type="State"><span><span
+                                                class="control-icon"><span
+                                                  style="font-weight: bold;font-family: cursive;">CS</span></span>State</span></i>
+                                          <i class="fa  input-control input-control-23 ui-sortable-handle  mt-2" data-type="City"><span><span
+                                                class="control-icon"><span
+                                                  style="font-weight: bold;font-family: cursive;">CC</span></span>City</span></i>
+                                          <i class="fa  input-control input-control-24 ui-sortable-handle  mt-2" data-type="UserList"><span><span
+                                                class="control-icon"><span
+                                                  style="font-weight: bold;font-family: cursive;">UL</span></span>User List</span></i><hr>
+                                                  <a class="btn btn-danger" href="">Clear</a>
+                                                  <a class="btn btn-dark" href="">Save </a>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                 <hr>
+                                 <div class="row">
+                                 <div class="form-group col-md-6">
+                                  <label for="FormName">Status</label>
+                                  <select id="country" name="country" class="form-control">
+                                    <option value=""> Live</option>
+                                    <option value="">Withdraw</option>
+                                    <option value="">Draft</option>
+                                    <option value="">Expire on -Date</option>
+                                   
+                                   </select>
+                                  <label class="has-error"></label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="FormName">key and unlock forms</label>
+                                  <input type="text" class="form-control" id="FormName" value="" />
+                                  <label class="has-error"></label>
+                                 
+                                </div>
+                              
+                                <div class="form-group col-md-6">
+                                  <label for="FormName">Response URL</label>
+                                  <input type="text" class="form-control" id="FormName" value="" />
+                                  <label class="has-error"></label>
+                                 
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="FormName">Publish URL</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="FormName" placeholder="Enter URL" />
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark" id="generateQR">Generate QR Code</button>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- QR code image will be displayed here -->
+                                    <div id="qrcode" class="mt-3">
+                                        <img id="qrImage" style="display: none;" />
+                                    </div>
+                                
+                                    <!-- QR Code Container -->
+                                    <div id="qrCodeContainer" class="mt-3"></div>
+                                </div>
+                                
+                              
+                                <div class="col-md-12 mb-3">
+                                <a class="btn btn-danger" href="">Cancel</a>
+                                <a class="btn btn-dark" href="form_builder.html">Save </a>
+                              </div>
+                              </div>
+                                  <input type="hidden" id="hdnFormId" value="" />
+                                </div>
+                                
+                          </form>
+                   
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+   
+    
+    
+ <script>document.getElementById("generateQR").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission if inside a form
+
+    // Get the URL from the input field
+    var url = document.getElementById("FormName").value.trim() || "https://www.google.com";
+
+    // Log the URL for debugging
+    console.log("Generating QR Code for URL:", url);
+
+    // Create an image element
+    var img = document.createElement("img");
+
+    // Set the live image source link
+    var qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(url);
+    img.src = qrUrl;
+    img.alt = "QR Code";
+    img.style.width = "200px";
+    img.style.height = "200px";
+
+    // Insert the image in the container
+    var container = document.getElementById("qrCodeContainer");
+
+    // Clear previous content (if any) before inserting the new one
+    container.innerHTML = "";
+    container.appendChild(img);
+
+    // Create a download link
+    var downloadLink = document.createElement("a");
+    downloadLink.href = qrUrl;
+    downloadLink.download = "QRCode.png"; // Set the download file name
+    downloadLink.innerHTML = "Download QR Code";
+    downloadLink.style.display = "block"; // Ensure the link appears below the image
+    downloadLink.style.fontWeight = "bold"; // Make the text bold
+
+    // Insert the download link below the image
+    container.appendChild(downloadLink);
+});
+</script>
+    
+     
+  </body>
+</html>

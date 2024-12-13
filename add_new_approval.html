@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h1>Add Approval Workflow</h1>
+                      <hr>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="table-responsive card">
+                        <table id="dtBasicExample" class="table table-sm table-striped m-0" cellspacing="0"
+                          width="100%">
+                          <thead>
+                            <tr>
+                              <th scope="col" colspan="1" rowspan="1">
+                                Business / Function
+                              </th>
+                              <!-- <th scope="col" colspan="1" rowspan="1" class="text-center">
+                                Type
+                              </th> -->
+                              <th>Draft</th>
+                              <th scope="col" colspan="1" rowspan="1" class="text-center">
+                                Level of Approval Required
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1" class="text-center">
+                                Level 1 Approval
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1" class="text-center">
+                                Level 2 Approval
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1" class="text-center">
+                                Level 3 Approval
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1" class="text-center">
+                                Action
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody id="approvalTable">
+                            <tr>
+                              <td colspan="1" rowspan="1">
+                                <select class="form-control" type="button" id="dropdownButton"
+                                  data-bs-toggle="dropdown" aria-expanded="false">
+                                  <option value="" selected disabled>Select business/function</option>
+                                  <option>
+                                    <label class="dropdown-item"> GCO </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> GPC </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> AM </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> IE </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> IB </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> SMEL </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> Finvest </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> APL </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> HR </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item"> Legal </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Compliance
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <!-- <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="">Business</option>
+                                  <option value="">Function</option>
+                                </select>
+                              </td> -->
+                              <td>
+                                <select name="" id="" class="form-control">
+                                  <option value="" selected disabled>
+                                    Select Draft
+                                  </option>
+                                  <option value="">Ajay Singh</option>
+                                  <option value="">Ankita Sawant</option>
+                                  <option value="">Navin Mishra</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">Sunita Kanojia</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">
+                                    Samantha Santiago
+                                  </option>
+                                  <option value="">Twisha Mehta</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input type="number" name="" id="" value="0" class="form-control" min="0" max="">
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-control">
+                                  <option value="" selected disabled>
+                                    Select Approval
+                                  </option>
+                                  <option value="">Ajay Singh</option>
+                                  <option value="">Ankita Sawant</option>
+                                  <option value="">Navin Mishra</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">Sunita Kanojia</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">
+                                    Samantha Santiago
+                                  </option>
+                                  <option value="">Twisha Mehta</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-control">
+                                  <option value="" selected disabled>
+                                    Select Approval
+                                  </option>
+                                  <option value="">Ajay Singh</option>
+                                  <option value="">Ankita Sawant</option>
+                                  <option value="">Navin Mishra</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">Sunita Kanojia</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">
+                                    Samantha Santiago
+                                  </option>
+                                  <option value="">Twisha Mehta</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-control" disabled>
+                                  <option value="" selected disabled>
+                                    Select Approval
+                                  </option>
+                                  <option value="">Ajay Singh</option>
+                                  <option value="">Ankita Sawant</option>
+                                  <option value="">Navin Mishra</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">Sunita Kanojia</option>
+                                  <option value="">Samidha Nawathye</option>
+                                  <option value="">
+                                    Samantha Santiago
+                                  </option>
+                                  <option value="">Twisha Mehta</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <i class="bi bi-plus-circle-fill mx-2" onclick="addRow()"></i>
+                                <i class="bi bi-dash-circle-fill mx-2" onclick="deleteRow(this)"></i>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                      <a href="approval_workflow.html" class="btn btn-dark">Cancel</a>
+                      <a href="approval_workflow.html" class="btn btn-success">Save</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+
+  <script>
+    function addRow() {
+      const table = document.getElementById("approvalTable");
+      const newRow = table.rows[0].cloneNode(true);
+
+      // Clear the dropdown selections and text in the new row
+      newRow.querySelectorAll("select").forEach(select => select.selectedIndex = 0);
+
+      // Add new row to table
+      table.appendChild(newRow);
+    }
+
+    function deleteRow(button) {
+      const row = button.parentNode.parentNode;
+      const table = document.getElementById("approvalTable");
+
+      // Ensure at least one row remains
+      if (table.rows.length > 1) {
+        row.remove();
+      }
+    }
+  </script>
+</body>
+
+</html>

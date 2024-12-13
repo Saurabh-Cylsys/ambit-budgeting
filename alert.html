@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<style>
+  /* Style the tab */
+  .tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 12px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color: #ff9a9a;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none; /* Hide all tab contents by default */
+  }
+
+  /* Show the active tab content */
+  .tabcontent.active {
+    display: block;
+  }
+</style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+                
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0" file-include-html="assets/includes/sidebar.html"
+                  id="collapseWidthExample"></div>
+                <div class="col " id="main">
+                    <div class="row ">
+                        <div class="col">
+                          <h1>Alert</h1>
+                      
+                        </div>
+                    
+                      </div>
+                      <hr>
+                  <!-- <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Vendor Management</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Courier Services</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">  Travel Management</button>
+                    <button class="tablinks" onclick="openCity(event, 'London1')" id="defaultOpen"> PPM Schedule Management</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris1')"> Admin Helpdesk</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo1')">Customer Satisfaction Feedback</button>
+                    <button class="tablinks" onclick="openCity(event, 'London2')" id="defaultOpen">  Attendance of Support Staff</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris2')">  Petty Cash Management</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo2')"> Repair & Maintenance Works</button>
+                  </div> -->
+
+                  <div id="London" class="tabcontent">
+                    <h3>Vendor Management</h3>
+                    <hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+
+                  <div id="Paris" class="tabcontent">
+                    <h3>Courier Services</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Notify to 
+                        <input class="form-control" type="email" placeholder="Email Id" style="width: 200px; margin: 0 8px;"> 
+                        if AWBNO is not entered in 
+                        <input class="form-control" type="text" placeholder="Days" style="width: 60px; margin-left: 8px;">
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+
+                  <div id="Tokyo" class="tabcontent">
+                    <h3>Travel Management</h3><hr>
+                    <div class="row p-1" >
+                      <form>
+                        <div class="row">
+                          
+                            <div class="col-md-6">
+                                <label for="travelType">Company Name</label>
+                                <div class="">
+                                  <select class="form-select" id="travelType" aria-label="Floating label select example">
+                                    <option value="">Select Company Name</option>
+                                    <option value="2" >Ambit Capital Private Ltd</option>
+                                    <option value="3">Ambit Investment Advisors Private Ltd</option>
+                                    <option value="4">Ambit Private Ltd</option>
+                                    <option value="5">Ambit Finvest Private Ltd</option>
+                                    <option value="6">Ambit Investment Managers Private Ltd</option>
+                                    <option value="7">Ambit Singapore Pte. Ltd</option>
+                                  
+                                  </select>
+    
+    
+                                  
+                               
+                              </div></div>
+                          <div class=" col-md-6  ">
+                            <label for="template">Department Name</label>
+                            <div class="dropdown">
+                              <button
+                                class="form-control dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                Select Department
+                              </button>
+                              <ul class="dropdown-menu columnName p-0 col-12">
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select All</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Group Corporate Office</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Global Private Client</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Asset Management</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Institutional Equities</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Investment Banking</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;SME Lending</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;HR</a></li>
+                                  <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;IT</a></li>
+                              
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-4 mt-2">
+                            <input type="checkbox">&nbsp;Ola
+                            &nbsp;&nbsp;<input type="checkbox">&nbsp;Uber
+                          </div>
+                          <div class="col-md-6"></div>
+                          <div class="col-md-6 mt-2">
+                            <label for="toEmail">To </label>
+                            <input type="email" class="form-control" id="toEmail" >
+                          </div>
+                          <div class="col-md-6 mt-2">
+                            <label for="ccEmail">CC</label>
+                            <input type="email" class="form-control" id="ccEmail"  >
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <!-- <div class="col-md-6 mt-2">
+                            <label for="subject">Ola</label>
+                            <input type="number" class="form-control" id="subject" >
+                          </div>
+                          <div class="col-md-6 mt-2">
+                            <label for="subject">Uber</label>
+                            <input type="number" class="form-control" id="subject" >
+                          </div> -->
+                          <!-- <div class="col-md-6 mt-2">
+                            <label for="customFile">Attach Document</label>
+                            <div class="custom-file form-control">
+                              <input class="custom-file-input" id="customFile" type="file">
+                              <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                          </div> -->
+                        </div>
+
+                        
+
+                        <!-- <div class="form-group mt-3">
+                          <label for="sendMeetingRequest"><strong>Want to Send Meeting Request</strong></label>
+                          <input type="checkbox" id="sendMeetingRequest" data-toggle="collapse" data-target="#collapseExample">
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label for="meetingDateTime">Date Time</label>
+                                  <div class="input-group date form_datetime" data-date-format="dd MM yyyy - HH:ii p">
+                                    <input class="form-control" id="meetingDateTime" type="text" placeholder="dd mm yyyy">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <label for="meetingDuration">Duration</label>
+                                  <input type="text" class="form-control" id="meetingDuration" placeholder="Duration">
+                                </div>
+                                <div class="col-md-4">
+                                  <label for="meetingLocation">Location</label>
+                                  <input type="text" class="form-control" id="meetingLocation" placeholder="Location">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+
+                        <div class="row">
+                          <div class="col-md-12 mt-2">
+                            <a href="email.html" class="btn btn-dark">Save</a>
+                            <button type="reset" class="btn btn-danger">Cancel</button>
+                          </div>
+                        </div>
+
+                        <nav class="navbar navbar-expand-lg">
+                          <div class="container-fluid">
+                            <div class="navbar-collapse bg-white d-flex" id="">
+                              <div class="navbar-nav  mb-2 mb-lg-0">
+                                <div class="dropdown">
+                                  <button
+                                    class="btn btn-outline-secondary dropdown-toggle"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Select Column
+                                  </button>
+                                  <ul class="dropdown-menu columnName p-0">
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select All</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;S.No</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Company Name</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;HOD-To</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Cc</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Ola</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Uber</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Action</a></li>
+
+                                  
+                                  </ul>
+                                </div>
+                              </div>&nbsp;
+                              <form class="d-flex " role="search">
+                                <select
+                                  class="form-control-sm"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>Show</option>
+                                  <option value="1">10</option>
+                                  <option value="1">20</option>
+                                  <option value="1">50</option>
+                                </select>
+                              </form>
+                              <img src="assets/images/download.svg" alt="">
+                             
+                            </div>
+                          </div>
+                        </nav>
+                        <div
+                          class="table-responsive rounded-3 border bookmakerTable"
+                        >
+                          <table class="table m-0">
+                            <thead>
+                              <tr> 
+                                <th><input class="" type="checkbox"></th>
+                                  
+                                  <th>Company Name</th>
+                                  <th>Department Name</th>
+                                  <th>Date/Time</th>
+                                  <th scope="col">Hod-To</th>
+                                  <th scope="col">Cc</th>
+                                  <th>Upload File	</th>
+                                  <th scope="col">Status</th>
+                              
+                             
+                                 
+                                <th>Download</th>
+                          
+                       
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <tr><td><input class="" type="checkbox"></td>
+                                 
+                                  <td>Ambit Capital Private Ltd</td>
+                                  <td>HR,IT</td>
+                                  <td>12/10/2024 10:15am</td>
+                                  <td>Raman Johar</td>
+                                  <td>Nitin Bhasin,Ruchita</td>
+                                  <td>	APL-Ola.xlxs	</td>
+                                  <td>Pending</td>
+                                  <td>
+                                   <i class="fa fa-download fa-2x"></i>
+                                  </td>
+                                  
+                                  
+                                </tr>
+                                <tr>
+                                  <td><input class="" type="checkbox"></td>
+                                  
+                                 <td>Ambit Private Ltd</td>
+                                 <td>Group Corporate Office</td>
+                                 <td>12/10/2024 01:15pm</td>
+                                <td>Dhipu</td>
+                                <td>Pillai</td>
+                               <td>AWPL-Uber.xlxs</td>
+                                <td>Send</td>
+                                <td>
+                                  <i class="fa fa-download fa-2x"></i>
+                                 </td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        
+                        </div>
+                        <nav class="mt-1" aria-label="Page navigation example">
+                          <ul class="pagination">
+                            <li class="page-item card">
+                              <a class="page-link text-black" href="#"
+                                >Previous</a
+                              >
+                            </li>
+                            <li class="page-item card">
+                              <a class="page-link text-black" href="#">1</a>
+                            </li>
+                            <li class="page-item card">
+                              <a class="page-link text-black" href="#">2</a>
+                            </li>
+                            <li class="page-item card">
+                              <a class="page-link text-black" href="#">3</a>
+                            </li>
+                            <li class="page-item card">
+                              <a class="page-link text-black" href="#"
+                                >Next</a
+                              >
+                            </li>
+                          </ul>
+                        </nav>
+                      </form>
+
+                      
+                    
+                   
+                    </div>
+                  </div>
+                  <div id="London1" class="tabcontent">
+                    <h3>PPM Schedule Management</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+
+                  <div id="Paris1" class="tabcontent">
+                    <h3>Admin Helpdesk</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+
+                  <div id="Tokyo1" class="tabcontent">
+                    <h3>Customer Satisfaction Feedback</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+                  <div id="London2" class="tabcontent">
+                    <h3>Attendance of Support Staff</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+
+                  <div id="Paris2" class="tabcontent">
+                    <h3> Petty Cash Management</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+
+                  <div id="Tokyo2" class="tabcontent">
+                    <h3> Repair & Maintenance Works</h3><hr>
+                    <div class="row p-4" >
+                      <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 8px;"> Something went wrong in Vendor Management. Please try again or contact support.
+                        
+                      </label>
+                      
+                    
+                    <a class="btn btn-dark mt-4 mb-3 col-md-3" href="">Save</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    // Function to handle tab opening
+    function openCity(evt, cityName) {
+      // Hide all tab contents
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+
+      // Remove active class from all tablinks
+      const tablinks = document.getElementsByClassName("tablinks");
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab content and add active class to the button
+      document.getElementById(cityName).classList.add("active");
+      evt.currentTarget.className += " active";
+    }
+
+    // Open the default tab on page load
+    document.getElementById("defaultOpen").click();
+  </script>
+      <script>// Define the report types for each vendor
+        const reportTypes = {
+            Ola: ['ACPL-Ola-CMT','ACPL-Ola-IE', 'ACPL-Ola-OPS', 'ACPL-Ola-RISK', 'AIAPL-Ola-AM' , 'APL-Ola-BCC' , 'APL-Ola-ECM' , 'AWPL-Ola-GPC'],
+            Uber: ['ACPL-Uber', 'ACPL-Uber-CMT', 'ACPL-Uber-LC', 'AIAPL-Uber' , 'AIAPL-Uber-LC' , 'APL-Uber-Admin' , 'APL-Uber-Delhi Admin' , 'APL-Uber-GCO' , 'AWPL-Uber-GPC' , 'APL-Uber-IT']
+        };
+        
+        // Function to filter reports based on the selected vendor
+        function filterReports() {
+            const vendorSelect = document.getElementById('vendorSelect');
+            const reportSelect = document.getElementById('reportSelect');
+            
+            // Get the selected vendor
+            const selectedVendor = vendorSelect.value;
+        
+            // Clear the previous report options
+            reportSelect.innerHTML = '<option value="">Select Report</option>';
+            
+            // If a vendor is selected, populate the corresponding report types
+            if (selectedVendor) {
+                const reports = reportTypes[selectedVendor];
+                
+                // Add new options for the selected vendor
+                reports.forEach(report => {
+                    const option = document.createElement('option');
+                    option.value = report;
+                    option.textContent = report;
+                    reportSelect.appendChild(option);
+                });
+            }
+        }
+        </script>
+</body>
+
+</html>

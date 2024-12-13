@@ -1,0 +1,3857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+    <style>
+      .input-box {
+        position: relative;
+        display: inline-block;
+      }
+
+      .comment-icon {
+        position: absolute;
+        left: 45px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .comment-popup {
+        display: none;
+        position: absolute;
+        top: -5px;
+        right: 25px;
+        background-color: #f1f1f1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 12px;
+        z-index: 1;
+      }
+
+      .info-icon {
+        font-size: 12px;
+        /* Smaller size for the icon */
+        cursor: pointer;
+        /* Change cursor to pointer */
+        margin-left: 5px;
+        /* Space between number and icon */
+      }
+
+      .popup {
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+      }
+
+      .popup-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+        /* Hide the popup by default */
+      }
+
+      .profile-pic {
+        width: 200px;
+        max-height: 200px;
+        display: inline-block;
+      }
+
+      .file-upload {
+        display: none;
+      }
+
+      .circle {
+        border-radius: 100% !important;
+        overflow: hidden;
+        width: 128px;
+        height: 128px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .p-image {
+        position: absolute;
+        top: 108px;
+        right: 136px;
+        color: #666666;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .p-image:hover {
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .upload-button {
+        font-size: 1.2em;
+      }
+
+      .upload-button:hover {
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        color: #999;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        will-change: transform;
+        z-index: 1000;
+      }
+
+      /* Tooltip container */
+      .tooltip {
+        position: relative;
+        /* display: inline-block; */
+        /* border-bottom: 1px dotted black; */
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 230px;
+        /* background-color: black; */
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+        top: -34px;
+
+        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+        opacity: 0;
+        transition: opacity 1s;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip .tooltiptext table thead tr th,
+      .tooltip .tooltiptext table tbody tr td {
+        background-color: #000 !important;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- modaL CODE START -->
+    <div
+      class="modal fade"
+      id="note"
+      tabindex="-1"
+      aria-labelledby="noteLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+          <h1 class="modal-title fs-5" id="noteLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="p-0">
+                  <li class="list-unstyled border-bottom">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <i class="bi bi-person-bounding-box fs-1"></i>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <h5>Samantha Santiago</h5>
+                            <h6>01/03/2024</h6>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 text-end">
+                        <div class="dropdown">
+                          <i
+                            class="bi bi-three-dots-vertical"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          ></i>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#">Resolve</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <p>
+                          Most of this relates to Professional & Legal Charges
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-unstyled border-bottom">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <i class="bi bi-person-bounding-box fs-1"></i>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <h5>Navin Mishra</h5>
+                            <h6>05/03/2024</h6>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 text-end">
+                        <div class="dropdown">
+                          <i
+                            class="bi bi-three-dots-vertical"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          ></i>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#">Resolve</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <p>
+                          Most of this relates to Professional & Legal Charges
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-unstyled border-bottom">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <i class="bi bi-person-bounding-box fs-1"></i>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <h5>Selvakumar Natrajan Gounder</h5>
+                            <h6>06/03/2024</h6>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 text-end">
+                        <div class="dropdown">
+                          <i
+                            class="bi bi-three-dots-vertical"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          ></i>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#">Resolve</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <p>
+                          Most of this relates to Professional & Legal Charges
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-md-12">
+                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-dark">Resolve</button>
+                <button class="btn btn-danger">Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-danger">
+            <input
+              type="text"
+              name=""
+              id=""
+              value=""
+              placeholder="Enter Notes"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="note_success"
+      tabindex="-1"
+      aria-labelledby="noteLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+          <h1 class="modal-title fs-5" id="noteLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="p-0">
+                  <li class="list-unstyled border-bottom">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <i class="bi bi-person-bounding-box fs-1"></i>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <h5>Samantha Santiago</h5>
+                            <h6>01/03/2024</h6>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 text-end">
+                        <div class="dropdown">
+                          <i
+                            class="bi bi-three-dots-vertical"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          ></i>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#">Resolve</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <p>
+                          Most of this relates to Professional & Legal Charges
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-unstyled border-bottom">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <i class="bi bi-person-bounding-box fs-1"></i>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <h5>Navin Mishra</h5>
+                            <h6>05/03/2024</h6>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 text-end">
+                        <div class="dropdown">
+                          <i
+                            class="bi bi-three-dots-vertical"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          ></i>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#">Resolve</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <p>
+                          Most of this relates to Professional & Legal Charges
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-unstyled border-bottom">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <i class="bi bi-person-bounding-box fs-1"></i>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <h5>Selvakumar Natrajan Gounder</h5>
+                            <h6>06/03/2024</h6>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 text-end">
+                        <div class="dropdown">
+                          <i
+                            class="bi bi-three-dots-vertical"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          ></i>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#">Resolve</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <p>
+                          Most of this relates to Professional & Legal Charges
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-md-12">
+                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-dark">Resolve</button>
+                <button class="btn btn-danger">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="agreement"
+      tabindex="-1"
+      aria-labelledby="agreementLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="agreementLabel">
+              Agreement spanning across multiple FY
+            </h1>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-4">
+                <label for="startdate" class="form-label">Start Date</label>
+                <input type="date" class="form-control" id="startdate" />
+              </div>
+              <div class="col-md-4">
+                <label for="endDate" class="form-label">End Date</label>
+                <input type="date" class="form-control" id="endDate" />
+              </div>
+              <div class="col-md-4">
+                <label for="endDate" class="form-label">% increment YOY</label>
+                <span class="d-flex align-items-center"
+                  ><input
+                    type="number"
+                    class="form-control w-50"
+                    id="endDate" /><i class="bi bi-percent"></i
+                ></span>
+              </div>
+              <div class="col-md-12">
+                <label for="endDate" class="form-label">Remark</label>
+                <textarea name="" id="" class="form-control"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="agreementList"
+      tabindex="-1"
+      aria-labelledby="agreementListLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="agreementListLabel">
+              Agreement spanning across multiple FY
+            </h1>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-4">
+                <label for="startdate" class="form-label">Start Date : </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="startdate"
+                  value="01/04/2024"
+                  disabled
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="endDate" class="form-label">End Date</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="endDate"
+                  value="01/03/2025"
+                  disabled
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="endDate" class="form-label">% increment YOY</label>
+                <span class="d-flex align-items-center"
+                  ><input
+                    type="number"
+                    class="form-control w-50"
+                    id="endDate"
+                    value="5"
+                    disabled /><i class="bi bi-percent"></i
+                ></span>
+              </div>
+              <div class="col-md-12">
+                <label for="endDate" class="form-label">Remark</label>
+                <textarea
+                  name=""
+                  id=""
+                  class="form-control"
+                  placeholder="Most of this relates to Professional & Legal Charges"
+                  disabled
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL CODE END -->
+    <header file-include-html="assets/includes/header.html"></header>
+
+    <main>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div
+            class="col-md-3 collapse collapse-horizontal show p-0"
+            file-include-html="assets/includes/sidebar.html"
+            id="collapseWidthExample"
+          ></div>
+          <div class="col card" id="main">
+            <div class="row align-items-center">
+              <div class="col-md-10 my-2">
+                <h1>Drafting Budget - Enterprise</h1>
+              </div>
+              <div class="col-md-2 my-2">
+                <select name="" id="" class="form-select">
+                  <option value="">Lacks</option>
+                  <option value="">Crores</option>
+                </select>
+              </div>
+              <div class="col-md-12 my-2">
+                <hr class="m-0" />
+              </div>
+              <div class="col-md-12">
+                <form id="budgetInitiationForm">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="row align-items-end">
+                        <div class="col-md-6">
+                          <label for="initiatorName">Budget Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="initiatorName"
+                            placeholder="Enter Budget Name"
+                            value="Budget 2023 - IT"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="yourUsername" class="form-label"
+                            >Due Date
+                          </label>
+                          <input type="date" class="form-control" value="" />
+                        </div>
+
+                        <div class="col-md-6">
+                          <img src="assets/images/download.svg" alt="" />
+                        </div>
+                        <div class="col-12">
+                          <label for="yourUsername" class="form-label"
+                            >Business Initials</label
+                          >
+                          <div class="multi-select-dropdown">
+                            <button
+                              class="form-select text-start"
+                              type="button"
+                              id="dropdownButton"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              Select Business
+                            </button>
+                            <ul
+                              class="dropdown-menu"
+                              id="dropdownMenu"
+                              aria-labelledby="dropdownButton"
+                            >
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="Select All"
+                                    class="business-checkbox"
+                                  />
+                                  Select All
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GCO"
+                                    class="business-checkbox"
+                                  />
+                                  Common
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GCO"
+                                    class="business-checkbox"
+                                  />
+                                  GCO
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GPC"
+                                    class="business-checkbox"
+                                  />
+                                  GPC
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GPC"
+                                    class="business-checkbox"
+                                  />
+                                  AM
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GPC"
+                                    class="business-checkbox"
+                                  />
+                                  IE
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GPC"
+                                    class="business-checkbox"
+                                  />
+                                  IB
+                                </label>
+                              </li>
+                              <li>
+                                <label class="dropdown-item">
+                                  <input
+                                    type="checkbox"
+                                    value="GPC"
+                                    class="business-checkbox"
+                                  />
+                                  SMEL
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="card">
+                            <div
+                              id="chartContainer"
+                              style="height: 250px; width: 100%"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card">
+                            <div
+                              id="chartContainer1"
+                              style="height: 250px; width: 100%"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mt-3" id="subhead">
+                      <div class="table-responsive">
+                        <table
+                          id="dtBasicExample"
+                          class="table table-sm table-striped m-0"
+                          cellspacing="0"
+                          width="100%"
+                        >
+                          <thead>
+                            <tr>
+                              <th>
+                                <div class="multi-select-dropdown">
+                                  <button
+                                    class="bg-transparent border-0 text-white fw-bold"
+                                    type="button"
+                                    id="dropdownButton"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Business Initials
+                                    <span
+                                      ><i class="bi bi-caret-down-fill"></i
+                                    ></span>
+                                  </button>
+                                  <ul
+                                    class="dropdown-menu"
+                                    id="dropdownMenu"
+                                    aria-labelledby="dropdownButton"
+                                  >
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Select All"
+                                          class="business-checkbox"
+                                        />
+                                        Select All
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GCO"
+                                          class="business-checkbox"
+                                        />
+                                        Common
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GCO"
+                                          class="business-checkbox"
+                                        />
+                                        GCO
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GPC"
+                                          class="business-checkbox"
+                                        />
+                                        GPC
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GPC"
+                                          class="business-checkbox"
+                                        />
+                                        AM
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GPC"
+                                          class="business-checkbox"
+                                        />
+                                        IE
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GPC"
+                                          class="business-checkbox"
+                                        />
+                                        IB
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="GPC"
+                                          class="business-checkbox"
+                                        />
+                                        SMEL
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1">
+                                <div class="multi-select-dropdown">
+                                  <button
+                                    class="bg-transparent border-0 text-white fw-bold"
+                                    type="button"
+                                    id="dropdownButton"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Budget Sub Head
+                                    <span
+                                      ><i class="bi bi-caret-down-fill"></i
+                                    ></span>
+                                  </button>
+                                  <ul
+                                    class="dropdown-menu"
+                                    id="dropdownMenu"
+                                    aria-labelledby="dropdownButton"
+                                  >
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Select All"
+                                          class="business-checkbox"
+                                        />
+                                        Select All
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Audit Fee"
+                                          class="business-checkbox"
+                                        />
+                                        Audit Fee
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Insurance Expenses"
+                                          class="business-checkbox"
+                                        />
+                                        Insurance Expenses
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="PROFESSIONAL & LEGAL CHARGES"
+                                          class="business-checkbox"
+                                        />
+                                        PROFESSIONAL & LEGAL CHARGES
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Repairs and Maintenace"
+                                          class="business-checkbox"
+                                        />
+                                        Repairs and Maintenace
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Staff Welfare Expenses"
+                                          class="business-checkbox"
+                                        />
+                                        Staff Welfare Expenses
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </th>
+                              <th>
+                                <div class="multi-select-dropdown">
+                                  <button
+                                    class="bg-transparent border-0 text-white fw-bold"
+                                    type="button"
+                                    id="dropdownButton"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Budget Head
+                                    <span
+                                      ><i class="bi bi-caret-down-fill"></i
+                                    ></span>
+                                  </button>
+                                  <ul
+                                    class="dropdown-menu"
+                                    id="dropdownMenu"
+                                    aria-labelledby="dropdownButton"
+                                  >
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Select All"
+                                          class="business-checkbox"
+                                        />
+                                        Select All
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Audit Fee"
+                                          class="business-checkbox"
+                                        />
+                                        Audit Fee
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Insurance Expenses"
+                                          class="business-checkbox"
+                                        />
+                                        Insurance Expenses
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="PROFESSIONAL & LEGAL CHARGES"
+                                          class="business-checkbox"
+                                        />
+                                        PROFESSIONAL & LEGAL CHARGES
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Repairs and Maintenace"
+                                          class="business-checkbox"
+                                        />
+                                        Repairs and Maintenace
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label class="dropdown-item">
+                                        <input
+                                          type="checkbox"
+                                          value="Staff Welfare Expenses"
+                                          class="business-checkbox"
+                                        />
+                                        Staff Welfare Expenses
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </th>
+
+                              <th scope="col" colspan="1" rowspan="1" class="">
+                                Budget Code
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1" class="">
+                                Budget Type
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <th></th>
+                              <th>
+                                Category
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <!-- <th>Business</th> -->
+                              <th>
+                                Allocation Method
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <!-- <th>Sub Allocation Method</th>
+                                        <th>Direct / Indirect</th> -->
+                              <th scope="col" colspan="1" rowspan="1" class="">
+                                Total Amount
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <th scope="col" colspan="1" rowspan="1" class="">
+                                Description
+                              </th>
+                              <th>
+                                Previous Actual Data
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <th>
+                                Previous Budget Data
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <th>
+                                Direct / Indirect
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th>
+                              <!-- <th>
+                                Yearly
+                                <span><i class="bi bi-arrow-down-up"></i></span>
+                              </th> -->
+                              <th
+                                scope="col"
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center"
+                              >
+                                Action
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody id="approvalTable7">
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget head
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="FNPL0001"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3" selected>BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+                              <!-- <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class="text-center"
+                                        >
+                                          <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            class="form-control"
+                                            placeholder=""
+                                            value=""
+                                          />
+                                        </td>
+                                        <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class=""
+                                        >
+                                          <select
+                                            class="form-control"
+                                            type="button"
+                                            id="dropdownButton"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                          >
+                                            <option value="" disabled>
+                                              Select
+                                            </option>
+                                            <option selected>
+                                              <label class="dropdown-item">
+                                                Direct
+                                              </label>
+                                            </option>
+                                            <option>
+                                              <label class="dropdown-item">
+                                                Indirect
+                                              </label>
+                                            </option>
+                                          </select>
+                                        </td> -->
+
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center tooltip"
+                              >
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="50,000"
+                                />
+                                <span class="tooltiptext">
+                                  <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          20% Business, 80% Others of total
+                                          50,000
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </span>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>50,000</td>
+                              <td>30,000</td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i
+                                  class="bi bi-stickies-fill text-danger mx-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note"
+                                ></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow7()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow7(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget head
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="FNPL0002"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3" selected>BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center tooltip"
+                              >
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="10,000"
+                                />
+                                <span class="tooltiptext">
+                                  <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          70% Business, 30% Others of total
+                                          10,000
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </span>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>10,000</td>
+                              <td>8,000</td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i
+                                  class="bi bi-stickies-fill text-danger mx-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note"
+                                ></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow7()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow7(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget head
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="FNPL0003"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3" selected>BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center tooltip"
+                              >
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="1,00,000"
+                                />
+                                <span class="tooltiptext">
+                                  <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          65% Business, 35% Others of total
+                                          1,00,000
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </span>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>50,000</td>
+                              <td>40,000</td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                    checked
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i
+                                  class="bi bi-stickies-fill text-danger mx-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note"
+                                ></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow7()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow7(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget head
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="FNPL0004"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3" selected>BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+                             
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center tooltip"
+                              >
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="10,000"
+                                />
+                                <span class="tooltiptext">
+                                  <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          78% Business, 22% Others of total
+                                          10,000
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </span>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>10,000</td>
+                              <td>5,000</td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                    checked
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i
+                                  class="bi bi-stickies-fill text-success mx-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note_success"
+                                ></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow7()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow7(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget head
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="FNPL0005"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3">BAU</option>
+                                  <option value="Q4" selected>NEW</option>
+                                </select>
+                              </td>
+                              
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+                              
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center tooltip"
+                              >
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="50,000"
+                                />
+                                <span class="tooltiptext">
+                                  <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          60% Business, 40% Others of total
+                                          50,000
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </span>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>50,000</td>
+                              <td>35,000</td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i
+                                  class="bi bi-stickies-fill text-success mx-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note_success"
+                                ></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow7()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow7(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1" class="">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" disabled>
+                                    Select budget head
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option selected>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="FNPL0006"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3" selected>BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+                             
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+                              <!-- <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class="text-center"
+                                        >
+                                          <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            class="form-control"
+                                            placeholder=""
+                                            value=""
+                                          />
+                                        </td>
+                                        <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class=""
+                                        >
+                                          <select
+                                            class="form-control"
+                                            type="button"
+                                            id="dropdownButton"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                          >
+                                            <option value="" disabled>
+                                              Select
+                                            </option>
+                                            <option>
+                                              <label class="dropdown-item">
+                                                Direct
+                                              </label>
+                                            </option>
+                                            <option selected>
+                                              <label class="dropdown-item">
+                                                Indirect
+                                              </label>
+                                            </option>
+                                          </select>
+                                        </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-center tooltip"
+                              >
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value="10,000"
+                                />
+                                <span class="tooltiptext">
+                                  <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          78% Business, 22% Others of total
+                                          10,000
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </span>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>10,000</td>
+                              <td>9,000</td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i
+                                  class="bi bi-stickies-fill text-danger mx-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#note"
+                                ></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow7()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow7(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" selected disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" selected disabled>
+                                    Select budget head
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value=""
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3">BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+                              <!-- <td>
+                                          <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            class="form-control"
+                                          />
+                                        </td>
+                                        <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class=""
+                                        >
+                                          <select
+                                            class="form-control"
+                                            type="button"
+                                            id="dropdownButton"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                          >
+                                            <option
+                                              value=""
+                                              selected
+                                              disabled
+                                            >
+                                              Select
+                                            </option>
+                                            <option>
+                                              <label class="dropdown-item">
+                                                Direct
+                                              </label>
+                                            </option>
+                                            <option>
+                                              <label class="dropdown-item">
+                                                Indirect
+                                              </label>
+                                            </option>
+                                          </select>
+                                        </td> -->
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  placeholder=""
+                                  value=""
+                                />
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i class="bi bi-stickies-fill mx-2"></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow8()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow8(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                            <tr id="hideShow" class="d-none">
+                              <td>
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled>
+                                    Select Business
+                                  </option>
+                                  <option value="">Common Value</option>
+                                  <option value="" selected>GCO</option>
+                                  <option value="">GPC</option>
+                                  <option value="">AM</option>
+                                  <option value="">IE</option>
+                                  <option value="">IB</option>
+                                  <option value="">SMEL</option>
+                                </select>
+                              </td>
+                              <td colspan="1" rowspan="1">
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" selected disabled>
+                                    Select budget subhead
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Internal Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Professional & Legal Charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      AMC charges
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <option value="" selected disabled>
+                                    Select budget head
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      PROFESSIONAL & LEGAL CHARGES
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Audit Fees
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Repairs and Maintenace
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Insurance Expenses
+                                    </label>
+                                  </option>
+                                  <option>
+                                    <label class="dropdown-item">
+                                      Staff Welfare Expenses
+                                    </label>
+                                  </option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                  value=""
+                                />
+                              </td>
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <button
+                                  class="form-control px-0"
+                                  type="button"
+                                  id="dropdownButton"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Type
+                                </button>
+                                <ul
+                                  class="dropdown-menu"
+                                  id="dropdownMenu"
+                                  aria-labelledby="dropdownButton"
+                                >
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Operational Expenditure (Opex)"
+                                        class="business-checkbox"
+                                        id="opexCheckbox"
+                                      />
+                                      Operational Expenditure (Opex)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Capital expenditures (CapEx)"
+                                        class="business-checkbox"
+                                        id="capexCheckbox"
+                                      />
+                                      Capital expenditures (CapEx)
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Planning"
+                                        class="business-checkbox"
+                                        id="planningCheckbox"
+                                      />
+                                      Planning
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="dropdown-item">
+                                      <input
+                                        type="checkbox"
+                                        value="Revenue"
+                                        class="business-checkbox"
+                                        id="revenueCheckbox"
+                                      />
+                                      Revenue
+                                    </label>
+                                  </li>
+                                </ul>
+                              </td>
+                              <td>
+                                <div id="checkbox" style="display: none">
+                                  <input type="file" id="" />
+                                </div>
+                              </td>
+                              <td>
+                                <select
+                                  class="form-control"
+                                  id="periodCycle"
+                                  required
+                                >
+                                  <option value="">Select Category</option>
+
+                                  <option value="Q3">BAU</option>
+                                  <option value="Q4">NEW</option>
+                                </select>
+                              </td>
+
+                              <td colspan="1" rowspan="1" class="text-center">
+                                <select name="" id="" class="form-select">
+                                  <option value="" selected disabled> Select Allocation Method</option>
+                                  <option value="">Adfactor Ratio</option>
+                                  <option value="">Budgeted Revenue without Finvest</option>
+                                  <option value="">Elixir retainer creative agency Ratio</option>
+                                  <option value="">Equally</option>
+                                  <option value="">Floor Space- Ambit House</option>
+                                  <option value="">Floor Space- Lodha One</option>
+                                  <option value="">Floor Space- Combine</option>
+                                  <option value="">Headcount without Finvest</option>
+                                  <option value="">Manual</option>
+                                  <option value="">Specific</option>
+                                  <option value="">Website AMC Ratio</option>
+                                </select>
+                              </td>
+                              <!-- <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class="text-center"
+                                        >
+                                          <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            class="form-control"
+                                            placeholder=""
+                                            value=""
+                                          />
+                                        </td>
+                                        <td
+                                          colspan="1"
+                                          rowspan="1"
+                                          class=""
+                                        >
+                                          <select
+                                            class="form-control"
+                                            type="button"
+                                            id="dropdownButton"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                          >
+                                            <option
+                                              value=""
+                                              selected
+                                              disabled
+                                            >
+                                              Select
+                                            </option>
+                                            <option>
+                                              <label class="dropdown-item">
+                                                Direct
+                                              </label>
+                                            </option>
+                                            <option>
+                                              <label class="dropdown-item">
+                                                Indirect
+                                              </label>
+                                            </option>
+                                          </select>
+                                        </td> -->
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  name=""
+                                  id=""
+                                  class="form-control"
+                                />
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td>
+                              <!-- <td class="text-center">
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                  />
+                                </div>
+                              </td> -->
+                              <td
+                                colspan="1"
+                                rowspan="1"
+                                class="text-end d-flex border-0 justify-content-end"
+                              >
+                                <i class="bi bi-stickies-fill mx-2"></i>
+                                <i class="bi bi-pen-fill mx-2"></i>
+                                <i
+                                  class="bi bi-plus-circle-fill mx-2"
+                                  onclick="addRow8()"
+                                ></i>
+                                <i
+                                  class="bi bi-trash-fill mx-2"
+                                  onclick="deleteRow8(this)"
+                                ></i>
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td></td>
+                              <td colspan="7" class="text-end">Total :</td>
+                              <td colspan="1" class="text-center">1,80,000</td>
+                              <td></td>
+                              <td colspan="1" class="text-start">1,80,000</td>
+                              <td colspan="1" class="text-start">1,27,000</td>
+                              <td colspan="2" class=""></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Email Notification -->
+                  <div class="form-group mt-3">
+                    <label for="notification">Notify Users</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="notification"
+                      placeholder="Enter email addresses (comma-separated)"
+                      required
+                    />
+                    <small class="form-text text-muted"
+                      >Users will receive email notifications about the
+                      initiation.</small
+                    >
+                  </div>
+                  <a class="btn btn-primary" href="budget.html">Cancel</a
+                  >&nbsp;&nbsp;
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    onclick="initiateBudget()"
+                  >
+                    Send for Approval
+                  </button>
+                </form>
+                <!-- Message display section -->
+                <div id="message" class="mt-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Popup Modal -->
+      <div id="popup" class="popup hidden">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <p>This is your comment about the number.</p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      window.onload = function () {
+        // First chart - Revenue and Unit Trend
+
+        var chart1 = new CanvasJS.Chart("chartContainer", {
+          exportEnabled: true,
+          animationEnabled: true,
+          legend: {
+            cursor: "pointer",
+            itemclick: function (e) {
+              e.dataSeries.visible = !e.dataSeries.visible;
+              chart1.render();
+            },
+          },
+          data: [
+            {
+              type: "pie",
+              startAngle: 25,
+              toolTipContent: "<b>{label}</b>: {y}%",
+              showInLegend: "true",
+              legendText: "{label}",
+              indexLabelFontSize: 16,
+              indexLabel: "{label} - {y}%",
+              dataPoints: [
+                { y: 20.08, label: "GCO" },
+                { y: 17.34, label: "GPC" },
+                { y: 27.34, label: "AM" },
+                { y: 15.34, label: "IE" },
+                { y: 9.34, label: "IB" },
+                { y: 11.34, label: "SME L" },
+              ],
+            },
+          ],
+        });
+
+        chart1.render();
+
+        // Second chart - Scenario by Accounts
+        var chart2 = new CanvasJS.Chart("chartContainer1", {
+          exportEnabled: true,
+          animationEnabled: true,
+          legend: {
+            cursor: "pointer",
+            itemclick: function (e) {
+              e.dataSeries.visible = !e.dataSeries.visible;
+              chart2.render();
+            },
+          },
+          data: [
+            {
+              type: "doughnut", // Change to "doughnut" for a donut chart
+              startAngle: 25,
+              toolTipContent: "<b>{label}</b>: {y}%",
+              showInLegend: "true",
+              legendText: "{label}",
+              indexLabelFontSize: 16,
+              indexLabel: "{label} - {y}%",
+              innerRadius: "50%", // Specifies the hollow center
+              dataPoints: [
+                { y: 51.08, label: "P&L Charges" },
+                { y: 17.34, label: "AF" },
+                { y: 7.34, label: "R&M" },
+                { y: 27.34, label: "IE" },
+                { y: 20.34, label: "SWE" },
+              ],
+            },
+          ],
+        });
+        chart2.render();
+      };
+    </script>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      function initiateBudget() {
+        // Show success message directly
+        document.getElementById("message").innerHTML =
+          '<div class="alert alert-success">Budget is sent for approval successfully, and notifications sent!</div>';
+      }
+    </script>
+    <script>
+      document
+        .getElementById("adminCheckbox")
+        .addEventListener("change", function () {
+          const adminOptions = document.getElementById("adminOptions");
+          adminOptions.style.display = this.checked ? "block" : "none";
+        });
+
+      document
+        .getElementById("noDeptCheckbox")
+        .addEventListener("change", function () {
+          const noDeptOptions = document.getElementById("noDeptOptions");
+          noDeptOptions.style.display = this.checked ? "block" : "none";
+        });
+    </script>
+
+    <script>
+      function showComment() {
+        var commentBox = document.getElementById("comment");
+        commentBox.style.display =
+          commentBox.style.display === "none" ? "block" : "none";
+      }
+    </script>
+
+    <script>
+      function addRow() {
+        const table = document.getElementById("approvalTable");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+
+      function addRow2() {
+        const table = document.getElementById("approvalTable2");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+
+      function addRow3() {
+        const table = document.getElementById("approvalTable3");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+      function addRow4() {
+        const table = document.getElementById("approvalTable4");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+
+      function addRow5() {
+        const table = document.getElementById("approvalTable5");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+
+      function addRow6() {
+        const table = document.getElementById("approvalTable6");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+      function addRow7() {
+        const table = document.getElementById("approvalTable7");
+        const newRow = table.rows[0].cloneNode(true);
+
+        // Clear the dropdown selections and text in the new row
+        newRow
+          .querySelectorAll("select")
+          .forEach((select) => (select.selectedIndex = 0));
+
+        // Add new row to table
+        table.appendChild(newRow);
+      }
+
+      function addRow8() {
+        const table = document.getElementById("hideShow");
+
+        table.classList.remove("d-none");
+      }
+
+      function deleteRow(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow2(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable2");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow3(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable3");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow4(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable4");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow5(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable5");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow6(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable6");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow7(button) {
+        const row = button.parentNode.parentNode;
+        const table = document.getElementById("approvalTable7");
+
+        // Ensure at least one row remains
+        if (table.rows.length > 1) {
+          row.remove();
+        }
+      }
+      function deleteRow8(button) {
+        const table = document.getElementById("hideShow");
+        table.classList.add("d-none");
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const opexCheckbox = document.getElementById("opexCheckbox");
+        const capexCheckbox = document.getElementById("capexCheckbox");
+        const planningCheckbox = document.getElementById("planningCheckbox");
+        const revenueCheckbox = document.getElementById("revenueCheckbox");
+
+        const checkbox = document.getElementById("checkbox");
+        const capexFileInput = document.getElementById("capexFileInput");
+
+        function updateFileInputs() {
+          if (planningCheckbox.checked || revenueCheckbox.checked) {
+            checkbox.style.display = "block";
+            capexFileInput.style.display = "none";
+            opexCheckbox.checked = false;
+            capexCheckbox.checked = false;
+          } else {
+            checkbox.style.display = planningCheckbox.checked
+              ? "block"
+              : "none";
+            capexFileInput.style.display = capexCheckbox.checked
+              ? "block"
+              : "none";
+          }
+        }
+
+        opexCheckbox.addEventListener("change", updateFileInputs);
+        capexCheckbox.addEventListener("change", updateFileInputs);
+        planningCheckbox.addEventListener("change", updateFileInputs);
+        revenueCheckbox.addEventListener("change", updateFileInputs);
+      });
+    </script>
+  </body>
+</html>

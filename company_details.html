@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card" id="main">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>Company Details</h1>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="col-12 mt-3">
+                        <div class="row align-items-center">
+                          <div class="col-md-8">
+                            <nav class="navbar navbar-expand-lg">
+                              <div class="container-fluid">
+                               
+                                <div class="navbar-collapse bg-white d-flex" id="">
+                                  <div class="navbar-nav  mb-2 mb-lg-0">
+                                    <div class="dropdown">
+                                      <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Select Column
+                                      </button>
+                                      <ul class="dropdown-menu columnName p-0">
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select
+                                            All</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;S.No</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;User
+                                            Name</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Role.</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Designation</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Company</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Business</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                            &nbsp;&nbsp;Action</a></li>
+      
+                                      </ul>
+                                    </div>
+                                  </div>&nbsp;
+                                  <form class="d-flex " role="search">
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>Show</option>
+                                      <option value="1">10</option>
+                                      <option value="1">20</option>
+                                      <option value="1">50</option>
+                                    </select>
+                                  </form>
+                                  <img src="assets/images/download.svg" alt="">
+                                </div>
+                                
+                              </div>
+                            </nav>
+                            
+                          </div>
+                          <div class="col-md-4">
+                             <div class="d-flex">
+                            <input type="search" name="" id="" class="form-control col mx-2" placeholder="Search">
+                            <a class="btn btn-dark col-5 mx-2" href="add_company.html">+Add Company</a>
+                             </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                     
+                      <div class="col-md-12 p-3">
+                        <div class="table-responsive card">
+                          <table id="dtBasicExample" class="table table-sm  table-striped m-0" cellspacing="0"
+                            width="100%">
+                            <thead>
+                              <tr>
+                                <th scope="col"><input type="checkbox" /></th>
+                                <!-- <th scope="col">Business</th> -->
+                                <th scope="col">Company</th>
+                                <th scope="col">Email Id</th>
+                                <th scope="col">Office Address</th>
+                                <th scope="col">Status</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Group Corporate Office</td> -->
+                                <td>Ambit Capital Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Group Corporate Office</td> -->
+                                <td>Ambit Investment Advisors Private
+                                  Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Group Corporate Office</td> -->
+                                <td>Ambit Investment Managers Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Group Corporate Office</td> -->
+                                <td>Ambit Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Group Corporate Office</td> -->
+                                <td>Ambit Wealth Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Global Private Client </td> -->
+                                <td>Ambit Capital Private Limited </td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Global Private Client </td> -->
+                                <td>Ambit Wealth Private Limited </td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Asset Management </td> -->
+                                <td>Ambit Investment Advisors Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Asset Management </td> -->
+                                <td>Ambit Investment Managers Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Institutional Equities</td> -->
+                                <td>Ambit Capital Private Limited </td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Institutional Equities</td> -->
+                                <td>Ambit Singapore Pte. Ltd </td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>Investment Banking</td> -->
+                                <td>Ambit Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td scope="row"><input type="checkbox" /></td>
+                                <!-- <td>SME Lending</td> -->
+                                <td>Ambit Finvest Private Limited</td>
+                                <td><a href="">Info.retail@ambit.com</a></td>
+
+                                <td>
+                                  Ambit House(registered house) Ambit Pvt.Ltd.
+                                  Ambit House, 449, Senapati Bapat Marg, Lower
+                                  Parel, Mumbai-400 013, Maharashtra
+                                </td>
+                                <td>
+                                  <i class="fa fa-circle" style="color: green"></i>
+                                </td>
+                                <td>
+                                  <div>
+                                    <select class="custom-select" id="inlineFormCustomSelect"
+                                      onchange="if(this.value) location.href=this.value;">
+                                      <option value="" selected>
+                                        Action
+                                      </option>
+                                      <option value="add_company.html">
+                                        Edit
+                                      </option>
+                                      <option value="add_branch.html">
+                                        Branch
+                                      </option>
+                                      <option value="">Delete</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <nav class="mt-1" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Previous</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">1</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">2</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">3</a>
+                          </li>
+                          <li class="page-item card">
+                            <a class="page-link text-black" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+
+    <main>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                <i class="bi bi-envelope-slash-fill"></i> Unlink your Mailbox?
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="card-body mt-4">
+              <p class="p-2">Are you Sure to Unlink your Mailbox?</p>
+            </div>
+
+            <div class="modal-footer">
+              <a
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                href="user.html"
+                >No</a
+              >
+              <a class="btn btn-info1" href="mailbox 1.html">Yes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal1"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel1">
+                <i class="bi bi-trash"></i> Delete your User?
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="card-body mt-4">
+              <p class="">Are you Sure to Delete your User?</p>
+            </div>
+
+            <div class="modal-footer">
+              <a
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                href="user.html"
+                >No</a
+              >
+              <a class="btn btn-info1" href="user.html">Yes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card-body p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div
+                    class="col-md-3 collapse collapse-horizontal show p-0"
+                    file-include-html="assets/includes/sidebar.html"
+                    id="collapseWidthExample"
+                  ></div>
+                  <div class="col card" id="main">
+                    <div class="row">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>User Master</h1>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="container">
+                        <nav class="navbar navbar-expand-lg">
+                          <div class="container-fluid">
+                            <div class="navbar-collapse bg-white d-flex" id="">
+                              <div class="navbar-nav mb-2 mb-lg-0">
+                                <div class="dropdown">
+                                  <button
+                                    class="btn btn-outline-secondary dropdown-toggle"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Select Column
+                                  </button>
+                                  <ul class="dropdown-menu columnName p-0">
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Select All</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;S.No</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;User Name</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Role.</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Designation</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Company</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Business</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        ><input type="checkbox" />&nbsp;
+                                        &nbsp;&nbsp;Action</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              &nbsp;
+                              <form class="d-flex" role="search">
+                                <select
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>Show</option>
+                                  <option value="1">10</option>
+                                  <option value="1">20</option>
+                                  <option value="1">50</option>
+                                </select>
+                              </form>
+                              <img src="assets/images/download.svg" alt="" />
+                              <a
+                                class="btn btn-dark ms-lg-auto"
+                                href="new_user.html"
+                                >+Add New User</a
+                              >
+                            </div>
+                          </div>
+                        </nav>
+                        <div
+                          class="table-responsive rounded-3 border bookmakerTable"
+                        >
+                          <table class="table table-hover m-0">
+                            <thead>
+                              <tr>
+                                <th>Emp.ID</th>
+                                <th>User name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Business / Function</th>
+                                <th>Created Date</th>
+                                <th>&nbsp;Action</th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr class="abcd">
+                                <td>101</td>
+                                <td>Akshay</td>
+                                <td>akshay@ambit.com</td>
+                                <td>Application Administrator</td>
+                                <td>Group Corporate Office</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr class="abcd">
+                                <td>102</td>
+                                <td>Paresh Kapadia</td>
+                                <td>paresh.kapadia@ambit.com</td>
+                                <td>Business User</td>
+                                <td>Global Private Client</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr class="abcd">
+                                <td>103</td>
+                                <td>Rinku Waghela</td>
+                                <td>rinku.waghela@ambit.com</td>
+                                <td>Business User</td>
+                                <td>Asset Management</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr class="abcd">
+                                <td>104</td>
+                                <td>Gautam Gupte</td>
+                                <td>Gautam.Gupte@ambit.co</td>
+                                <td>Business Approver</td>
+                                <td>HR</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr class="abcd">
+                                <td>105</td>
+                                <td>Rakesh Gupta</td>
+                                <td>Rakesh.Gupta@cylsys.com</td>
+                                <td>Enterprise Function User</td>
+                                <td>IE</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr class="abcd">
+                                <td>106</td>
+                                <td>Ajesh Bhosale</td>
+                                <td>ajesh.bhosale@ambit.co</td>
+                                <td>Enterprise Function Approver</td>
+                                <td>IB</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr class="abcd">
+                                <td>107</td>
+                                <td>Rishi</td>
+                                <td>rishi@ambit.co</td>
+                                <td>Enterprise Function Approver</td>
+                                <td>SME Lending</td>
+                                <td>Jun 17, 2024, 12:31:01 PM</td>
+                                <td>
+                                  <button
+                                    class="btn creat-studio-btn btn-dark"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="float: inline-start"
+                                  >
+                                    <span>
+                                      Action <i class="bi bi-chevron-down"></i
+                                    ></span>
+                                  </button>
+
+                                  <ul
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton1"
+                                  >
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        href="add_user.html"
+                                      >
+                                        &nbsp; &nbsp;<i
+                                          class="bi bi-pencil-square"
+                                        ></i
+                                        >&nbsp;Edit User</a
+                                      >
+                                    </li>
+                                    <hr />
+                                    <li>
+                                      <a
+                                        class="text-black"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1"
+                                        data-bs-whatever="@getbootstrap"
+                                        href=""
+                                        style="text-decoration: none"
+                                        href=""
+                                      >
+                                        &nbsp; &nbsp;<i class="bi bi-trash"></i
+                                        >&nbsp;Delete User</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <nav
+                            class="mt-1"
+                            aria-label="Page navigation example"
+                          >
+                            <ul class="pagination">
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#"
+                                  >Previous</a
+                                >
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">1</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">2</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">3</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#"
+                                  >Next</a
+                                >
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      // Function to open feedback form
+      function openFeedbackForm() {
+        document.getElementById("qrSection").style.display = "none";
+        document.getElementById("feedbackForm").style.display = "block";
+      }
+
+      // Simulate QR code scanning after 5 seconds (for demo purpose)
+      setTimeout(openFeedbackForm, 5000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

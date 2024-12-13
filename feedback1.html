@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <style>/* Container to make the table scrollable with a fixed header */
+    .table-container {
+      position: relative;
+      max-height: 400px; /* Adjust as needed */
+      overflow-y: auto;
+    }
+    
+    .table-container thead {
+      position: sticky;
+      top: 0;
+      background-color: #fff; /* Adjust background color if needed */
+      z-index: 1; /* Ensure the header stays on top */
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th {
+      white-space: nowrap; /* Prevent text wrapping */
+      text-align: left; /* Align text to the left */
+      padding: 8px; /* Adjust padding if needed */
+      border-bottom: 1px solid #ddd; /* Border for the header cells */
+      text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+      overflow: hidden; /* Hide overflowed text */
+    }
+    </style>
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+  
+    <main>
+        <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="addNewLabel">+ Add New Vendor</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                
+                  </div>
+                </div>
+              </div> -->
+              <div class="card-body p-0">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div
+                      class="col-md-3 collapse collapse-horizontal show p-0"
+                      file-include-html="assets/includes/sidebar.html"
+                      id="collapseWidthExample"
+                    ></div>
+                    <div class="col card " id="main">
+                      <div class="row">
+                        
+                        <div class="col-md-12 ">
+                          <div class="row mt-3">
+                            <div class="col">
+                              <h1>	Response count</h1>
+                          
+                            </div>
+                        
+                          </div>
+                          <hr>
+                          
+                                 <div class="row">
+            
+              <div class="col-md-3">
+                <label for="">From Date</label>
+                <input type="date" class="form-control" >
+              </div>
+              <div class="col-md-3">
+                <label for="">To Date</label>
+                <input type="date" class="form-control" >
+              </div>
+              
+            
+              <div class="form-group col-md-3">
+                <label for="FormName">Form Name</label>
+                <input type="text" class="form-control" id="FormName" value="" placeholder="Enter form name" />
+            
+              </div>
+              <div class="col-md-3 mt-3 ">
+                  
+                  
+                <a
+                  type="button"
+                  class="btn btn-dark mt-1"
+                  style="color: white; float: left;"
+                  
+                  >search</a
+                >
+             
+              </div>
+            </div>
+                          <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                              <div class="navbar-collapse bg-white d-flex" id="">
+                                <div class="navbar-nav  mb-2 mb-lg-0">
+                                  <div class="dropdown">
+                                    <button
+                                      class="btn btn-outline-secondary dropdown-toggle"
+                                      type="button"
+                                      data-bs-toggle="dropdown"
+                                      aria-expanded="false"
+                                    >
+                                      Select Column
+                                    </button>
+                                    <ul class="dropdown-menu columnName p-0">
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select All</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Name</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Email Id</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Phone no.</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;10th Parcentage</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;12th Parcentage</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Year of Passing</a></li>
+                                        <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp; Action </a></li>
+                                    
+                                    </ul>
+                                  </div>
+                                </div>&nbsp;
+                                <form class="d-flex " role="search">
+                                  <select
+                                    class="form-select"
+                                    aria-label="Default select example"
+                                  >
+                                    <option selected>Show</option>
+                                    <option value="1">10</option>
+                                    <option value="1">20</option>
+                                    <option value="1">50</option>
+                                  </select>
+                                </form>
+                                <img src="assets/images/download.svg" alt="">   
+                               
+                              </div>
+                            </div>
+                          </nav>
+                          <div class="col-md-12 p-3">
+                            <div class="table-responsive card">
+                                <table
+                                  id="dtBasicExample"
+                                  class="table table-sm small table-striped m-0"
+                                  cellspacing="0"
+                                  width="100%"
+                                >
+                                  <thead>
+                                    <th scope="col"><input type="checkbox" /></th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Candidate's Name (As per Aadhar)</th>
+                                    <th scope="col">Email ID</th>
+                                    <th scope="col">Phone no</th>
+                                    <th scope="col">Academics - 10th Percentage</th>
+                                    <th scope="col">Passing Year</th>
+                                    <th scope="col">Academics - 12th / Diploma Percentage</th>
+                                    <th scope="col">Passing Year</th>
+                                    <th scope="col">Bachelor's Degree</th>
+                                    <th scope="col">College/Institute Name</th>
+                                    <th scope="col">CGPA / Percentage</th>
+                                    <th scope="col">Bachelor's Passing Year</th>
+                                    <th scope="col">Training/Internship on - Dot Net Technology</th>
+                                    <th scope="col">Training/Internship on - Other Technologies</th>
+                                    <th scope="col">Training/Internship Institute Name</th>
+                                    <th scope="col">Training/Internship Duration - Dotnet Technology</th>
+                                    <th scope="col">Training/Internship Mode - Dotnet Technology</th>
+                                    <th scope="col">Additional Skill set - Technologies names that you know</th>
+                                   
+                                    <th scope="col">Github - URL</th>
+                                    <th scope="col">Current Location</th>
+                                    <th scope="col">Ready to relocate at Gadarwara location Madhya Pradesh</th>
+                                    <th scope="col">Discription</th>
+                                    <th scope="col">Link</th>
+                                    <th scope="col">Declaration - I hereby declare that the above mentioned information is correct up to my knowledge and I bear the responsibility for the correctness of the above mentioned particulars.</th>
+                                    <th>Action</th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Amit Kumar</td>
+                                      <td>amitkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>anurudh shrivastava Kumar</td>
+                                      <td>anurudhshrivastava2@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td scope="row"><input type="checkbox" /></td>
+                                      <td>12/04/2024</td>
+                                      <td>Abir Kumar</td>
+                                      <td>abirkumar111@gmail.com</td>
+                                      <td>6303650775</td>
+                                      <td>8.7</td>
+                                      <td>2016</td>
+                                      <td>89.1</td>
+                                      <td>2018</td>
+                                      <td>B_TECH</td>
+                                      <td>BIJU PATNAIK UNIVERSItY OF TECHNOLOGY</td>
+                                      <td>85.5</td>
+                                      <td>2022</td>
+                                      <td>No</td>
+                                      <td>YES</td>
+                                      <td>META</td>
+                                      <td>1 month</td>
+                                      <td>Online - Virtually</td>
+                                      <td>HTML, CSS, JavaScript, MongoDB, ExpressJS, ReactJS,</td>
+                                      <td><a href="">https://github.com/Mr-Rabi-111</a></td>
+                                      <td>bhubneswar, odisha</td>
+                                      <td>Yes</td>
+                                      <td>For growth and advancement </td>
+                                      
+                                      <td><a href="">https://drive.google.com/open?id=1_VdAfNIV8MAZVGiukTWWkG0jEwoY0ygE</a></td>
+                                      <td>Yes, I agree</td>
+                                   
+              
+                                      
+                                   
+                                      <td>
+                                        <select
+                                          class="custom-select"
+                                          id="inlineFormCustomSelect"
+                                          onchange="location = this.options[this.selectedIndex].value;"
+                                        >
+                                          <option selected="">Action</option>
+                                          <option>Edit</option>
+                                          <option>Delete</option>
+                                          <option>Clone</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  
+                                  </tbody>
+                                </table>
+                              </div>
+                        
+                          </div>
+                          <nav class="mt-1" aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#"
+                                  >Previous</a
+                                >
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">1</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">2</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#">3</a>
+                              </li>
+                              <li class="page-item card">
+                                <a class="page-link text-black" href="#"
+                                  >Next</a
+                                >
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

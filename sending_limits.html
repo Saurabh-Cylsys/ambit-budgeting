@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<style>
+  .sidepnl {
+      background-color: rgb(32, 68, 119);
+      height: 130vh;
+    }
+    .sidebtn{
+  padding: 10px 0px 0px 45px ;
+ }
+ #sidend{
+     text-decoration: none;
+      color: white;
+    }
+    .sidend{
+      margin-top: 80%;
+    }
+
+    /* scrollbar css Start */
+    .mailbox{
+      
+      height: 25vh;
+      overflow: auto;
+    }
+ 
+      /* width */
+      .mailbox::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+
+  .mailbox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  .mailbox::-webkit-scrollbar-thumb {
+   background-color: rgb(182, 178, 178);
+    border-radius: 10px;
+  }
+  .mailbox::-webkit-scrollbar-thumb:hover{
+background-color:rgb(0, 21, 51);
+  } 
+
+
+/* scrollbar css end */
+#mailbox{
+  border: 1px solid;
+  border-top-left-radius: 5px;
+
+}
+    h2 {
+      color: white;
+    }
+    .bttn,
+    .bttn1,
+    .bttn2 {
+      width: 100%;
+      text-align: left;
+      border-radius: 20px;
+      background-color: rgb(0, 21, 51);
+      padding: 7px;
+      color: white;
+      padding-left: 20px;
+    }
+    .bttn1 {
+      background-color: rgb(64, 64, 209);
+    }
+    .bttn2 {
+      /* background-color: rgb(14, 14, 15); */
+      background: transparent !important;
+    border: none;
+    }
+    .dropdwn {
+      background: transparent;
+      color: white;
+      border: none;
+    }
+    .bgclr {
+      background: transparent;
+      color: white;
+    }
+  
+
+    .paragrph {
+      font-weight: 500;
+      font-size: larger;
+    }
+    .paragrph1 {
+      font-weight: 500;
+      font-size: large;
+    }
+    .table {
+      border: 1px solid;
+      text-align: center;
+    }
+    .text ,  .text1{
+      font-weight: 700;
+    }
+    .text1{
+      border: 1px solid rgb(173, 171, 171);
+    }
+    .icon{
+      padding-right: 15px;
+    }
+
+    .endbtn {
+      margin-top: 5%;
+    }
+ .form-control{
+  font-weight: 700 !important;
+ }
+
+ 
+  </style>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="card">
+            <div class="card-header bg-white">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                      <button
+                        class="btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseWidthExample"
+                        aria-expanded="false"
+                        aria-controls="collapseWidthExample"
+                      >
+                        <img src="assets/images/hamburger.svg" alt="..." />
+                      </button>
+                    </div>
+                   
+                  </div>
+                </div>
+             
+              
+                </div>
+              </div>
+            </div> -->
+            <div class="card-body p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div
+                    class="col-md-3 collapse collapse-horizontal show p-0"
+                    file-include-html="assets/includes/sidebar.html"
+                    id="collapseWidthExample"
+                  ></div>
+                  <div class="col card " id="main">
+                    <div class="row">
+                      
+                      <div class="col-md-12 ">
+                        <div class="row mt-3">
+                          <div class="col">
+                            <h1>Sending limits</h1>
+                        
+                          </div>
+                      
+                        </div>
+                        <hr>
+                     
+      
+                            <div class="row">
+                      
+                              <!-- side -->
+                      
+                              <div class="col-md-4 sidepnl">
+                                <h2 class="p-3 pb-5">
+                                  Welcome to the <br />
+                                  guided Mailbox setup !
+                                </h2>
+                      
+                               
+                                <a class="bttn btn mt-3 " href="link_mail.html"> 
+                                  <i class="bi bi-check-lg"></i> &nbsp;&nbsp;Link mailbox
+                              
+                                
+                                  <a class="btn bttn mt-3 btn-de" href="sending_limits.html"> 
+                                  <i class="bi bi-wrench " style="color: white"></i>
+                                  &nbsp;&nbsp;Sending Limits
+                                  </a>
+                             
+                      
+                               
+                               
+                             
+                            </div>
+                      
+                              <!-- main content start here -->
+                      
+                              <div class="col-md-8 p-3">
+                               
+                                <p class="pt-2 paragrph">
+                                  Sending limits are essential to maintaining a healthy deliverability
+                                  rate and domain safety. We recommend utilizing Apollo
+                                  <br />default limits to minimize risk.
+                                </p>
+                      
+                                <div
+                                  class="alert alert-warning d-flex align-items-center"
+                                  role="alert"
+                                >
+                                  <svg
+                                    class="bi flex-shrink-0 me-2"
+                                    width="24"
+                                    height="24"
+                                    role="img"
+                                    aria-label="Info:"
+                                  >
+                                    <use xlink:href="#info-fill" />
+                                  </svg>
+                                  <div class="paragrph1">
+                                    <i class="bi bi-info-circle"></i>&nbsp; Don't wont to Configure
+                                    the mailbox now? No worries! You can access this flow anytime from
+                                    the mailbox listing page in Settings.
+                                  </div>
+                                </div>
+                      
+                                <table class="table">
+                                  <tbody>
+                                    <tr>
+                                      <td>Email sent per day</td>
+                                      <td>Email sent per hour</td>
+                                      <td>Daily between emails</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="p-4  text">
+                                        <i class="bi bi-info-circle p-2" style="color: orange"></i>240
+                                      </td>
+                                      <td class="p-4 text">
+                                        <i class="bi bi-info-circle p-2" style="color: orange"></i>20
+                                      </td>
+                                      <td class="p-4 text">600 secs</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!--  -->
+                                <div  class="p-3 mailbox" id="mailbox" style="height: 300px;">
+                                  <h5 class="text"><i class="bi bi-gear icon"></i>Sending limits</h5>
+                                  <div class="pt-4">
+                                    <p class="m-0">
+                                      <span class="text">Email sent per day</span> (24-hours-period)<i class="bi bi-info-circle p-2" style="color: orange"></i>
+                                    </p>
+                                    <div>
+                                      <input type="text" class="form-control border-dark" value="50" >
+                                     <p>Recommended daily limit 50, or 50+ if you're sending campaigns with a > 5% reply rate and have a high domen resolution.</p>
+                                    </div>
+                                  </div>
+                      
+                                  <div class="pt-4">
+                                    <p class="m-0">
+                                      <span class="text">Email sent per day</span> (Optional)<i class="bi bi-info-circle p-2" style="color: orange"></i>
+                                    </p>
+                                    <div>
+                                      <input type="text" class="form-control border-dark" value="10" >
+                                     <p>Recommended hourly limit:6 emails.</p>
+                                    </div>
+                                  </div>
+                      
+                                  <div class="pt-4">
+                                    <p class="m-0">
+                                      <span class="text">Delay between emails in second</span> (Optional)<i class="bi bi-info-circle p-2" style="color: orange"></i>
+                                    </p>
+                                    <div>
+                                      <input type="text" class="form-control border-dark" value="30" >
+                                      <p>Recommended hourly limit:6 emails.</p>
+                                    </div>
+                                  </div> 
+                      
+                                </div>
+                      <div>
+                       <a class="btn btn-dark mt-3" href="link_mail.html"><i class="bi bi-chevron-left"></i>Previous</a> 
+                        <div class="float-end endbtn">
+                        <a class="btn btn-danger" href="mailbox 1.html"><i class="bi bi-skip-end"></i>Skip this step</a>  
+                        <a class="btn btn-dark" href="user.html"> <i class="bi bi-check"></i> Complete</a>  
+                           
+                          
+                        </div>
+                      </div>
+                                
+                              </div>
+                            </div>
+                         
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+
+ 
+
+<!-- Modal -->
+
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

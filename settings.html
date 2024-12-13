@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>AMBIT</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+  <header file-include-html="assets/includes/header.html"></header>
+  <main>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body p-0">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 collapse collapse-horizontal show p-0"
+                  file-include-html="assets/includes/sidebar.html" id="collapseWidthExample"></div>
+                <div class="col card " id="main">
+                  <div class="row">
+
+                    <div class="col-md-12 ">
+                      <div class="row mt-3">
+                        <div class="col">
+                          <h1>All Settings</h1>
+
+                        </div>
+
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-md-12 p-3">
+                          <div class="row">
+                            <div class="col-md">
+                              <h4>General</h4>
+
+                            </div>
+                            <div class="col-md">
+                              <h4>User & Control</h4>
+                            </div>
+                            <div class="col-md">
+                              <h4>Configurations</h4>
+                            </div>
+                          
+                            <div class="col-md">
+                              <h4>Notifications</h4>
+                            </div>
+                            <hr>
+
+                            <div class="col-md">
+
+                              <a href="user_profile.html" style="    text-decoration-line: none;"><br>
+                                <h5 style="color: black;">My Profile</h5>
+                              </a> <br>
+                              <!-- <a href="company_details.html" style="    text-decoration-line: none;">
+                                <h5 style="color: black;">Company Details</h5>
+                              </a> <br> -->
+                              <!-- <a href="enterprise_function.html" style="    text-decoration-line: none;">
+                                <h5 style="color: black;">Enterprise Function</h5>
+                              </a> <br> -->
+                            </div>
+                            <div class="col-md  ">
+                            
+                              <a href="link_mailbox.html" style="    text-decoration-line: none;">
+                                <h5 class="mt-4" style="color: black;">Link Mailbox</h5>
+                              </a> <br>
+                            </div><br>
+                            <div class="col-md mt-4">
+                              <a href="integration.html" style="    text-decoration-line: none;">
+                                <h5 style="color: black;">Integration</h5>
+                              </a> <br>
+                               <!-- <a href="category.html" style=" text-decoration-line: none;"><h5 style="color: black;">Category</h5></a> <br> -->
+                               
+                               <!--   <a href="mail_footer.html"><h5 style="color: black;">Mail Footer</h5></a> <br>  -->
+                            </div>
+                         
+                            <div class="col-md mt-4">
+                              <a href="alert.html" style="    text-decoration-line: none;">
+                                <h5 style="color: black;">Alert</h5>
+                              </a> <br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addNewLabel">+ Add New Access</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-6 my-3">
+                <div class="form-floating mb-md-0 mb-3">
+                  <input type="text" class="form-control" id="userName" placeholder="name@example.com">
+                  <label for="userName">User Name</label>
+                </div>
+              </div>
+              <div class="col-6 my-3">
+                <div class="form-floating mb-md-0 mb-3">
+                  <input type="number" class="form-control" id="userID" placeholder="name@example.com">
+                  <label for="userID">User ID</label>
+                </div>
+              </div>
+              <div class="col-6 my-3">
+                <div class="form-floating mb-md-0 mb-3">
+                  <select class="form-select" id="department" aria-label="Floating label select example">
+
+                    <option value="1">IT</option>
+                    <option value="2">HR</option>
+                  </select>
+                  <label for="department">Department</label>
+                </div>
+              </div>
+              <div class="col-6 my-3">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false"
+                    style="height: calc(3.5rem + calc(var(--bs-border-width) * 2));">
+                    Select Column
+                  </button>
+                  <ul class="dropdown-menu columnName p-0 w-100">
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">Company
+                        Name</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">Contact
+                        Name</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                        for="company_name">Email</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                        for="company_name">Source</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">City
+                      </label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">Contact
+                        Type</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label
+                        for="company_name">RM</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">Creation
+                        Date</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">Last
+                        Interaction Date</label></li>
+                    <li><input type="checkbox" name="" id="company_name" class="me-2"><label for="company_name">Last
+                        Interaction With</label></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-12 text-end">
+                <button type="button" class="btn btn-outline-secondary my-3">Cancel</button>
+                <button type="submit" class="btn btn-secondary my-3">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--  JS Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

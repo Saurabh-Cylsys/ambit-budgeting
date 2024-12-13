@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AMBIT</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+  <body>
+    <header file-include-html="assets/includes/header.html"></header>
+
+    <main>
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="card">
+              <div class="card-header bg-white">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseWidthExample"
+                          aria-expanded="false"
+                          aria-controls="collapseWidthExample"
+                        >
+                          <img src="assets/images/hamburger.svg" alt="..." />
+                        </button>
+                      </div>
+                     
+                    </div>
+                  </div>
+               
+                    <nav class="navbar navbar-expand-lg">
+                      <div class="container-fluid">
+                        <div class="navbar-collapse bg-white d-flex" id="">
+                          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-outline-secondary dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                Select Column
+                              </button>
+                              <ul class="dropdown-menu columnName p-0">
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Company Name</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Contact Name</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">Email</label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">Source</label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">City </label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Contact Type</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name">RM</label>
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Creation Date</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Last Interaction Date</label
+                                  >
+                                </li>
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name=""
+                                    id="company_name"
+                                    class="me-2"
+                                  /><label for="company_name"
+                                    >Last Interaction With</label
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <form class="d-flex" role="search">
+                            <select
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Show</option>
+                              <option value="1">10</option>
+                              <option value="1">20</option>
+                              <option value="1">50</option>
+                            </select>
+                          </form>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div> -->
+            <div class="card-body p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div
+                    class="col-md-3 card collapse collapse-horizontal show p-0"
+                    file-include-html="assets/includes/sidebar.html"
+                    id="collapseWidthExample"
+                  ></div>
+                  <div class="col card" id="main">
+                    <div class="row">
+                      <h1 class="mt-3">Add Account</h1>
+                      <hr />
+                      <div class="col-md-12 mb-3">
+                        <div class="p-2">
+                          <form class="form-inline my-2 my-lg-0">
+                            <input
+                              class="form-control mr-sm-2 w-25 float-end"
+                              type="search"
+                              placeholder="Search"
+                              aria-label="Search"
+                            />
+                          </form>
+
+                          <br />
+                          <div>
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <nav class="navbar navbar-expand-lg">
+                                    <div class="container-fluid">
+                                      <div
+                                        class="navbar-collapse bg-white d-flex"
+                                        id=""
+                                      >
+                                        <div class="navbar-nav mb-2 mb-lg-0">
+                                          <div class="dropdown">
+                                            <button
+                                              class="btn btn-outline-secondary dropdown-toggle"
+                                              type="button"
+                                              data-bs-toggle="dropdown"
+                                              aria-expanded="false"
+                                            >
+                                              Select Column
+                                            </button>
+                                            <ul
+                                              class="dropdown-menu columnName p-0"
+                                            >
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name">
+                                                  Ticket Id</label
+                                                >
+                                              </li>
+
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name"
+                                                  >Email</label
+                                                >
+                                              </li>
+
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name"
+                                                  >Subject
+                                                </label>
+                                              </li>
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name"
+                                                  >Ticket owner
+                                                </label>
+                                              </li>
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name"
+                                                  >PHONE</label
+                                                >
+                                              </li>
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name"
+                                                  >Priority</label
+                                                >
+                                              </li>
+                                              <li>
+                                                <input
+                                                  type="checkbox"
+                                                  name=""
+                                                  id="company_name"
+                                                  class="me-2"
+                                                /><label for="company_name"
+                                                  >Group</label
+                                                >
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        &nbsp;
+                                        <form class="d-flex" role="search">
+                                          <select
+                                            class="form-select"
+                                            aria-label="Default select example"
+                                          >
+                                            <option selected>Show</option>
+                                            <option value="1">10</option>
+                                            <option value="1">20</option>
+                                            <option value="1">50</option>
+                                          </select>
+                                        </form>
+                                        <img
+                                          src="assets/images/download.svg"
+                                          alt=""
+                                        />
+                                      </div>
+                                    </div>
+                                  </nav>
+                                </div>
+                                <div class="col-md-6">
+                                  <ul
+                                    class="list-unstyled d-flex justify-content-end mt-4"
+                                  >
+                                    <li class="me-3 dropdown">
+                                      <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        role="button"
+                                        id="filterDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                      >
+                                        <i class="fa-solid fa-filter"></i>
+                                        Filter
+                                      </a>
+                                      <ul
+                                        class="dropdown-menu"
+                                        aria-labelledby="filterDropdown"
+                                      >
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Receivable Accounts</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Payable Accounts</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Equity</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Assets</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Liability</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Income</a
+                                          >
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" href="#"
+                                            >Expenses</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </li>
+                                    <li class="me-3">
+                                      <i class="fa-solid fa-bars"></i> Group by
+                                    </li>
+                                    <li>
+                                      <i class="fa-solid fa-star"></i> Favorites
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Code</th>
+                                <th>Account Name</th>
+                                <th>Type</th>
+                                <th>Allow report</th>
+                                <th></th>
+                                <th>Dependeny</th>
+                                <th>Company</th>
+                                <th>...</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="checkbox" /> 101000</td>
+                                <td>Current Assets</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                      checked
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101300</td>
+                                <td>Account Receivable (POS)</td>
+                                <td>Receivable</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101401</td>
+                                <td>Bank Suspense Account</td>
+                                <td>Current Liabilities</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101402</td>
+                                <td>Outstanding Receipts</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101403</td>
+                                <td>Outstanding Payments</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                      checked
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101404</td>
+                                <td>Bank</td>
+                                <td>Bank and Cash</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101501</td>
+                                <td>Cash</td>
+                                <td>Bank and Cash</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                      checked
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 101701</td>
+                                <td>Liquidity Transfer</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                      checked
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 110100</td>
+                                <td>Stock Valuation</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 110200</td>
+                                <td>Stock Interim (Received)</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 110300</td>
+                                <td>Stock Interim (Delivered)</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 121000</td>
+                                <td>Account Receivable</td>
+                                <td>Receivable</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                      checked
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 121100</td>
+                                <td>Products to receive</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox" /> 131000</td>
+                                <td>Tax Paid</td>
+                                <td>Current Assets</td>
+                                <td>
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="flexSwitchCheckChecked"
+                                    />
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>My Company (San Francisco)</td>
+                                <td>SETUP</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="Assets/js/bootstrap.js"></script>
+    <script src="Assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
