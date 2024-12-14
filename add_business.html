@@ -83,22 +83,40 @@
                                         placeholder="business name"
                                       />
                                     </div>
-                                    <div class="form-group col-md">
+                                    <!-- <div class="form-group col-md">
                                       <label for=""
-                                        >Business Head
+                                        >Business draft & Approver
                                         <span class="" style="color: red"
                                           >*</span
                                         >
                                       </label>
+                                      <select name="" id="" class="form-select">
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="">Approver</option>
+                                        <option value="">Draft</option>
+                                      </select>
+                                    </div> -->
+                                    <div class="form-group col-md">
+                                      <label for="">Business Draft</label>
                                       <input
                                         type="text"
                                         name=""
                                         id=""
                                         class="form-control"
-                                        placeholder="Business head"
+                                        placeholder="Business draft"
                                       />
                                     </div>
                                     <div class="form-group col-md">
+                                      <label for="">Business Approver </label>
+                                      <input
+                                        type="text"
+                                        name=""
+                                        id=""
+                                        class="form-control"
+                                        placeholder="Business approver"
+                                      />
+                                    </div>
+                                    <!-- <div class="form-group col-md">
                                       <label for=""
                                         >Company Name
                                         <span class="" style="color: red"
@@ -269,7 +287,7 @@
                                           </li>
                                         </ul>
                                       </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-12 mt-3">
                                       <div class="modal-footer">
@@ -306,208 +324,322 @@
                                               Business Initials
                                             </th>
                                             <th scope="col">Business Name</th>
-                                            <th scope="col">Business Head</th>
-                                            <th scope="col">Company Name</th>
+                                            <th scope="col">Business Draft</th>
+                                            <th scope="col">
+                                              Business Approver
+                                            </th>
 
                                             <th>Action</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GCO</td>
-                                          <td colspan="1" rowspan="1">Group Corporate Office</td>
-                                          <td>Akshay</td>
-                                          <td colspan="1" rowspan="1">Ambit Capital Private Limited</td>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GCO</td>
+                                            <td colspan="1" rowspan="1">
+                                              Group Corporate Office
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
 
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GCO</td>
+                                            <td colspan="1" rowspan="1">
+                                              Group Corporate Office
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GCO</td>
+                                            <td colspan="1" rowspan="1">
+                                              Group Corporate Office
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GCO</td>
+                                            <td colspan="1" rowspan="1">
+                                              Group Corporate Office
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GCO</td>
+                                            <td colspan="1" rowspan="1">
+                                              Group Corporate Office
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GPC</td>
+                                            <td colspan="1" rowspan="1">
+                                              Global Private Client
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
 
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GCO</td>
-                                          <td colspan="1" rowspan="1">Group Corporate Office</td>
-                                          <td>Akshay</td>
-                                          <td colspan="1" rowspan="1">Ambit Investment Advisors Private Limited</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">GPC</td>
+                                            <td colspan="1" rowspan="1">
+                                              Global Private Client
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">AM</td>
+                                            <td colspan="1" rowspan="1">
+                                              Asset Management
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
 
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GCO</td>
-                                          <td colspan="1" rowspan="1">Group Corporate Office</td>
-                                          <td>Akshay</td>
-                                          <td colspan="1" rowspan="1">Ambit Investment Managers Private Limited</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">AM</td>
+                                            <td colspan="1" rowspan="1">
+                                              Asset Management
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">IE</td>
+                                            <td colspan="1" rowspan="1">
+                                              Institutional Equities
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">IE</td>
+                                            <td colspan="1" rowspan="1">
+                                              Institutional Equities
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">IB</td>
+                                            <td colspan="1" rowspan="1">
+                                              Investment Banking
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
 
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GCO</td>
-                                          <td colspan="1" rowspan="1">Group Corporate Office</td>
-                                          <td>Akshay</td>
-                                          <td colspan="1" rowspan="1">Ambit Private Limited</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td colspan="1" rowspan="1">
+                                              SMEL
+                                            </td>
+                                            <td colspan="1" rowspan="1">
+                                              SME Lending
+                                            </td>
+                                            <td>Business draft</td>
+                                            <td colspan="1" rowspan="1">
+                                              Business Approver
+                                            </td>
 
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GCO</td>
-                                          <td colspan="1" rowspan="1">Group Corporate Office</td>
-                                          <td>Akshay</td>
-                                          <td colspan="1" rowspan="1">Ambit Wealth Private Limited</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GPC</td>
-                                          <td colspan="1" rowspan="1">Global Private Client</td>
-                                          <td>Paresh Kapadia</td>
-                                          <td colspan="1" rowspan="1">Ambit Capital Private Limited</td>
-
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">GPC</td>
-                                          <td colspan="1" rowspan="1">Global Private Client</td><td>Paresh Kapadia</td>
-                                          <td colspan="1" rowspan="1">Ambit Wealth Private Limited</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">AM</td>
-                                          <td colspan="1" rowspan="1">Asset Management</td><td>Rinku Waghela</td>
-                                          <td colspan="1" rowspan="1">Ambit Investment Advisors Private Limited</td>
-
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">AM</td>
-                                          <td colspan="1" rowspan="1">Asset Management</td><td>Rinku Waghela</td>
-                                          <td colspan="1" rowspan="1">Ambit Investment Managers Private Limited</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">IE</td>
-                                          <td colspan="1" rowspan="1">Institutional Equities</td><td>Rakesh Gupta</td>
-                                          <td colspan="1" rowspan="1">Ambit Capital Private Limited</td>
-
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">IE</td>
-                                          <td colspan="1" rowspan="1">Institutional Equities</td><td>Rakesh Gupta</td>
-                                          <td colspan="1" rowspan="1">Ambit Singapore Pte. Ltd</td>
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">IB</td>
-                                          <td colspan="1" rowspan="1">Investment Banking</td><td>Ajesh Bhosale</td>
-                                          <td colspan="1" rowspan="1">Ambit Private Limited</td>
-
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td colspan="1" rowspan="1">SMEL</td>
-                                          <td colspan="1" rowspan="1">SME Lending</td><td>Rishi</td>
-                                          <td colspan="1" rowspan="1">Ambit Finvest Private Limited</td>
-
-                                          <td colspan="1" rowspan="1">
-                                            <div>
-                                              <select class="custom-select" id="inlineFormCustomSelect"
-                                                onchange="if(this.value) location.href=this.value;">
-
-                                                <option value="">Delete</option>
-                                              </select>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                      </tbody>
+                                            <td colspan="1" rowspan="1">
+                                              <div>
+                                                <select
+                                                  class="custom-select"
+                                                  id="inlineFormCustomSelect"
+                                                  onchange="if(this.value) location.href=this.value;"
+                                                >
+                                                  <option value="">
+                                                    Delete
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </tbody>
                                         <!-- <tbody>
                                           <tr>
                                             <td>IB</td>

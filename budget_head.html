@@ -53,27 +53,27 @@
                               >Expense / Revenue</label
                             >
                             <select name="" id="" class="form-select">
-                              <option value="" disabled>
-                                 Expense
+                              <option value="" disabled>Expense</option>
+                              <option value="">Finance Cost and NPA</option>
+                              <option value="">Recruitment Charges</option>
+                              <option value="">Personnel Cost - Direct</option>
+                              <option value="">
+                                Personnel Cost - Indirect
                               </option>
-                              <option value="">Office Rent- Ambit House</option>
-                              <option value="">Office Rent- One Lodha Place</option>
-                              <option value="">Office Rent Dr Site - One Bkc</option>
-                              <option value="">Warehouse Rent</option>
-                              <option value="">Office Rent WeWorks Bangalore</option>
-                              <option value="">Electricity Charges - Ambit House</option>
-                              <option value="">Electricity Charges - One Lodha Place</option>
-                              <option value="">Mobile and Telephone Exp- Business</option>
-                              <option value="">Bandwidth Internet Exps- Business</option>
-                              <option value=""  disabled>
-                                 Revenue
+                              <option value="">Research / GNC Sharing</option>
+                              <option value="">
+                                Adminstration and other Expenses - Direct
                               </option>
                               <option value="">
-                                MEMBERSHIP AND SUBSCRIPTION
+                                Adminstration and other Expenses - indirect
                               </option>
-                              <option value="">DIRECTORS SITTING FEES</option>
+                              <option value="">Non Cash Expenses</option>
+                              <option value="" disabled>Revenue</option>
                               <option value="">
-                                TRAVEL FOREIGN-HOTEL STAY EXPENSES
+                                Finance & Direct Costs / Payouts
+                              </option>
+                              <option value="">
+                                Finance & Direct Costs / Payouts
                               </option>
                             </select>
                           </div>
@@ -92,9 +92,15 @@
                               >Budget Type</label
                             >
                             <select name="" id="" class="form-select">
-                              <option value="" selected disabled>Select Budget Type</option>
-                              <option value="">Operational Expenditure (Opex)</option>
-                              <option value="">Capital expenditures (CapEx)</option>
+                              <option value="" selected disabled>
+                                Select Budget Type
+                              </option>
+                              <option value="">
+                                Operational Expenditure (Opex)
+                              </option>
+                              <option value="">
+                                Capital expenditures (CapEx)
+                              </option>
                             </select>
                             <!-- <button
                               class="form-control px-0"
@@ -380,8 +386,7 @@
                               <tbody>
                                 <tr>
                                   <td>Electricity Charges - Ambit House</td>
-                                  <td>Professional & Legal Charges
-                                  </td>
+                                  <td>Conveyance And Travelling</td>
                                   <td>Capital expenditures (CapEx)</td>
                                   <td>Asset Management</td>
 
@@ -418,8 +423,7 @@
                                 </tr>
                                 <tr>
                                   <td>Electricity Charges - Ambit House</td>
-                                  <td>Repairs And Maintenance
-                                  </td>
+                                  <td>Rent, Rates & Taxes</td>
                                   <td>Capital expenditures (CapEx)</td>
                                   <td>Asset Management</td>
 
@@ -456,7 +460,7 @@
                                 </tr>
                                 <tr>
                                   <td>Mobile and Telephone Exp- Business</td>
-                                  <td>MEMBERSHIP AND SUBSCRIPTION                                 </td>
+                                  <td>E Conference</td>
                                   <td>Operational Expenditure (Opex)</td>
                                   <td>Group Corporate Office</td>
 
@@ -492,9 +496,8 @@
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>Bandwidth Internet Exps- Business                                  </td>
-                                  <td>Software Expenses
-                                  </td>
+                                  <td>Bandwidth Internet Exps- Business</td>
+                                  <td>Speaker Fees</td>
                                   <td>Capital expenditures (CapEx)</td>
                                   <td>Global Private Client</td>
 
@@ -531,8 +534,7 @@
                                 </tr>
                                 <tr>
                                   <td>Electricity Charges - One Lodha Place</td>
-                                  <td>Electricity Charges
-                                  </td>
+                                  <td>Membership & Subscription</td>
                                   <td>Operational Expenditure (Opex)</td>
                                   <td>Asset Management</td>
 
@@ -569,8 +571,7 @@
                                 </tr>
                                 <tr>
                                   <td>Mobile and Telephone Exp- Business</td>
-                                  <td>Telephone & Intranet
-                                  </td>
+                                  <td>Bloomberg, Connectivity & Data Subscriptions</td>
                                   <td>Capital expenditures (CapEx)</td>
                                   <td>Asset Management</td>
 
@@ -607,8 +608,7 @@
                                 </tr>
                                 <tr>
                                   <td>Mobile and Telephone Exp- Business</td>
-                                  <td>Staff Welfare
-                                  </td>
+                                  <td>Seminar & Conference Expenses</td>
                                   <td>Capital expenditures (CapEx)</td>
                                   <td>SME Lending</td>
 
@@ -643,6 +643,562 @@
                                     </div>
                                   </td>
                                 </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Repairs And Maintenance</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Telephone & Intranet</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Professional & Legal Charges</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Branding & Business Promotion Expenses</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Directors Sitting Fees</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Insurance</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Electricity Charges</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Staff Welfare</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Printing & Stationery</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Audit Fees</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Software Expenses</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Donation</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Miscellaneous Expenses</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>New Initiatives</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Mobile and Telephone Exp- Business</td>
+                                  <td>Finvest Expenses</td>
+                                  <td>Capital expenditures (CapEx)</td>
+                                  <td>SME Lending</td>
+
+                                  <!-- <td>12/10/2023</td> -->
+                                  <td>
+                                    <div class="form-check form-switch">
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="flexSwitchCheckChecked"
+                                      />
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div>
+                                      <select
+                                        class="custom-select"
+                                        id="inlineFormCustomSelect"
+                                        onchange="if(this.value) location.href=this.value;"
+                                      >
+                                        <option value="" selected>
+                                          Action
+                                        </option>
+                                        <option value="sub_budget.html">
+                                          Add Sub Budget
+                                        </option>
+                                        <option value="budget_head.html">
+                                          Edit
+                                        </option>
+                                        <option value="">Delete</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                
                               </tbody>
                             </table>
                           </div>
