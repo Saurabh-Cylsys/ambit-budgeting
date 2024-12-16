@@ -47,7 +47,7 @@
                               <!-- <th scope="col" colspan="1" rowspan="1" class="text-center">
                                 Type
                               </th> -->
-                              <th>Draft</th>
+                              <!-- <th>Draft</th> -->
                               <th scope="col" colspan="1" rowspan="1" class="text-center">
                                 Level of Approval Required
                               </th>
@@ -114,7 +114,7 @@
                                   <option value="">Function</option>
                                 </select>
                               </td> -->
-                              <td>
+                              <!-- <td>
                                 <select name="" id="" class="form-control">
                                   <option value="" selected disabled>
                                     Select Draft
@@ -130,7 +130,7 @@
                                   </option>
                                   <option value="">Twisha Mehta</option>
                                 </select>
-                              </td>
+                              </td> -->
                               <td colspan="1" rowspan="1" class="text-center">
                                 <input type="number" name="" id="" value="0" class="form-control" min="0" max="">
                               </td>
@@ -198,6 +198,349 @@
                       <a href="approval_workflow.html" class="btn btn-dark">Cancel</a>
                       <a href="approval_workflow.html" class="btn btn-success">Save</a>
                     </div>
+
+
+                    <!-- Table -->
+                    <div class="col-12 mt-3">
+                      <div class="row align-items-center">
+                        <div class="col-md-8">
+                          <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                             
+                              <div class="navbar-collapse bg-white d-flex" id="">
+                                <div class="navbar-nav  mb-2 mb-lg-0">
+                                  <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                      Select Column
+                                    </button>
+                                    <ul class="dropdown-menu columnName p-0">
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;Select
+                                          All</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                          &nbsp;&nbsp;S.No</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp; &nbsp;&nbsp;User
+                                          Name</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                          &nbsp;&nbsp;Role.</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                          &nbsp;&nbsp;Designation</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                          &nbsp;&nbsp;Company</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                          &nbsp;&nbsp;Business</a></li>
+                                      <li><a class="dropdown-item" href="#"><input type="checkbox">&nbsp;
+                                          &nbsp;&nbsp;Action</a></li>
+    
+                                    </ul>
+                                  </div>
+                                </div>&nbsp;
+                                <form class="d-flex " role="search">
+                                  <select class="form-select" aria-label="Default select example">
+                                    <option selected>Show</option>
+                                    <option value="1">10</option>
+                                    <option value="1">20</option>
+                                    <option value="1">50</option>
+                                  </select>
+                                </form>
+                                <img src="assets/images/download.svg" alt="">
+                              </div>
+                              
+                            </div>
+                          </nav>
+                          
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Search</label>
+                          <input type="search" name="" id="" class="form-control col mx-2" placeholder="Search">
+                           
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-12 p-3">
+                    <div class="table-responsive card">
+                      <table id="dtBasicExample" class="table table-sm table-striped m-0" cellspacing="0"
+                        width="100%">
+                        <thead>
+                          <tr>
+                            <th scope="col" colspan="1" rowspan="1">
+                              Business / Function
+                            </th>
+                            <!-- <th scope="col" colspan="1" rowspan="1" class="text-center">
+                              Type
+                            </th> -->
+                            <!-- <th>Draft</th> -->
+                            <th scope="col" colspan="1" rowspan="1" class="text-center">
+                              Level of Approval Required
+                            </th>
+                            <th scope="col" colspan="1" rowspan="1" class="text-center">
+                              Level 1 Approval
+                            </th>
+                            <th scope="col" colspan="1" rowspan="1" class="text-center">
+                              Level 2 Approval
+                            </th>
+                            <th scope="col" colspan="1" rowspan="1" class="text-center">
+                              Level 3 Approval
+                            </th>
+                            <th scope="col" colspan="1" rowspan="1" class="text-center">
+                              Action
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td colspan="1" rowspan="1">GCO</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Akshay</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              2
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Ajay Singh
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Ankita Sawant
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center"></td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">GPC</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Paresh Kapadia</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              3
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Ajay Singh
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Ankita Sawant
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">IE</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Rakesh Gupta</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">PT</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Twisha Mehta</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">DDT</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Ajesh Bhosale</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">AM</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Rinku Waghela</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">IB</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              B
+                            </td> -->
+                            <!-- <td>Ajesh Bhosale</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">HR</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              F
+                            </td> -->
+                            <!-- <td>Rinku Waghela</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">Legal</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              F
+                            </td> -->
+                            <!-- <td>Paresh Kapadia</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="1" rowspan="1">Compliance</td>
+                            <!-- <td colspan="1" rowspan="1" class="text-center">
+                              F
+                            </td> -->
+                            <!-- <td>Ajesh Bhosale</td> -->
+                            <td colspan="1" rowspan="1" class="text-center">
+                              1
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              Navin Mishra
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              
+                            </td>
+                            <td colspan="1" rowspan="1" class="text-center">
+                              <a href="add_new_approval.html"><i class="bi bi-pen-fill mx-2"></i></a>
+                              <i class="bi bi-trash-fill mx-2"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <nav class="mt-1" aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item card">
+                        <a class="page-link text-black" href="#">Previous</a>
+                      </li>
+                      <li class="page-item card">
+                        <a class="page-link text-black" href="#">1</a>
+                      </li>
+                      <li class="page-item card">
+                        <a class="page-link text-black" href="#">2</a>
+                      </li>
+                      <li class="page-item card">
+                        <a class="page-link text-black" href="#">3</a>
+                      </li>
+                      <li class="page-item card">
+                        <a class="page-link text-black" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
                   </div>
                 </div>
               </div>
